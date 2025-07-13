@@ -11,7 +11,7 @@ module Org
       return @current_member if defined?(@current_member)
 
       if (request.subdomain == 'admin' || !RailsOrg.config.independent) && current_authorized_token
-        @current_member = current_authorized_token.member || current_authorized_token.mocked_member || current_account.members.first
+        @current_member = current_authorized_token.member || current_authorized_token.mocked_member
       elsif current_domain_organ
         @current_member = current_authorized_token&.member ||
           (defined?(current_wechat_user) && current_wechat_user && current_wechat_user.members.find_by(organ_id: current_domain_organ.self_and_ancestor_ids)) ||
