@@ -1,28 +1,5 @@
 <tr id="tr_<%= model.id %>" data-depth="<%= model.depth_str %>" data-controller="tree show" data-tree-target="item" data-action="mouseenter->show#show mouseleave->show#hide">
   <%= yield %>
-  <td>
-    <div data-show-target="item" class="visibility-hidden">
-      <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-circle-info text-info"></i>
-      <% end %>
-      <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-pencil text-link"></i>
-      <% end %>
-      <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-rounded is-light', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
-        <i class="fa-solid fa-trash text-danger"></i>
-      <% end %>
-    </div>
-    <div data-show-target="item" class="visibility-hidden">
-      <%= link_to({ controller: 'organ_domains', organ_id: model.id }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-mobile text-info"></i>
-        <span class="ml-1"><%= t('.organ_domains.index.title') %></span>
-      <% end %>
-      <%= link_to({ controller: '/admin/home', auth_token: current_authorized_token.id, host: model.admin_host }, class: 'button is-small is-rounded is-light', target: '_blank') do %>
-        <i class="fa-solid fa-hand-point-right text-success"></i>
-        <span class="ml-1"><%= t('.mock') %></span>
-      <% end if model != current_organ %>
-    </div>
-  </td>
 </tr>
 <% model.children.each do |child| %>
   <%= render partial: 'index_tbody', layout: 'index_tr', locals: { model: child, display: 'table-row' } %>
