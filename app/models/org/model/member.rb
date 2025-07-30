@@ -22,7 +22,7 @@ module Org
       }, default: 'init'
 
       has_one :account, -> { where(confirmed: true) }, class_name: 'Auth::Account', primary_key: :identity, foreign_key: :identity
-      has_many :authorized_tokens, ->(o){ where(o.filter) }, class_name: 'Auth::AuthorizedToken'
+      has_many :sessions, ->(o){ where(o.filter) }, class_name: 'Auth::Session'
 
       belongs_to :organ, counter_cache: true, inverse_of: :members
 
