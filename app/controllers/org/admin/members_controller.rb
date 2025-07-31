@@ -53,7 +53,7 @@ module Org
 
     def mock
       organ_grant = @member.mock_organ_grant(current_user.id)
-      current_authorized_token.update member_id: @member.id
+      Current.session.update member_id: @member.id
     end
 
     def add_item

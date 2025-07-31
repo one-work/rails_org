@@ -4,18 +4,18 @@ module Org
 
     def login
       @member = current_account.members.find(params[:id])
-      current_authorized_token.update member_id: @member.id
+      Current.session.update member_id: @member.id
       refresh_or_redirect_to({ controller: '/me/home' })
     end
 
     def user_login
       @member = current_user.members.find(params[:id])
-      current_authorized_token.update member_id: @member.id
+      Current.session.update member_id: @member.id
       refresh_or_redirect_to({ controller: '/me/home' })
     end
 
     def logout
-      current_authorized_token.update member_id: nil
+      Current.session.update member_id: nil
 
       if RailsOrg.config.independent && request.subdomain == 'admin'
         refresh_or_redirect_to({ controller: '/me/home' })

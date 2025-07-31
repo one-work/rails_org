@@ -5,7 +5,7 @@ module Org
     def require_org_member
       return if current_organ && current_organ.self_and_ancestor_ids.include?(current_member&.organ_id)
 
-      if current_authorized_token
+      if Current.session
         render 'require_org_member', layout: 'simple'
         set_auth_token
       elsif defined? current_provider_app

@@ -1,4 +1,4 @@
-<%= link_to({ controller: '/me/home', auth_token: current_authorized_token.id, **model.admin_url_options(request) }, class: 'media') do %>
+<%= link_to({ controller: '/me/home', auth_token: Current.session.id, **model.admin_url_options(request) }, class: 'media') do %>
   <%= yield %>
   <div class="media-right">
     <i class="fa-solid fa-chevron-right"></i>

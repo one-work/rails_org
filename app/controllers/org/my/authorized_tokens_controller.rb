@@ -19,7 +19,7 @@ module Org
 
     private
     def set_authorized_token
-      @authorized_token = current_authorized_token
+      @authorized_token = Current.session
     end
 
     def authorized_token_params

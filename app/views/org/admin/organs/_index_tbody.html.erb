@@ -46,7 +46,7 @@
       <i class="fa-solid fa-mobile text-info"></i>
       <span class="ml-1"><%= t('.organ_domains.index.title') %></span>
     <% end %>
-    <%= link_to({ controller: '/admin/home', auth_token: current_authorized_token.id, host: model.admin_host }, class: 'button is-small is-rounded is-light', target: '_blank') do %>
+    <%= link_to({ controller: '/admin/home', auth_token: Current.session.id, host: model.admin_host }, class: 'button is-small is-rounded is-light', target: '_blank') do %>
       <i class="fa-solid fa-hand-point-right text-success"></i>
       <span class="ml-1"><%= t('.mock') %></span>
     <% end if model != current_organ %>

@@ -30,7 +30,7 @@ module Org
       if RailsOrg.config.independent
         redirect_to({ controller: '/me/home', host: @organ.admin_host, auth_token: member.auth_token }, allow_other_host: true)
       else
-        current_authorized_token.update member_id: member.id
+        Current.session.update member_id: member.id
         redirect_to controller: '/admin/home'
       end
     end
@@ -48,11 +48,11 @@ module Org
     def set_create_organ
       @organ = current_user.created_organs.build(organ_params)
       @member = @organ.members.build(
-        identity: current_authorized_token.identity,
+        identity: Current.session.identity,
         own: true,
         **organ_params.slice(:role_whos_attributes)
       )
-      @member.wechat_openid = current_authorized_token.uid if @member.respond_to? :wechat_openid
+      @member.wechat_openid = Current.session.uid if @member.respond_to? :wechat_openid
     end
 
     def set_role

@@ -10,10 +10,10 @@ module Org
     def current_member
       return @current_member if defined?(@current_member)
 
-      if (request.subdomain == 'admin' || !RailsOrg.config.independent) && current_authorized_token
-        @current_member = current_authorized_token.member || current_authorized_token.mocked_member
+      if (request.subdomain == 'admin' || !RailsOrg.config.independent) && Current.session
+        @current_member = Current.session.member || Current.session.mocked_member
       elsif current_domain_organ
-        @current_member = current_authorized_token&.member ||
+        @current_member = Current.session&.member ||
           (defined?(current_wechat_user) && current_wechat_user && current_wechat_user.members.find_by(organ_id: current_domain_organ.self_and_ancestor_ids)) ||
           (current_account && current_account.members.find_by(organ_id: current_domain_organ.self_and_ancestor_ids)) ||
           defined?(current_corp_user) && current_corp_user&.member
