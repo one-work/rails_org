@@ -22,7 +22,7 @@ module Org
       }, default: 'init'
 
       has_one :account, -> { where(confirmed: true) }, class_name: 'Auth::Account', primary_key: :identity, foreign_key: :identity
-      has_many :authorized_tokens, ->(o){ where(o.filter) }, class_name: 'Auth::AuthorizedToken'
+      has_many :sessions, primary_key: :identity, foreign_key: :identity, class_name: 'Auth::Session'
 
       belongs_to :organ, counter_cache: true, inverse_of: :members
 
@@ -56,12 +56,6 @@ module Org
 
       #before_save :sync_tutorials, if: -> { join_on_changed? }
       #before_save :sync_avatar_from_user, if: -> { identity_changed? && user }
-    end
-
-    def filter
-      options = { identity: identity, mock_member: true }
-      options.merge! uid: wechat_openid if defined?(wechat_openid)
-      options
     end
 
     def set_current_cart(organ_id)
@@ -160,12 +154,12 @@ module Org
       end
     end
 
-    def authorized_token
-      authorized_tokens.find(&:effective?) || authorized_tokens.create
-    end
-
     def auth_token
-      authorized_token.id
+      session = sessions.where(mock_member: true).effective.take || sessions.create! do |m|
+        m.mock_member = true
+        m.uid = wechat_openid if defined?(wechat_openid)
+      end
+      session.id
     end
 
   end
