@@ -1,6 +1,6 @@
 <div class="menu-list">
   <%= link_to({ controller: 'org/admin/members' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: 'org/admin/members', item: 'menu-item', active: 'menu-item is-active')) do %>
-    <%= svg_light_tag 'users', class: 'icon size-4' %>
+    <%= svg_tag 'users', kind: 'light', class: 'icon size-4' %>
     <span class="size-7 mt-1"><%= t('org.admin.members.index.title') %></span>
   <% end %>
 </div>
