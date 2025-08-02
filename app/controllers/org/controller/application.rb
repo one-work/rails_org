@@ -10,6 +10,7 @@ module Org
     def current_member
       return @current_member if defined?(@current_member)
 
+      resume_session
       if (request.subdomain == 'admin' || !RailsOrg.config.independent) && Current.session
         @current_member = Current.session.member || Current.session.mocked_member
       elsif current_domain_organ
