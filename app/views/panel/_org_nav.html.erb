@@ -1,7 +1,7 @@
 <div class="menu-list">
   <%= link_to({ controller: 'org/panel/home' }, text: true, data: { turbo_frame: 'body', action: 'menu#enter' }, class: 'menu-item') do %>
-    <i class="fa-solid fa-fw fa-sitemap"></i>
-    <strong><%= t('org.panel.title') %></strong>
+    <%= svg_tag 'sitemap' %>
+    <strong class="ml-1"><%= t('org.panel.title') %></strong>
   <% end %>
   <div class="pl-4">
     <%= link_to t('org.panel.organs.index.title'), { controller: 'org/panel/organs' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: 'organs', item: 'menu-item', active: 'menu-item is-active') %>
