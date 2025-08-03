@@ -18,6 +18,8 @@ module Org
           (defined?(current_wechat_user) && current_wechat_user && current_wechat_user.members.find_by(organ_id: current_domain_organ.self_and_ancestor_ids)) ||
           (current_account && current_account.members.find_by(organ_id: current_domain_organ.self_and_ancestor_ids)) ||
           defined?(current_corp_user) && current_corp_user&.member
+      else
+        @current_member = Current.session&.member
       end
 
       if @current_member
