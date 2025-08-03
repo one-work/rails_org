@@ -156,6 +156,7 @@ module Org
 
     def auth_token
       session = sessions.where(mock_member: true).effective.take || sessions.create! do |m|
+        m.member_id = id
         m.mock_member = true
         m.uid = wechat_openid if defined?(wechat_openid)
       end
