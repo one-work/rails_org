@@ -1,0 +1,7 @@
+<div class="fixed-grid has-5-cols">
+  <div class="grid">
+    <%= link_to({ controller: 'org/panel/organs' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('org.panel.organs.index.title') %></span>
+    <% end %>
+  </div>
+</div>
