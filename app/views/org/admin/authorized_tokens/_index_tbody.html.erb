@@ -5,14 +5,14 @@
   <td><time data-controller="time"><%= authorized_token.expire_at.to_fs(:iso8601) %></time></td>
   <td><%= authorized_token.mock_member %></td>
   <td>
-    <%= link_to({ action: 'show', id: authorized_token.id }, { aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light' }) do %>
-      <i class="fa-solid fa-circle-info"></i>
+    <%= link_to({ action: 'show', id: authorized_token.id }, { aria: { label: t('.show.title') }, class: 'button is-small is-borderless' }) do %>
+      <%= svg_tag 'circle-info', class: 'icon text-info' %>
     <% end %>
-    <%= link_to({ action: 'edit', id: authorized_token.id }, { aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light' }) do %>
+    <%= link_to({ action: 'edit', id: authorized_token.id }, { aria: { label: t('.edit.title') }, class: 'button is-small is-borderless' }) do %>
       <i class="fa-solid fa-pencil"></i>
     <% end %>
-    <%= link_to({ action: 'destroy', id: authorized_token.id }, { method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-rounded is-light' }) do %>
-      <i class="fa-solid fa-trash"></i>
+    <%= link_to({ action: 'destroy', id: authorized_token.id }, { method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-borderless' }) do %>
+      <%= svg_tag 'trash', class: 'icon' %>
     <% end %>
   </td>
 </tr>

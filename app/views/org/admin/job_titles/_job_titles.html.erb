@@ -31,7 +31,7 @@
   </td>
   <td data-controller="input">
     <% if job_title.department_id == @department.id %>
-      <%= link_to({ action: 'edit', id: job_title.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ action: 'edit', id: job_title.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-pencil"></i>
       <% end %>
     <% end %>
@@ -41,8 +41,8 @@
         <label data-action="click->input#check"></label>
       <% end %>
     <% else %>
-      <%= button_to({ action: 'destroy', id: job_title.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-trash"></i>
+      <%= button_to({ action: 'destroy', id: job_title.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'trash', class: 'icon' %>
       <% end %>
     <% end %>
   </td>

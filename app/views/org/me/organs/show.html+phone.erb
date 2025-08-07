@@ -1,7 +1,7 @@
 <% if current_organ.creator_id == current_user.id %>
 <div class="box">
   <%= button_to({ action: 'destroy' }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-fullwidth is-danger') do %>
-    <i class="fa-solid fa-trash"></i>
+    <%= svg_tag 'trash', class: 'icon' %>
     <span class="ml-1"><%= t('.destroy.title') %></span>
   <% end %>
 </div>

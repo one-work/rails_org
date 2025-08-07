@@ -38,31 +38,31 @@
   </div>
 </td>
 <td>
-  <%= link_to({ controller: 'members', organ_id: model.id }, aria: { label: t('org.panel.members.index.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'members', organ_id: model.id }, aria: { label: t('org.panel.members.index.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-users text-info"></i>
     <span class="ml-1"><%= model.members_count %></span>
   <% end %>
 </td>
 <td>
-  <%= link_to({ action: 'children', id: model.id }, aria: { label: t('.children.index.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ action: 'children', id: model.id }, aria: { label: t('.children.index.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-building-flag text-info"></i>
     <span class="ml-1"><%= model.children.count %></span>
   <% end %>
 </td>
 <td>
   <div data-show-target="item" class="visibility-hidden">
-    <%= button_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
-      <i class="fa-solid fa-circle-info text-info"></i>
+    <%= button_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
+      <%= svg_tag 'circle-info', class: 'icon text-info' %>
     <% end %>
-    <%= button_to({ action: 'edit', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
-      <i class="fa-solid fa-pencil text-link"></i>
+    <%= button_to({ action: 'edit', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
+      <%= svg_tag 'pencil', class: 'icon text-link' %>
     <% end %>
-    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-rounded is-light', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
-      <i class="fa-solid fa-trash text-danger"></i>
+    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-borderless', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
+      <%= svg_tag 'trash', class: 'icon text-danger' %>
     <% end %>
   </div>
   <div data-show-target="item" class="visibility-hidden">
-    <%= link_to({ controller: 'organ_domains', organ_id: model.id }, class: 'button is-small is-rounded is-light') do %>
+    <%= link_to({ controller: 'organ_domains', organ_id: model.id }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-mobile text-info"></i>
       <span class="ml-1"><%= t('.organ_domains.index.title') %></span>
     <% end %>

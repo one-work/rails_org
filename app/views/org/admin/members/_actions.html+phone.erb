@@ -1,5 +1,5 @@
 <%= button_to({ action: 'destroy' }, method: :delete, form: { data: { turbo_confirm: t('.destroy.confirm'), class: 'cell' } }, class: ' has-column-centered text-danger') do %>
-  <i class="fa-solid fa-trash"></i>
+  <%= svg_tag 'trash', class: 'icon' %>
   <span><%= t('.destroy.title') %></span>
 <% end %>
 <%= button_to({ action: 'edit' }, class: 'cell has-column-centered') do %>
@@ -7,7 +7,7 @@
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= link_to({ action: 'show' }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-circle-info"></i>
+  <%= svg_tag 'circle-info', class: 'icon text-info' %>
   <span><%= t('.show.title') %></span>
 <% end %>
 <%= button_to({ controller: 'roled/admin/who_roles', action: 'show', who_type: 'Org::Member', who_id: model.id }, class: 'cell has-column-centered') do %>

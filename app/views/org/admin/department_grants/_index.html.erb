@@ -14,7 +14,7 @@
           <span class="ui label">
             <%= department_grant.job_title&.name %>
             <%= link_to admin_department_grant_path(@organ_handle.record_class, @organ_handle.record_column, department_grant), method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') } do %>
-              <i class="fa-solid fa-trash"></i>
+              <%= svg_tag 'trash', class: 'icon' %>
             <% end %>
           </span>
           <% end %>
