@@ -1,0 +1,16 @@
+<div class="grid">
+  <%= link_to({ controller: 'org/admin/organs' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['organs', 'organ_domains'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('org.admin.organs.index.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'org/admin/members' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['members'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('org.admin.members.index.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'org/admin/departments' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['departments', 'job_descriptions'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('org.admin.departments.index.title') %></span>
+  <% end %>
+</div>
+
+<%# link_to 'Supports', admin_supports_path, class: active_helper(controllers: 'supports') %>
+<%# link_to 'Tutorials', admin_tutorials_path, class: active_helper(controllers: ['tutorials']) %>
+<%# link_to 'Job Transfers', admin_job_transfers_path, class: active_helper(controllers: ['job_transfers']) %>
+<%# link_to 'Resigns', admin_resigns_path, class: active_helper(controllers: ['resigns', 'resign_reasons']) %>
