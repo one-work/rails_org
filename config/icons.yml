@@ -1,2 +1,5 @@
 regular:
+  - building-flag
+  - mobile
   - sitemap
+  - users

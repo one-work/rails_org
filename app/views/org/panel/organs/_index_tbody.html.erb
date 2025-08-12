@@ -38,14 +38,14 @@
   </div>
 </td>
 <td>
-  <%= link_to({ controller: 'members', organ_id: model.id }, aria: { label: t('org.panel.members.index.title') }, class: 'button is-small is-borderless') do %>
-    <i class="fa-solid fa-users text-info"></i>
+  <%= link_to({ controller: 'members', organ_id: model.id }, aria: { label: t('.members.index.title') }, class: 'button is-small is-borderless') do %>
+    <%= svg_tag 'users', class: 'icon text-info' %>
     <span class="ml-1"><%= model.members_count %></span>
   <% end %>
 </td>
 <td>
   <%= link_to({ action: 'children', id: model.id }, aria: { label: t('.children.index.title') }, class: 'button is-small is-borderless') do %>
-    <i class="fa-solid fa-building-flag text-info"></i>
+    <%= svg_tag 'building-flag', class: 'icon text-info' %>
     <span class="ml-1"><%= model.children.count %></span>
   <% end %>
 </td>
@@ -63,7 +63,7 @@
   </div>
   <div data-show-target="item" class="visibility-hidden">
     <%= link_to({ controller: 'organ_domains', organ_id: model.id }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-mobile text-info"></i>
+      <%= svg_tag 'mobile', class: 'icon text-info' %>
       <span class="ml-1"><%= t('.organ_domains.index.title') %></span>
     <% end %>
   </div>
