@@ -1,5 +1,5 @@
 module Org
-  class Admin::OrgansController < Panel::OrgansController
+  class Admin::OrgansController < Admin::BaseController
     before_action :set_organ, only: [:show, :edit, :update, :destroy]
 
     def index
