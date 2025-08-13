@@ -11,7 +11,7 @@
       <div>
         <%= md.job_title&.name %>
         <%= button_to({ controller: 'member_departments', action: 'destroy', member_id: member.id, id: md.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }) do %>
-          <%= svg_tag 'trash', class: 'icon' %>
+          <%= svg_tag 'trash' %>
         <% end %>
       </div>
     <% end %>
@@ -22,7 +22,7 @@
       <i class="fa-solid fa-pencil"></i>
     <% end %>
     <%= button_to({ controller: 'members', action: 'destroy', id: member.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-borderless', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
-      <%= svg_tag 'trash', class: 'icon' %>
+      <%= svg_tag 'trash' %>
     <% end %>
   </td>
 </tr>
