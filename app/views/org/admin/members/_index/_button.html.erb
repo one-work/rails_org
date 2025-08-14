@@ -1,5 +1,5 @@
 <%= button_to({ action: 'new' }, class: 'button is-rounded is-primary') do %>
-  <i class="fa-solid fa-plus"></i>
+  <%= svg_tag 'plus' %>
   <span class="ml-1"><%= t('.new.title') %></span>
 <% end %>
 <%= button_to({ controller: 'datum/admin/table_lists', action: 'find', data_list_id: 'Org::MemberExport' }, class: 'button is-light') do %>

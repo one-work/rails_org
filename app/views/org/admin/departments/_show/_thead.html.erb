@@ -4,6 +4,6 @@
 <th><%= Member.human_attribute_name(:join_on) %></th>
 <th>
   <%= link_to({ controller: 'members', action: 'new', department_id: @department.id }, class: 'button is-link is-small') do %>
-    <i class="fa-solid fa-plus"></i><span><%= t('.new.title') %></span>
+    <%= svg_tag 'plus' %><span><%= t('.new.title') %></span>
   <% end %>
 </th>
