@@ -28,7 +28,7 @@ module Org
       member = current_user.members.find_by(organ_id: @organ.id)
 
       if RailsOrg.config.independent
-        redirect_to({ controller: '/me/home', host: @organ.admin_host, auth_token: member.auth_token }, allow_other_host: true)
+        redirect_to({ controller: '/admin/home', host: @organ.admin_host, auth_token: member.auth_token }, allow_other_host: true)
       else
         Current.session.update member_id: member.id
         redirect_to controller: '/admin/home'
