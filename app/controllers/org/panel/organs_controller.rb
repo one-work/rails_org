@@ -45,6 +45,7 @@ module Org
     def organ_params
       params.fetch(:organ, {}).permit(
         :name,
+        :code,
         :logo,
         :official,
         :name_short,
