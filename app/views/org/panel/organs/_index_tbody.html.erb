@@ -44,7 +44,7 @@
   <% end %>
 </td>
 <td>
-  <%= link_to({ action: 'children', id: model.id }, aria: { label: t('.children.index.title') }, class: 'button is-small is-borderless') do %>
+  <%= link_to({ action: 'children', id: model.id }, aria: { label: t('.children.title') }, class: 'button is-small is-borderless') do %>
     <%= svg_tag 'building-flag', class: 'icon text-info' %>
     <span class="ml-1"><%= model.children.count %></span>
   <% end %>
