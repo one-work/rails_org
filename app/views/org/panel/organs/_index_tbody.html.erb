@@ -33,7 +33,7 @@
   </div>
   <div>
     <%= button_to({ action: 'edit_roles', id: model.id }, aria: { label: t('.edit_roles.title') }) do %>
-      <i class="fa-solid fa-user-shield text-link"></i>
+      <%= svg_tag 'user-shield' %>
     <% end %>
   </div>
 </td>
