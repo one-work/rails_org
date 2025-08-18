@@ -1,9 +1,9 @@
 <td>
   <span style="width: <%= model.depth * 1.43 %>em; display: inline-block"></span>
   <% if model.leaf? %>
-    <i class="fa-solid fa-fw fa-minus"></i>
+    <%= svg_tag 'minus' %>
   <% else %>
-    <i class="fa-solid fa-fw fa-caret-right" style="cursor: pointer" data-action="click->tree#expand"></i>
+    <%= svg_tag 'caret-right', data: { action: 'click->tree#expand' }, class: 'icon is-small clickable' %>
   <% end %>
   <%= link_to({ action: 'show', id: model.id}) do %>
     <span><%= model.name %></span>
