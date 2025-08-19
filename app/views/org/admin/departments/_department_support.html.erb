@@ -17,7 +17,7 @@
   <td class="ui labels">
     <%= link_to 'Supports', admin_supports_path(department_id: node.id), class: 'ui yellow label' %>
     <%= link_to edit_admin_department_path(node), class: 'ui pink mini icon button' do %>
-      <i class="fa-solid fa-pencil"></i>
+      <%= svg_tag 'pencil' %>
     <% end %>
     <%= link_to admin_department_path(node), method: :delete, data: {turbo_confirm: t('.destroy.confirm')}, class: 'ui red mini icon button' do %>
       <i class="times icon"></i>

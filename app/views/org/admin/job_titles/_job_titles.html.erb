@@ -32,7 +32,7 @@
   <td data-controller="input">
     <% if job_title.department_id == @department.id %>
       <%= link_to({ action: 'edit', id: job_title.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
-        <i class="fa-solid fa-pencil"></i>
+        <%= svg_tag 'pencil' %>
       <% end %>
     <% end %>
     <% if job_title.super_job_title %>

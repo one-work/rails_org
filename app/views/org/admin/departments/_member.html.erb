@@ -19,7 +19,7 @@
   <td><%= member.join_on %></td>
   <td>
     <%= link_to({ controller: 'members', action: 'edit', id: member.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-pencil"></i>
+      <%= svg_tag 'pencil' %>
     <% end %>
     <%= button_to({ controller: 'members', action: 'destroy', id: member.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-borderless', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
       <%= svg_tag 'trash' %>

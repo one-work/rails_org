@@ -9,7 +9,7 @@
         <i class="fa-regular fa-id-card"></i>
       <% end %>
       <%= link_to({ action: 'edit', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
-        <i class="fa-solid fa-pencil"></i>
+        <%= svg_tag 'pencil' %>
       <% end %>
       <%= link_to({ action: 'mock', id: model.id }, method: :patch, aria: { label: t('.mock') }, class: 'button is-small is-borderless') do %>
         <i class="fa-regular fa-hand-point-right"></i>
