@@ -1,5 +1,6 @@
 regular:
   - building-flag
+  - check
   - mobile
   - sitemap
   - user-shield
