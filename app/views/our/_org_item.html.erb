@@ -13,7 +13,7 @@
     <span><%= t('org.me.members.show.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
 <%= link_to({ controller: 'org/me/members', action: 'qrcodes', host: current_client.organ.host, auth_token: current_account.auth_token }, class: 'media') do %>
@@ -22,6 +22,6 @@
     <span><%= t('org.me.members.qrcodes.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>

@@ -4,7 +4,7 @@
     <span class="ml-1"><%= t('.members.show.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
 <%= link_to({ controller: 'org/me/members', action: 'qrcodes' }, class: 'media') do %>
@@ -13,7 +13,7 @@
     <span class="ml-1"><%= t('.members.qrcodes.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
 <%= link_to({ controller: 'trade/me/home', action: 'qrcode' }, class: 'media') do %>
@@ -22,7 +22,7 @@
     <span class="ml-1"><%= t('trade.me.home.qrcode.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
 <%= link_to({ controller: 'org/me/organs', action: 'show' }, class: 'media') do %>
@@ -31,7 +31,7 @@
     <span class="ml-1"><%= t('.organs.show.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
 <%= link_to({ controller: 'print/admin/devices' }, class: 'media') do %>
@@ -40,7 +40,7 @@
     <span class="ml-1"><%= t('print.admin.devices.index.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
 <% if request.variant.include?(:mini_program) %>
@@ -57,7 +57,7 @@
       <span class="ml-1"><%= '设置蓝牙称' %></span>
     </div>
     <div class="media-right">
-      <i class="fa-solid fa-chevron-right"></i>
+      <%= svg_tag 'chevron-right' %>
     </div>
   </div>
 <% end %>

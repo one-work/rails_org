@@ -3,7 +3,7 @@
     <%= link_to({ controller: '/me/home' }, class: 'media') do %>
       <div class="media-content"><%= current_organ.name %></div>
       <div class="media-right">
-        <i class="fa-solid fa-chevron-right"></i>
+        <%= svg_tag 'chevron-right' %>
       </div>
     <% end %>
     <%= render partial: 'organ', collection: @organs, as: :organ %>

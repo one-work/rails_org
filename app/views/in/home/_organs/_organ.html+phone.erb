@@ -1,6 +1,6 @@
 <%= link_to({ controller: 'factory/in/home', org_id: "org_#{organ.id}" }, class: 'media') do %>
   <div class="media-content"><%= organ.name %></div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
