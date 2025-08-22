@@ -1,4 +1,4 @@
-<%= button_to({ action: 'redirect', id: model.id }, class: 'media is-fullwidth', form: { class: 'is-fullwidth' }) do %>
+<%= link_to({ action: 'redirect', id: model.id }, class: 'media') do %>
   <%= yield %>
   <div class="media-right">
     <%= svg_tag 'chevron-right' %>
