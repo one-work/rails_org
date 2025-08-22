@@ -1,4 +1,4 @@
-<%= link_to({ controller: '/me/home', auth_token: Current.session.id, **model.admin_url_options(request) }, class: 'media') do %>
+<%= button_to({ action: 'redirect', id: model.id }, class: 'media is-fullwidth', form: { class: 'is-fullwidth' }) do %>
   <%= yield %>
   <div class="media-right">
     <%= svg_tag 'chevron-right' %>
