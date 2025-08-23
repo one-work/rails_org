@@ -11,21 +11,21 @@ zh:
   our:
     home:
       index:
-        title: 我的组织
+        title: 我的团队
   mem:
     home:
       index:
         title: 我的
   org:
-    title: 组织架构
+    title: 团队
     admin:
-      title: 组织架构
+      title: 团队
       authorized_tokens:
         index:
           title: 登陆Token
       home:
         index:
-          title: 组织管理
+          title: 团队
       departments:
         index:
           title: 部门
@@ -43,7 +43,7 @@ zh:
       organs:
         index:
           title: 分支机构
-          mock: 进入该组织
+          mock: 进入该团队
       organ_domains:
         index:
           title: 域名管理
@@ -84,20 +84,20 @@ zh:
         destroy:
           title: 移除快捷菜单
     panel:
-      title: 组织管理
+      title: 团队
       home:
         index:
-          title: 组织管理
+          title: 团队管理
       organs:
         index:
-          title: 组织列表
+          title: 团队
         children:
-          title: 下级组织
+          title: 下级团队
         edit_roles:
           title: 权限管理
       organ_domains:
         index:
-          title: 组织域名
+          title: 团队域名
       members:
         index:
           title: 员工列表
@@ -111,23 +111,23 @@ zh:
         show:
           title: 首页
     board:
-      title: 我的组织
+      title: 我的团队
       members:
         index:
           title: 我的工作台
         new:
           title: 申请为职员
         logout:
-          title: 切换组织
+          title: 切换团队
       organs:
         index:
-          title: 我的组织
+          title: 我的团队
         new:
-          title: 创建新组织
+          title: 创建新团队
         redirect:
           title: 工作台
     me:
-      title: 组织管理
+      title: 团队管理
       home:
         index:
           title: 首页
@@ -140,13 +140,13 @@ zh:
           title: 邀请同事
       organs:
         index:
-          title: 组织列表
+          title: 团队列表
         show:
-          title: 注销组织
+          title: 注销团队
         new:
-          title: 创建新组织
+          title: 创建新团队
         destroy:
-          title: 注销组织
+          title: 注销团队
       departments:
         index:
           title: 我的部门
