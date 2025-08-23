@@ -5,13 +5,13 @@
   <div class="columns is-4-mobile flex is-vcentered is-centered m-0 is-shadow" data-empty-target="content">
     <%= link_to({ controller: 'org/admin/members' }, class: 'column has-column-centered') do %>
       <div class="text-primary">
-        <%= svg_tag 'user-gear' %>
+        <%= svg_tag 'user-gear', class: 'icon is-medium' %>
       </div>
       <div class="text-grey size-7 mt-1"><%= t('org.admin.members.index.title') %></div>
     <% end %>
     <%= link_to({ controller: 'org/admin/departments' }, class: 'column has-column-centered') do %>
       <div class="text-primary">
-        <%= svg_tag 'chalkboard-user' %>
+        <%= svg_tag 'chalkboard-user', class: 'icon is-medium' %>
       </div>
       <div class="text-dark size-7 mt-1"><%= t('org.admin.departments.index.title') %></div>
     <% end %>
