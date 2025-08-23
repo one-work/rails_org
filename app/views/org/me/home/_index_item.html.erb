@@ -1,6 +1,6 @@
 <%= link_to({ controller: 'org/me/members', action: 'show' }, class: 'media') do %>
   <div class="media-content">
-    <i class="fa-solid fa-fw fa-user-gear text-primary"></i>
+    <%= svg_tag 'user-gear' %>
     <span class="ml-1"><%= t('.members.show.title') %></span>
   </div>
   <div class="media-right">
@@ -9,7 +9,7 @@
 <% end %>
 <%= link_to({ controller: 'org/me/members', action: 'qrcodes' }, class: 'media') do %>
   <div class="media-content">
-    <i class="fa-solid fa-fw fa-qrcode text-primary"></i>
+    <%= svg_tag 'qrcode' %>
     <span class="ml-1"><%= t('.members.qrcodes.title') %></span>
   </div>
   <div class="media-right">
@@ -18,7 +18,7 @@
 <% end %>
 <%= link_to({ controller: 'trade/me/home', action: 'qrcode' }, class: 'media') do %>
   <div class="media-content">
-    <i class="fa-solid fa-fw fa-qrcode text-danger"></i>
+    <%= svg_tag 'qrcode' %>
     <span class="ml-1"><%= t('trade.me.home.qrcode.title') %></span>
   </div>
   <div class="media-right">
@@ -27,17 +27,17 @@
 <% end %>
 <%= link_to({ controller: 'org/me/organs', action: 'show' }, class: 'media') do %>
   <div class="media-content">
-    <i class="fa-solid fa-fw fa-sitemap text-danger"></i>
+    <%= svg_tag 'sitemap' %>
     <span class="ml-1"><%= t('.organs.show.title') %></span>
   </div>
   <div class="media-right">
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
-<%= link_to({ controller: 'print/admin/devices' }, class: 'media') do %>
+<%= link_to({ controller: 'print/admin/jia_bo_printers' }, class: 'media') do %>
   <div class="media-content">
-    <i class="fa-solid fa-fw fa-print"></i>
-    <span class="ml-1"><%= t('print.admin.devices.index.title') %></span>
+    <%= svg_tag 'print' %>
+    <span class="ml-1"><%= t('print.admin.jia_bo_printers.index.title') %></span>
   </div>
   <div class="media-right">
     <%= svg_tag 'chevron-right' %>
