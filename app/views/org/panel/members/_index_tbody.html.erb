@@ -47,7 +47,7 @@
   </div>
   <div data-show-target="item" class="visibility-hidden">
     <%= button_to({ action: 'mock', id: model.id }, data: { turbo: false }, class: 'button is-small is-borderless', form: { target: '_blank' }) do %>
-      <i class="fa-solid fa-hand-point-right text-success"></i>
+      <%= svg_tag 'hand-point-right' %>
       <span class="ml-1"><%= t('.mock.title') %></span>
     <% end %>
   </div>
