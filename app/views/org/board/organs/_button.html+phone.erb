@@ -1,0 +1,6 @@
+<% @roles.each do |role| %>
+  <%= button_to({ controller: 'organs', action: 'new', role_id: role.id }, class: 'button is-fullwidth is-primary') do %>
+    <%= svg_tag 'plus' %>
+    <span class="ml-1"><%= role.tip %></span>
+  <% end %>
+<% end %>
