@@ -1,2 +1,2 @@
 <%= turbo_stream.append 'tbody', partial: 'index_item', layout: 'index_item_actions', locals: { model: @organ } %>
-<%= turbo_stream.replace 'new_card', partial: 'new_card' %>
+<%= turbo_stream.remove 'modal' %>

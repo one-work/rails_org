@@ -4,14 +4,12 @@
 
 <%= render 'tip' %>
 
-<% if @created_organs.present? %>
 <div class="box is-padding-less">
   <div class="box-header">我创建的</div>
   <div id="tbody" class="box-body">
     <%= render partial: 'index_item', layout: 'index_item_actions', collection: @created_organs, as: :model %>
   </div>
 </div>
-<% end %>
 
 <% @accounts.each do |account, organs| %>
   <% if organs.present? %>
