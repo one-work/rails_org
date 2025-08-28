@@ -10,7 +10,8 @@
     <div class="content">
       <span>
         <%= link_to({ action: 'show', id: member.id }) do %>
-          <i class="fa-regular fa-user"></i><%= member.name %>
+          <%= svg_tag 'user' %>
+          <span class="ml-1"><%= member.name %></span>
         <% end %>
       </span>
     </div>
