@@ -3,7 +3,7 @@
     <p>您不是该组织成员，请联系管理员</p>
   </div>
 <% elsif current_account && request.subdomain == 'admin' %>
-  <div>
+  <div class="has-page-centered">
     <p>您在以下组织存在账号，请选择账号登录</p>
     <div class="buttons mt-3">
     <% current_account.members.includes(:organ).each do |member| %>
@@ -12,7 +12,7 @@
     </div>
   </div>
 <% elsif current_user && request.subdomain == 'admin' %>
-  <div>
+  <div class="has-page-centered">
     <p>您在以下组织存在账号，请选择账号登录</p>
     <div class="buttons mt-3">
     <% current_user.members.includes(:organ).each do |member| %>
