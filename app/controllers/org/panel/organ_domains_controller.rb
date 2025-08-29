@@ -9,7 +9,10 @@ module Org
     end
 
     def all
-      @organ_domains = OrganDomain.page(params[:page])
+      q_params = {}
+      q_params.merge! params.permit(:host)
+
+      @organ_domains = OrganDomain.where(q_params).page(params[:page])
     end
 
     private
