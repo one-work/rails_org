@@ -98,6 +98,8 @@ zh:
       organ_domains:
         index:
           title: 团队域名
+        all:
+          title: 域名
       members:
         index:
           title: 员工列表

@@ -3,5 +3,8 @@
     <%= link_to({ controller: 'org/panel/organs' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
       <span><%= t('org.panel.organs.index.title') %></span>
     <% end %>
+    <%= link_to({ controller: 'org/panel/organ_domains', action: 'all' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('org.panel.organ_domains.all.title') %></span>
+    <% end %>
   </div>
 </div>

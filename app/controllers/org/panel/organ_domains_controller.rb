@@ -1,11 +1,15 @@
 module Org
   class Panel::OrganDomainsController < Panel::BaseController
-    before_action :set_organ
+    before_action :set_organ, except: [:all]
     before_action :set_organ_domain, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_organ_domain, only: [:new, :create]
 
     def index
       @organ_domains = @organ.organ_domains.page(params[:page])
+    end
+
+    def all
+      @organ_domains = OrganDomain.page(params[:page])
     end
 
     private
