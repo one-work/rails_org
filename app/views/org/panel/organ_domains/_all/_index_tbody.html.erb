@@ -1,7 +1,8 @@
 <td>
-  <p><%= link_to model.host, model.redirect_url(port: request.port), target: '_blank' %></p>
+  <p><%= link_to model.host, model.redirect_url(port: request.port), target: '_blank', class: 'family-monospace' %></p>
   <p><span class="tag"><%= model.kind_i18n %></span></p>
 </td>
+<td><%= model.domain %></td>
 <td><%= model.beian %></td>
 <td>
   <p><%= model.redirect_controller %></p>
