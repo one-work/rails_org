@@ -47,13 +47,13 @@
   <div
     data-controller="mini-program"
     data-mini-program-nav-value="true"
-    data-mini-program-url-value="/pages/weigh/index"
+    data-mini-program-url-value="/pages/print/index"
     data-mini-program-data-value="<%= { url: url_for(only_path: false) }.to_json %>"
     data-action="click->mini-program#link"
     class="media"
   >
     <div class="media-content">
-      <i class="fa-solid fa-fw fa-print text-primary"></i>
+      <%= svg_tag 'print' %>
       <span class="ml-1"><%= '设置蓝牙称' %></span>
     </div>
     <div class="media-right">
