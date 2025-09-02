@@ -2,10 +2,10 @@
   <td>
     <%= job_title.grade %>
     <%= button_to({ action: 'move_lower', id: job_title }, method: :patch) do %>
-      <i class="fa-solid fa-arrow-down"></i>
+      <%= svg_tag 'arrow-down' %>
     <% end %>
     <%= button_to({ action: 'move_higher', id: job_title }, method: :patch) do %>
-      <i class="fa-solid fa-arrow-up"></i>
+      <%= svg_tag 'arrow-up' %>
     <% end %>
   </td>
   <td><%= job_title.name %></td>
