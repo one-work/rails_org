@@ -23,6 +23,7 @@ module Org
           else
             render 'choose_org_member', layout: 'simple', locals: { members: members }
           end
+          set_auth_token # 在这里渲染了模板，不会调用 after_action
         end
       elsif defined? current_provider_app
         require_user(current_provider_app)
