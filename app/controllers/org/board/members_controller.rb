@@ -8,12 +8,6 @@ module Org
       refresh_or_redirect_to({ controller: '/admin/home' })
     end
 
-    def user_login
-      @member = current_user.members.find(params[:id])
-      Current.session.update member_id: @member.id
-      refresh_or_redirect_to({ controller: '/admin/home' })
-    end
-
     def logout
       Current.session.update member_id: nil
 
