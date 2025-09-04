@@ -1,3 +1,8 @@
+<div class="box is-padding-less">
+  <div class="box-header">我创建的</div>
+  <div id="tbody" class="box-body"></div>
+</div>
+
 <% roles.each do |role| %>
   <%= button_to({ controller: 'org/board/organs', action: 'new', role_id: role.id }, class: 'button is-primary is-fullwidth mx-0', form: { class: 'is-fullwidth' }) do %>
     <%= svg_tag 'plus' %>
