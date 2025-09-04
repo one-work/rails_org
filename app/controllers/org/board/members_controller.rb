@@ -5,7 +5,7 @@ module Org
     def login
       @member = current_user.members.find(params[:id])
       Current.session.update member_id: @member.id
-      refresh_or_redirect_to({ controller: '/admin/home' })
+      refresh_or_redirect_to({ controller: '/me/home' })
     end
 
     def logout
