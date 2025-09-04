@@ -7,7 +7,6 @@ module Org
 
       if Current.session
         render 'require_org_member', layout: 'simple'
-        set_auth_token
       elsif defined? current_provider_app
         require_user(current_provider_app)
       else
