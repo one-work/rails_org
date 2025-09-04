@@ -18,6 +18,8 @@ module Org
           end
 
           if members.blank?
+            roles = Roled::Role.visible.where.not(tip: nil)
+            render 'add_org_member', locals: { roles: roles }
           else
             render 'choose_org_member', layout: 'simple', locals: { members: members }
           end
