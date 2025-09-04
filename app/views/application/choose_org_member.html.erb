@@ -1,0 +1,18 @@
+
+  <div class="has-page-centered">
+    <p>您在以下组织存在账号，请选择账号登录</p>
+    <div class="buttons mt-3">
+    <% current_account.members.includes(:organ).each do |member| %>
+      <%= link_to member.organ.name, { controller: 'org/board/members', action: 'login', id: member.id }, class: 'button is-link' %>
+    <% end %>
+    </div>
+  </div>
+  <div class="has-page-centered">
+    <p>您在以下组织存在账号，请选择账号登录</p>
+    <div class="buttons mt-3">
+    <% current_user.members.includes(:organ).each do |member| %>
+      <%= link_to member.organ.name, { controller: 'org/board/members', action: 'login', id: member.id }, class: 'button is-link' %>
+    <% end %>
+    </div>
+  </div>
+

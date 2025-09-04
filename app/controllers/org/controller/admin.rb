@@ -19,9 +19,8 @@ module Org
 
           if members.blank?
           else
-
+            render 'choose_org_member', layout: 'simple', locals: { members: members }
           end
-
         end
       elsif defined? current_provider_app
         require_user(current_provider_app)
