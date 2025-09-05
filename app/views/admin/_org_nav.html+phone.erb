@@ -2,18 +2,20 @@
   <div class="box-body">
     <span class="size-7 has-border-left-primary"><%= t('org.admin.title') %></span>
   </div>
-  <div class="columns is-4-mobile flex is-vcentered is-centered m-0 is-shadow" data-empty-target="content">
-    <%= link_to({ controller: 'org/admin/members' }, class: 'column has-column-centered') do %>
-      <div class="text-primary">
-        <%= svg_tag 'user-gear', class: 'icon is-medium' %>
-      </div>
-      <div class="text-grey size-7 mt-1"><%= t('org.admin.members.index.title') %></div>
-    <% end %>
-    <%= link_to({ controller: 'org/admin/departments' }, class: 'column has-column-centered') do %>
-      <div class="text-primary">
-        <%= svg_tag 'chalkboard-user', class: 'icon is-medium' %>
-      </div>
-      <div class="text-dark size-7 mt-1"><%= t('org.admin.departments.index.title') %></div>
-    <% end %>
+  <div class="fixed-grid has-4-cols is-shadow p-3">
+    <div class="grid">
+      <%= link_to({ controller: 'org/admin/members' }, class: 'cell has-column-centered') do %>
+        <div class="text-primary">
+          <%= svg_tag 'user-gear', class: 'icon is-medium' %>
+        </div>
+        <div class="text-grey size-7 mt-1"><%= t('org.admin.members.index.title') %></div>
+      <% end %>
+      <%= link_to({ controller: 'org/admin/departments' }, class: 'cell has-column-centered') do %>
+        <div class="text-primary">
+          <%= svg_tag 'chalkboard-user', class: 'icon is-medium' %>
+        </div>
+        <div class="text-dark size-7 mt-1"><%= t('org.admin.departments.index.title') %></div>
+      <% end %>
+    </div>
   </div>
 </div>
