@@ -9,7 +9,7 @@
 <% end %>
 <%= link_to({ controller: 'org/me/members', action: 'show', host: current_client.organ.host, auth_token: current_account.auth_token }, class: 'media') do %>
   <div class="media-content">
-    <i class="fa-solid fa-fw fa-user text-primary"></i>
+    <%= svg_tag 'user' %>
     <span><%= t('org.me.members.show.title') %></span>
   </div>
   <div class="media-right">

@@ -15,6 +15,7 @@ regular:
   - qrcode
   - sitemap
   - trash
+  - user
   - user-gear
   - user-shield
   - users
