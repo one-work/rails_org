@@ -18,7 +18,8 @@ module Org
 
     def create
       if @organ.save
-        render :create, locals: { model: @organ }
+        Current.session.update member_id: @member.id
+        redirect_to '/'
       else
         render :new, locals: { model: @organ }, status: :unprocessable_entity
       end
