@@ -1,5 +1,5 @@
 <div class="panel background-white mx-3 mt-3">
-  <p class="p-3">您在以下组织存在账号，请选择账号登录</p>
+  <p class="p-3">选择账号登录</p>
   <% members.each do |member| %>
     <%= link_to({ controller: 'org/board/members', action: 'login', id: member.id }, class: 'panel-block') do %>
       <span><%= member.organ.name %></span>
