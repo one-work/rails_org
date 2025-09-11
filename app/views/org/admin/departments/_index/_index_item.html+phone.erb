@@ -21,7 +21,7 @@
     <div class="button is-small is-light" aria-label="<%= job_title.grade %>"><%= job_title.name %></div>
   <% end %>
   <%= link_to({ controller: 'job_titles', department_id: model.id }, aria: { label: t('.job_title') }, class: 'button is-small is-borderless') do %>
-    <i class="fa-solid fa-user-tag"></i>
+    <%= svg_tag 'user-tag' %>
   <% end %>
 </div>
 <p>
