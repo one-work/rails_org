@@ -1,2 +1,1 @@
-<%= turbo_stream.append 'tbody', partial: 'index_item', layout: 'index_item_actions', locals: { model: @organ } %>
-<%= turbo_stream.remove 'modal' %>
+<%= render partial: 'visit', locals: { url: url_for(action: 'index') } %>
