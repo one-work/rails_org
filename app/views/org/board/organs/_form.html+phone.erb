@@ -1,0 +1,4 @@
+<%= f.text_field :name, autofocus: @created_organs.blank?, required: true, placeholder: '输入名称', label: '创建新团队' %>
+<%= f.fields :role_whos do |ef| %>
+  <%= ef.hidden_field :role_id %>
+<% end %>

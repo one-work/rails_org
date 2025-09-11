@@ -1,19 +1,15 @@
-<div id="form_wrapper" class="box flex-grow-1 mx-3">
+<div id="form_wrapper" class="flex-grow-1">
   <%= form_with theme: 'weui', model: @organ, url: { action: 'create' } do |f| %>
     <%= render 'error_messages', target: f.object %>
-    <div class="weui-form__control-area">
-      <div class="weui-cells__group weui-cells__group_form">
-        <div class="weui-cells__title">
-        <% if params[:role_id].present? %>
-          <span><%= @role.tip %></span>
-        <% else %>
-          <span><%= t('.title') %></span>
-        <% end %>
-        </div>
-        <div class="weui-cells">
-          <%= render partial: 'form', locals: { f: f } %>
-        </div>
+    <div class="form-fields box mt-3">
+      <div class="weui-cells__title">
+      <% if params[:role_id].present? %>
+        <span><%= @role.tip %></span>
+      <% else %>
+        <span><%= t('.title') %></span>
+      <% end %>
       </div>
+      <%= render partial: 'form', locals: { f: f } %>
     </div>
     <%= f.submit %>
   <% end %>
