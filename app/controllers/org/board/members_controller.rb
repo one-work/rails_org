@@ -10,12 +10,7 @@ module Org
 
     def logout
       Current.session.update member_id: nil
-
-      if RailsOrg.config.independent && request.subdomain == 'admin'
-        refresh_or_redirect_to({ controller: '/me/home' })
-      else
-        refresh_or_redirect_to({ controller: 'org/board/organs' })
-      end
+      refresh_or_redirect_to({ controller: 'org/board/organs' })
     end
 
     private
