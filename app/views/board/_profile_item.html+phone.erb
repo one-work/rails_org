@@ -1,4 +1,4 @@
-<%= link_to({ controller: 'auth/board/home' }, text: true, class: 'media') do %>
+<%= link_to({ controller: 'auth/board/home' }, text: true, class: 'media as-boxed') do %>
   <div class="media-left">
   <% if current_user.avatar.attached? %>
     <%= image_tag current_user.avatar, class: 'image is-64x64 is-radius' %>
@@ -18,8 +18,8 @@
       <span class="text-weight-normal size-7"><%= current_account&.identity %></span>
     </div>
   </div>
-  <div class="weui-media-box__ft pr-4 text-grey">
+  <div class="media-right">
     <%= svg_tag 'qrcode' %>
-    <%= svg_tag 'chevron-right', class: 'icon is-small ml-2' %>
+    <%= svg_tag 'chevron-right', class: 'icon is-small' %>
   </div>
 <% end %>
