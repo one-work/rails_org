@@ -1,8 +1,6 @@
 <% if current_organ.creator_id == current_user.id %>
 <div class="box">
-  <%= button_to({ action: 'destroy' }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-fullwidth is-danger') do %>
-    <%= svg_tag 'trash' %>
-    <span class="ml-1"><%= t('.destroy.title') %></span>
-  <% end %>
+  <p>注意：</p>
+  <p>此操作将删除本团队及本团队的所有数据，且不可逆，请务必谨慎操作！</p>
 </div>
 <% end %>
