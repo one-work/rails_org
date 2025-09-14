@@ -1,16 +1,15 @@
 <div id="form_wrapper" class="weui-form-wrap">
+  <%= image_tag 'logo.png', class: 'image' %>
   <%= form_with theme: 'weui', model: @organ, url: { action: 'create' } do |f| %>
     <%= render 'error_messages', target: f.object %>
-
-      <div class="text-grey mb-1">
-      <% if params[:role_id].present? %>
-        <span><%= @role.tip %></span>
-      <% else %>
-        <span><%= t('.title') %></span>
-      <% end %>
-      </div>
-      <%= render partial: 'form', locals: { f: f } %>
-
+    <div class="text-grey mb-1">
+    <% if params[:role_id].present? %>
+      <span><%= @role.tip %></span>
+    <% else %>
+      <span><%= t('.title') %></span>
+    <% end %>
+    </div>
+    <%= render partial: 'form', locals: { f: f } %>
     <%= f.submit %>
   <% end %>
 </div>
