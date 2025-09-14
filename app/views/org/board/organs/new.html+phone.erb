@@ -2,7 +2,7 @@
   <%= form_with theme: 'weui', model: @organ, url: { action: 'create' } do |f| %>
     <%= render 'error_messages', target: f.object %>
     <div class="form-fields box mt-3">
-      <div class="weui-cells__title">
+      <div class="text-grey mb-1">
       <% if params[:role_id].present? %>
         <span><%= @role.tip %></span>
       <% else %>
