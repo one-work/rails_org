@@ -1,4 +1,4 @@
-<%= button_to({ action: 'destroy' }, method: :delete, form: { data: { turbo_confirm: t('.destroy.confirm'), class: 'cell' } }, class: ' has-column-centered text-danger') do %>
+<%= button_to({ action: 'destroy' }, method: :delete, form: { data: { turbo_confirm: t('.destroy.confirm') }, class: 'cell' }, class: 'has-column-centered text-danger') do %>
   <%= svg_tag 'trash' %>
   <span><%= t('.destroy.title') %></span>
 <% end %>
@@ -7,10 +7,10 @@
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= link_to({ action: 'show' }, class: 'cell has-column-centered') do %>
-  <%= svg_tag 'eye', class: 'icon text-info' %>
+  <%= svg_tag 'eye', class: 'icon is-small text-info' %>
   <span><%= t('.show.title') %></span>
 <% end %>
-<%= button_to({ controller: 'roled/admin/who_roles', action: 'show', who_type: 'Org::Member', who_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-user-shield"></i>
+<%= button_to({ action: 'edit_roles', id: model.id }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'user-shield' %>
   <span><%= '权限管理' %></span>
 <% end %>

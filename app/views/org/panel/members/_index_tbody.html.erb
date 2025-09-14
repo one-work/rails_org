@@ -18,7 +18,7 @@
       <span class="tag"><%= role %></span>
     <% end %>
     <%= button_to({ action: 'edit_roles', id: model.id }) do %>
-      <i class="fa-solid fa-user-shield"></i>
+      <%= svg_tag 'user-shield' %>
     <% end %>
   </div>
 </td>
