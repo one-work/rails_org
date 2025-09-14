@@ -19,3 +19,5 @@ light:
   - user-gear
   - user-shield
   - users
+regular:
+  - angle-left
