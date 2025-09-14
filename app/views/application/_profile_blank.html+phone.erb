@@ -1,0 +1,12 @@
+<%= link_to({ controller: 'auth/board/home' }, text: true, class: 'media px-3') do %>
+  <div class="media-left">
+    <%= image_tag 'default_avatar.jpg', class: 'image is-64x64 is-radius' %>
+  </div>
+  <div class="media-content">
+    <p>注册或登录</p>
+  </div>
+  <div class="media-right">
+    <%= svg_tag 'qrcode' %>
+    <%= svg_tag 'chevron-right', class: 'icon is-small' %>
+  </div>
+<% end %>
