@@ -43,7 +43,7 @@
   </div>
   <div data-show-target="item" class="visibility-hidden">
     <%= link_to({ controller: 'organ_domains', organ_id: model.id }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-mobile text-info"></i>
+      <%= svg_tag 'mobile' %>
       <span class="ml-1"><%= t('.organ_domains.index.title') %></span>
     <% end %>
     <%= link_to({ controller: '/admin/home', auth_token: Current.session.id, host: model.admin_host }, class: 'button is-small is-borderless', target: '_blank') do %>
