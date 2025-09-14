@@ -1,7 +1,7 @@
-<div id="form_wrapper" class="flex-grow-1">
+<div id="form_wrapper" class="weui-form-wrap">
   <%= form_with theme: 'weui', model: @organ, url: { action: 'create' } do |f| %>
     <%= render 'error_messages', target: f.object %>
-    <div class="form-fields box mt-3">
+
       <div class="text-grey mb-1">
       <% if params[:role_id].present? %>
         <span><%= @role.tip %></span>
@@ -10,7 +10,7 @@
       <% end %>
       </div>
       <%= render partial: 'form', locals: { f: f } %>
-    </div>
+
     <%= f.submit %>
   <% end %>
 </div>
