@@ -1,14 +1,14 @@
 <div class="box is-padding-less">
   <div class="box-header">
-    <i class="fa-solid fa-fw fa-building text-primary"></i>
-    <span><%= t('org.panel.title') %></span>
+    <div>
+      <%= svg_tag 'building' %>
+      <span><%= t('org.panel.title') %></span>
+    </div>
   </div>
-  <div class="weui-panel__bd">
-    <div class="columns is-4-mobile flex is-vcentered is-centered m-0 is-shadow" data-empty-target="content">
-      <%= link_to({ controller: 'org/panel/organs' }, class: 'column has-column-centered') do %>
-        <div class="text-primary">
-          <i class="fa-solid fa-fw fa-xl fa-user-gear"></i>
-        </div>
+  <div class="fixed-grid has-3-cols is-shadow p-3">
+    <div class="grid">
+      <%= link_to({ controller: 'org/panel/organs' }, class: 'cell has-column-centered') do %>
+        <%= svg_tag 'user-gear', class: 'icon is-medium' %>
         <div class="text-grey size-7 mt-1"><%= t('org.panel.organs.index.title') %></div>
       <% end %>
     </div>
