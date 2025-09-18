@@ -59,6 +59,7 @@ Rails.application.routes.draw do
     end
 
     namespace :board, defaults: { namespace: 'board' } do
+      root 'home#index'
       resources :organs do
         member do
           match :redirect, via: [:get, :post]
