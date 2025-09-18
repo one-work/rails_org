@@ -9,7 +9,10 @@
   <% end %>
   </div>
   <div class="media-content">
-    <p class="text-weight-normal text-black"><strong><%= current_organ.name %></strong></p>
+    <p class="text-weight-normal text-black">
+      <strong><%= current_organ.name %></strong>
+      <span class="tag is-primary is-light"><%= current_organ.dispatch_i18n %></span>
+    </p>
     <p class="size-7 text-grey"><%= current_member.name %></p>
   </div>
   <div class="media-right text-grey">
