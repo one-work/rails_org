@@ -14,13 +14,13 @@
           data-action="click->mini-program#link"
           class="cell has-column-centered"
         >
-          <%= svg_tag 'headset', class: 'icon is-medium' %>
-          <span class="mt-1">联系客服</span>
+          <%= svg_tag 'headset', class: 'icon is-medium text-primary' %>
+          <span class="size-7 text-grey mt-1">联系客服</span>
         </div>
       <% else %>
         <%= link_to current_organ.service_url, rel: 'nofollow', class: 'cell has-column-centered' do %>
-          <%= svg_tag 'headset', class: 'icon is-medium' %>
-          <span class="mt-1">联系客服</span>
+          <%= svg_tag 'headset', class: 'icon is-medium text-primary' %>
+          <span class="size-7 text-grey mt-1">联系客服</span>
         <% end if current_organ.service_url.present? %>
       <% end %>
     </div>
