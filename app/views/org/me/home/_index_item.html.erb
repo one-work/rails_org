@@ -1,4 +1,4 @@
-<%= link_to({ controller: 'org/me/members', action: 'show' }, class: 'media') do %>
+<%= link_to({ controller: 'org/me/members', action: 'show' }, class: 'media as-link') do %>
   <div class="media-content">
     <%= svg_tag 'user-gear' %>
     <span class="ml-1"><%= t('.members.show.title') %></span>
@@ -7,7 +7,7 @@
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
-<%= link_to({ controller: 'org/me/members', action: 'qrcodes' }, class: 'media') do %>
+<%= link_to({ controller: 'org/me/members', action: 'qrcodes' }, class: 'media as-link') do %>
   <div class="media-content">
     <%= svg_tag 'qrcode' %>
     <span class="ml-1"><%= t('.members.qrcodes.title') %></span>
@@ -16,7 +16,7 @@
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
-<%= link_to({ controller: 'trade/me/home', action: 'qrcode' }, class: 'media') do %>
+<%= link_to({ controller: 'trade/me/home', action: 'qrcode' }, class: 'media as-link') do %>
   <div class="media-content">
     <%= svg_tag 'qrcode' %>
     <span class="ml-1"><%= t('trade.me.home.qrcode.title') %></span>
@@ -25,7 +25,7 @@
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
-<%= link_to({ controller: 'org/me/organs', action: 'show' }, class: 'media') do %>
+<%= link_to({ controller: 'org/me/organs', action: 'show' }, class: 'media as-link') do %>
   <div class="media-content">
     <%= svg_tag 'sitemap' %>
     <span class="ml-1"><%= t('.organs.show.title') %></span>
