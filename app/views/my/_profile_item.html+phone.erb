@@ -1,4 +1,4 @@
-<%= link_to({ controller: 'auth/board/home' }, text: true, class: 'media p-3') do %>
+<%= link_to({ controller: 'auth/board/home' }, text: true, class: 'media p-3 mb-0') do %>
   <div class="media-left">
   <% if current_user.avatar.attached? %>
     <%= image_tag current_user.avatar, class: 'image is-64x64 is-radius' %>
