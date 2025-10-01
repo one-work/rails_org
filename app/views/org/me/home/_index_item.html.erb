@@ -7,15 +7,6 @@
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
-<%= link_to({ controller: 'org/me/members', action: 'qrcodes' }, class: 'media as-link') do %>
-  <div class="media-content">
-    <%= svg_tag 'qrcode' %>
-    <span class="ml-1"><%= t('.members.qrcodes.title') %></span>
-  </div>
-  <div class="media-right">
-    <%= svg_tag 'chevron-right' %>
-  </div>
-<% end %>
 <%= link_to({ controller: 'trade/me/home', action: 'qrcode' }, class: 'media as-link') do %>
   <div class="media-content">
     <%= svg_tag 'qrcode' %>
