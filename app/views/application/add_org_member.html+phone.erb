@@ -1,4 +1,4 @@
-<%= form_with theme: 'line_phone', model: Org::Organ.new, url: { controller: 'org/board/organs', action: 'create' }, class: 'card', id: 'new_card' do |f| %>
+<%= form_with theme: 'line_phone', model: Org::Organ.new, url: { controller: 'org/board/organs', action: 'create' }, class: 'box', id: 'new_card' do |f| %>
   <div class="card-content has-column-left">
     <%= render 'error_messages', target: f.object %>
     <%= f.text_field :name, autofocus: true, required: true, placeholder: '输入名称', label: '创建新团队' %>
