@@ -2,12 +2,4 @@
   <main id="weui-tab__panel">
     <%= yield %>
   </main>
-  <div class="p-3">
-  <% roles.each do |role| %>
-    <%= link_to({ controller: 'org/board/organs', action: 'new', role_id: role.id }, class: 'button is-primary is-fullwidth') do %>
-      <%= svg_tag 'plus' %>
-      <span class="ml-1"><%= role.tip %></span>
-    <% end %>
-  <% end %>
-  </div>
 <% end %>

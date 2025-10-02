@@ -2,11 +2,15 @@
   <div class="card-content has-column-left">
     <%= render 'error_messages', target: f.object %>
     <%= f.text_field :name, autofocus: true, required: true, placeholder: '输入名称', label: '创建新团队' %>
-    <%= f.fields :role_whos do |ef| %>
-      <%= ef.hidden_field :role_id %>
-    <% end %>
   </div>
   <div class="card-footer p-2">
-    <%= f.submit %>
+    <div class="p-3">
+      <% roles.each do |role| %>
+        <%= button_tag name: 'organ[role_whos_attributes][][role_id]', value: role.id, class: 'button is-primary is-fullwidth mt-3' do %>
+          <%= svg_tag 'plus' %>
+          <span class="ml-1"><%= role.tip %></span>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 <% end %>

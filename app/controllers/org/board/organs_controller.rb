@@ -74,7 +74,7 @@ module Org
       _p = params.fetch(:organ, {}).permit(
         :name,
         :logo,
-        role_whos_attributes: {}
+        role_whos_attributes: [:role_id]
       )
       _p.merge! provider_id: current_organ.id if current_organ
       _p
