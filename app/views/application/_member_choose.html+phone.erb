@@ -4,12 +4,7 @@
   </div>
   <div class="box-body is-shadow-top">
   <% members.each do |member| %>
-    <%= link_to({ controller: 'org/board/members', action: 'login', id: member.id }, class: 'media as-link') do %>
-      <div class="media-content"><%= member.organ.name %></div>
-      <div class="media-right">
-        <%= svg_tag 'chevron-right' %>
-      </div>
-    <% end %>
+
   <% end %>
   </div>
 </div>
