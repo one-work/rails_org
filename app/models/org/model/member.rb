@@ -21,7 +21,7 @@ module Org
         approved: 'approved'
       }, default: 'init'
 
-      has_one :account, -> { where(confirmed: true) }, class_name: 'Auth::Account', primary_key: :identity, foreign_key: :identity
+      has_many :oauth_users, class_name: 'Auth::OauthUser', primary_key: [:identity, :wechat_openid], foreign_key: [:identity, :uid]
       has_many :sessions, primary_key: :identity, foreign_key: :identity, class_name: 'Auth::Session'
 
       belongs_to :organ, counter_cache: true, inverse_of: :members
