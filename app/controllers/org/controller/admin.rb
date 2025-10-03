@@ -15,11 +15,11 @@ module Org
             members = Member.none
           end
 
-          if members.blank? && created_organs.blank?
+          if members.blank?
             roles = Roled::Role.visible.where.not(tip: nil)
             render 'add_org_member', layout: 'admin_add_member', locals: { roles: roles }
           else
-            render 'choose_org_member', layout: 'simple', locals: { members: members, organs: created_organs }
+            render 'choose_org_member', layout: 'simple', locals: { members: members }
           end
           set_auth_token # 在这里渲染了模板，不会调用 after_action
         end
