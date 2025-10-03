@@ -8,6 +8,17 @@ module Org
       refresh_or_redirect_to({ controller: '/me/home' })
     end
 
+    def redirect
+      member = current_user.members.find_by(organ_id: @organ.id)
+
+      if request.subdomain == 'admin'
+        Current.session.update member_id: member.id
+        redirect_to '/'
+      else
+        redirect_to({ controller: '/me/home', host: @organ.admin_host, auth_token: member.auth_token }, allow_other_host: true)
+      end
+    end
+
     def logout
       Current.session.update member_id: nil
       refresh_or_redirect_to({ controller: 'org/board/organs' })
