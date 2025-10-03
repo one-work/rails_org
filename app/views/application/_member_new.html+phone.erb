@@ -1,3 +1,6 @@
+<div class="flex-grow-1 has-block-centered">
+  <%= image_tag 'logo.png', class: 'image' %>
+</div>
 <%= form_with theme: 'line_phone', model: Org::Organ.new, url: { controller: 'org/board/organs', action: 'create' }, class: 'box', id: 'new_card' do |f| %>
   <div class="card-content has-column-left">
     <%= render 'error_messages', target: f.object %>
@@ -8,7 +11,7 @@
     <% roles.each do |role| %>
       <%= button_tag name: 'organ[role_whos_attributes][][role_id]', value: role.id, class: 'cell as-boxed has-column-centered p-3' do %>
         <%= svg_tag 'plus', class: 'icon is-medium' %>
-        <span class="mt-1"><%= role.tip %></span>
+        <span class="mt-1 text-grey size-0_8"><%= role.tip %></span>
       <% end %>
     <% end %>
     </div>

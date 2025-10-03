@@ -3,8 +3,7 @@ module Org
     before_action :set_organ, only: [:show, :edit, :update, :redirect, :destroy]
     before_action :set_new_organ, only: [:index, :new]
     before_action :set_create_organ, only: [:create]
-    before_action :set_role, only: [:new]
-    before_action :set_roles, only:[:index, :create]
+    before_action :set_roles, only:[:index, :new, :create]
 
     def index
       q_params = {}
@@ -54,12 +53,6 @@ module Org
         **organ_params.slice(:role_whos_attributes)
       )
       @member.wechat_openid = Current.session.uid if @member.respond_to? :wechat_openid
-    end
-
-    def set_role
-      if params[:role_id].present?
-        @role = Roled::Role.find params[:role_id]
-      end
     end
 
     def set_roles
