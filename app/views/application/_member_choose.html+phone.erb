@@ -1,10 +1,8 @@
-<div class="box is-padding-less mx-3 mt-3">
+<div class="box is-padding-less">
   <div class="box-header">
-    <div class="has-border-left-primary size-7">选择账号登录</div>
+    <div class="has-border-left-primary size-7">我创建的</div>
   </div>
-  <div class="box-body is-shadow-top">
-  <% members.each do |member| %>
-
-  <% end %>
+  <div id="tbody" class="box-body is-shadow-top">
+    <%= render partial: 'member_item', collection: organs, as: :model %>
   </div>
 </div>

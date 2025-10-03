@@ -11,10 +11,8 @@ module Org
         else
           if current_user
             members = current_user.members.includes(:organ)
-            created_organs = current_user.created_organs
           else
             members = Member.none
-            created_organs = Organ.none
           end
 
           if members.blank? && created_organs.blank?

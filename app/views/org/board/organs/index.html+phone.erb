@@ -1,10 +1,5 @@
 <% if @created_organs.present? %>
-<div class="box is-padding-less">
-  <div class="box-header">我创建的</div>
-  <div id="tbody" class="box-body is-shadow-top">
-    <%= render partial: 'member_item', collection: @created_organs, as: :model %>
-  </div>
-</div>
+
 <% else %>
   <%= render partial: 'member_new', locals: { roles: @roles } %>
 <% end %>

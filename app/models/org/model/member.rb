@@ -13,7 +13,7 @@ module Org
       attribute :join_on, :date, default: -> { Date.today }
       attribute :enabled, :boolean, default: true
       attribute :inviter, :boolean, default: false
-      attribute :own, :boolean, default: false
+      attribute :owned, :boolean, default: false
 
       enum :state, {
         init: 'init',
@@ -64,7 +64,7 @@ module Org
     end
 
     def admin?
-      return true if own?
+      return true if owned?
       if account
         account.user_id == organ.creator_id
       elsif wechat_user

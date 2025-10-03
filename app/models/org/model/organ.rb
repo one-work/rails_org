@@ -18,7 +18,6 @@ module Org
         has_taxons :area
         belongs_to :area, class_name: 'Ship::Area', optional: true
       end
-      belongs_to :creator, class_name: 'Auth::User', counter_cache: 'created_organs_count', optional: true
       belongs_to :provider, class_name: 'Org::Organ', optional: true
 
       has_many :organs, class_name: self.name, primary_key: :provider_id

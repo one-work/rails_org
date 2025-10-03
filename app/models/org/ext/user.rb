@@ -3,8 +3,6 @@ module Org
     extend ActiveSupport::Concern
 
     included do
-      attribute :created_organs_count, :integer, default: 0
-
       has_many :members, class_name: 'Org::Member', through: :oauth_users
       has_many :created_organs, class_name: 'Org::Organ', foreign_key: :creator_id
 

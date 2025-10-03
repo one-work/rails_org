@@ -4,18 +4,12 @@ module Org
 
     def login
       @member = current_user.members.find(params[:id])
-      Current.session.update member_id: @member.id
-      refresh_or_redirect_to({ controller: '/me/home' })
-    end
-
-    def redirect
-      member = current_user.members.find_by(organ_id: @organ.id)
 
       if request.subdomain == 'admin'
         Current.session.update member_id: member.id
         redirect_to '/'
       else
-        redirect_to({ controller: '/me/home', host: @organ.admin_host, auth_token: member.auth_token }, allow_other_host: true)
+        refresh_or_redirect_to({ controller: '/me/home', host: @organ.admin_host, auth_token: member.auth_token }, allow_other_host: true)
       end
     end
 

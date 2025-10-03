@@ -10,9 +10,7 @@ module Org
       #q_params.merge! provider_id: [current_organ.id, nil] if current_organ
       q_params.merge! 'who_roles.role_id' => params[:role_id] if params[:role_id].present?
 
-      @created_organs = current_user.created_organs.includes(:organ_domains).default_where(q_params).order(id: :desc)
-      @accounts = current_user.accounts.each_with_object({}) { |k, h| h[k] = k.organs.where.not(id: current_user.created_organ_ids).default_where(q_params) }
-      @accounts.merge! current_user.wechat_users.each_with_object({}) { |k, h| h[k] = k.organs.where.not(id: current_user.created_organ_ids).default_where(q_params) }
+      @oauth_users = current_user.oauth_users.each_with_object({}) { |k, h| h[k] = k.organs.default_where(q_params) }
     end
 
     def create
@@ -38,7 +36,7 @@ module Org
       @organ = current_user.created_organs.build(organ_params)
       @member = @organ.members.build(
         identity: Current.session.identity,
-        own: true,
+        owned: true,
         **organ_params.slice(:role_whos_attributes)
       )
       @member.wechat_openid = Current.session.uid if @member.respond_to? :wechat_openid
