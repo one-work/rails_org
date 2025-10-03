@@ -1,0 +1,15 @@
+<div class="box is-padding-less mx-3 mt-3">
+  <div class="box-header">
+    <div class="has-border-left-primary size-7">选择账号登录</div>
+  </div>
+  <div class="box-body is-shadow-top">
+  <% members.each do |member| %>
+    <%= link_to({ controller: 'org/board/members', action: 'login', id: member.id }, class: 'media as-link') do %>
+      <div class="media-content"><%= member.organ.name %></div>
+      <div class="media-right">
+        <%= svg_tag 'chevron-right' %>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>
