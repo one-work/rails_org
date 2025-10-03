@@ -1,8 +1,13 @@
-<div class="box is-padding-less">
-  <div class="box-header">
-    <div class="has-border-left-primary size-7">我的团队</div>
+<% members.group_by(&:identity).each do |identity, sub_members| %>
+  <div class="box is-padding-less">
+    <div class="box-header">
+      <div class="has-border-left-primary size-7">
+        <span>我的团队</span>
+        <span class="text-grey"><%= identity %></span>
+      </div>
+    </div>
+    <div id="tbody" class="box-body is-shadow-top">
+      <%= render partial: 'member_item', collection: sub_members, as: :model %>
+    </div>
   </div>
-  <div id="tbody" class="box-body is-shadow-top">
-    <%= render partial: 'member_item', collection: members, as: :model %>
-  </div>
-</div>
+<% end %>
