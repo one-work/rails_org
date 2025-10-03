@@ -15,7 +15,6 @@
   <p class="text-grey"><time data-controller="time" data-format="human"><%= model.created_at.to_fs(:iso8601) %></time></p>
 </td>
 <td>
-  <p><%= model.creator&.name || model.creator_id %></p>
   <p><%= defined?(RailsShip) && model.area&.full_name %></p>
 </td>
 <td>
