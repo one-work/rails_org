@@ -173,7 +173,7 @@ module Org
       end
 
       users.each do |user|
-        user.update_json_counter(counter)
+        user.update_json_counter(**counter)
       end
     end
 

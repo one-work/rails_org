@@ -3,6 +3,8 @@ module Org
     extend ActiveSupport::Concern
 
     included do
+      attribute :counters, :json, default: {}
+
       has_many :members, class_name: 'Org::Member', through: :oauth_users
       has_many :organs, class_name: 'Org::Organ', through: :members
 
