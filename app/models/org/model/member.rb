@@ -4,7 +4,7 @@ module Org
     extend ActiveSupport::Concern
 
     included do
-      attribute :identity, :string, index: true
+      attribute :identity, :string, default: '', index: true
       attribute :experience, :string
       attribute :attendance_number, :string
       attribute :organ_root_id, :integer
