@@ -5,24 +5,12 @@ module Org
     included do
       attribute :created_organs_count, :integer, default: 0
 
+      has_many :members, class_name: 'Org::Member', through: :oauth_users
       has_many :account_members, class_name: 'Org::Member', through: :accounts, source: :members
       has_many :oauth_user_members, class_name: 'Org::Member', through: :oauth_users, source: :members
       has_many :created_organs, class_name: 'Org::Organ', foreign_key: :creator_id
 
       after_save :copy_avatar_to_members, if: -> { attachment_changes['avatar'].present? }
-    end
-
-    def members
-      identities = accounts.pluck(:identity)
-      uids = oauth_users.pluck(:uid)
-
-      if uids.present? && identities.present?
-        Member.where(identity: identities).or(Member.where(wechat_openid: uids))
-      elsif identities.present?
-        Member.where(identity: identities)
-      elsif uids.present?
-        Member.where(wechat_openid: uids)
-      end
     end
 
     def organs
