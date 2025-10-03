@@ -10,7 +10,7 @@ module Org
       #q_params.merge! provider_id: [current_organ.id, nil] if current_organ
       q_params.merge! 'who_roles.role_id' => params[:role_id] if params[:role_id].present?
 
-      @oauth_users = current_user.oauth_users.each_with_object({}) { |k, h| h[k] = k.organs.default_where(q_params) }
+      @oauth_users = current_user.oauth_users.each_with_object({}) { |k, h| h[k] = k.members.includes(:organ).default_where(q_params) }
     end
 
     def create

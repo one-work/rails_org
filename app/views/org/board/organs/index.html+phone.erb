@@ -4,15 +4,15 @@
   <%= render partial: 'member_new', locals: { roles: @roles } %>
 <% end %>
 
-<% @accounts.each do |account, organs| %>
-  <% if organs.present? %>
+<% @oauth_users.each do |account, members| %>
+  <% if members.present? %>
   <div class="box is-padding-less">
     <div class="box-header">
       <span>我加入的</span>
       <span class="text-grey size-7"><%= account.identity %></span>
     </div>
     <div class="box-body">
-      <%= render partial: 'member_item', collection: organs, as: :model, locals: { account: account } %>
+      <%= render partial: 'member_item', collection: members, as: :model %>
     </div>
   </div>
   <% end %>
