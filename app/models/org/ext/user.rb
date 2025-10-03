@@ -6,8 +6,6 @@ module Org
       attribute :created_organs_count, :integer, default: 0
 
       has_many :members, class_name: 'Org::Member', through: :oauth_users
-      has_many :account_members, class_name: 'Org::Member', through: :accounts, source: :members
-      has_many :oauth_user_members, class_name: 'Org::Member', through: :oauth_users, source: :members
       has_many :created_organs, class_name: 'Org::Organ', foreign_key: :creator_id
 
       after_save :copy_avatar_to_members, if: -> { attachment_changes['avatar'].present? }
