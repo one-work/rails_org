@@ -1,6 +1,9 @@
 zh:
   activerecord:
     enum:
+      org/member:
+        owned:
+          true: 创建者
       organ_domain:
         kind:
           frontend: 网站
