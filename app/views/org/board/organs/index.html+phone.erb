@@ -6,7 +6,7 @@
   </div>
 </div>
 <% else %>
-  <%= render 'org_blank' %>
+  <%= render partial: 'member_new', locals: { roles: @roles } %>
 <% end %>
 
 <% @accounts.each do |account, organs| %>
