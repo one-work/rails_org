@@ -4,14 +4,9 @@ module Org
 
     included do
       has_many :members, class_name: 'Org::Member', through: :oauth_users
-      has_many :created_organs, class_name: 'Org::Organ', foreign_key: :creator_id
+      has_many :organs, class_name: 'Org::Organ', through: :members
 
       after_save :copy_avatar_to_members, if: -> { attachment_changes['avatar'].present? }
-    end
-
-    def organs
-      organ_ids = members.pluck(:organ_id)
-      Organ.where(id: organ_ids.uniq)
     end
 
     def available_account_identities

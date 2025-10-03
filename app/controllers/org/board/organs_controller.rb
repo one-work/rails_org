@@ -28,12 +28,12 @@ module Org
     end
 
     def set_new_organ
-      @organ = current_user.created_organs.build(organ_params)
+      @organ = Organ.new(organ_params)
       @organ.role_whos.build(role_id: params[:role_id]) if params[:role_id].present?
     end
 
     def set_create_organ
-      @organ = current_user.created_organs.build(organ_params)
+      @organ = Organ.new(organ_params)
       @member = @organ.members.build(
         identity: Current.session.identity,
         owned: true,
