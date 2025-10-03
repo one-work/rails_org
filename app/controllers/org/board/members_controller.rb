@@ -1,15 +1,13 @@
 module Org
   class Board::MembersController < Board::BaseController
-    before_action :set_member, only: [:show, :edit, :update]
+    before_action :set_member, only: [:show, :login, :edit, :update]
 
     def login
-      @member = current_user.members.find(params[:id])
-
       if request.subdomain == 'admin'
-        Current.session.update member_id: member.id
+        Current.session.update member_id: @member.id
         redirect_to '/'
       else
-        refresh_or_redirect_to({ controller: '/me/home', host: @organ.admin_host, auth_token: member.auth_token }, allow_other_host: true)
+        refresh_or_redirect_to({ controller: '/me/home', host: @organ.admin_host, auth_token: @member.auth_token }, allow_other_host: true)
       end
     end
 

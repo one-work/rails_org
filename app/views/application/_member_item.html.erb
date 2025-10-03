@@ -1,11 +1,15 @@
 <%= link_to({ controller: 'org/board/members', action: 'login', id: model.id }, class: 'media as-link') do %>
   <div class="media-content">
-    <span><%= model.organ.name %></span>
-    <% if model.owned %>
-      <span class="tag is-success"><%= model.owned_i18n %></span>
-    <% end %>
+    <p>
+      <span><%= model.organ.name %></span>
+      <% if model.owned %>
+        <span class="tag is-success"><%= model.owned_i18n %></span>
+      <% end %>
+    </p>
+    <p class="size-7 text-grey"><%= model.identity %></p>
   </div>
   <div class="media-right">
+
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
