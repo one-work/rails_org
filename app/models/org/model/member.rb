@@ -22,7 +22,8 @@ module Org
       }, default: 'init'
 
       has_many :oauth_users, class_name: 'Auth::OauthUser', primary_key: [:identity, :wechat_openid], foreign_key: [:identity, :uid]
-      has_many :sessions, primary_key: :identity, foreign_key: :identity, class_name: 'Auth::Session'
+      has_many :users, class_name: 'Auth::User', through: :oauth_users
+      has_many :sessions, class_name: 'Auth::Session', primary_key: :identity, foreign_key: :identity
 
       belongs_to :organ, counter_cache: true, inverse_of: :members
 
@@ -56,6 +57,7 @@ module Org
 
       #before_save :sync_tutorials, if: -> { join_on_changed? }
       #before_save :sync_avatar_from_user, if: -> { identity_changed? && user }
+      after_create_commit :increment_counts_to_users
     end
 
     def set_current_cart(organ_id)
@@ -161,6 +163,18 @@ module Org
         m.uid = wechat_openid if defined?(wechat_openid)
       end
       session.id
+    end
+
+    def increment_counts_to_users
+      if owned
+        counter = { owned: 1 }
+      else
+        counter = { joined: 1 }
+      end
+
+      users.each do |user|
+        user.update_json_counter(counter)
+      end
     end
 
   end
