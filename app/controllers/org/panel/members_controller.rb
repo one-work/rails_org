@@ -8,7 +8,7 @@ module Org
       q_params = {}
       q_params.merge! params.permit(:id, :identity, 'name-like', :enabled)
 
-      @members = @organ.members.includes(:account, :roles).default_where(q_params).order(id: :desc).page(params[:page])
+      @members = @organ.members.includes(:roles).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def mock
