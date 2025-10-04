@@ -4,7 +4,7 @@
       <%= yield %>
     <% end %>
   <% else %>
-    <%= button_to({ action: 'edit', id: model.id }, class: 'has-column-left', form: { class: 'media-content' }) do %>
+    <%= button_to({ action: 'edit', id: model.id }, class: 'text-left', form: { class: 'media-content' }) do %>
       <%= yield %>
     <% end %>
   <% end %>
