@@ -69,6 +69,10 @@ module Org
       owned?
     end
 
+    def invitable?
+      inviter? || owned?
+    end
+
     def grade
       member_departments.minimum(:grade)
     end

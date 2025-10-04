@@ -4,7 +4,7 @@ module Org
     before_action :set_member, only: [:show, :edit, :update, :destroy, :qrcodes]
 
     def qrcodes
-      if @member.inviter
+      if @member.invitable?
         @scene = @member.invite_member!
         @requests = @scene.requests.includes(:wechat_user).page(params[:page])
       else
