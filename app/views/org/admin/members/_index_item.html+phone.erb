@@ -1,7 +1,11 @@
 <div>
   <div class="is-several">
     <%= image_tag model.avatar.variant(resize_to_limit: [35, 35]), class: 'image is-24x24' if model.avatar.attached? %>
-    <%= link_to model.display_name, { action: 'show', id: model } %>
+    <% if model.name.present? %>
+      <span><%= model.name %></span>
+    <% else %>
+      <span class="text-grey">请填写姓名</span>
+    <% end %>
   </div>
   <span class="text-grey"><%= model.identity %></span>
 </div>
@@ -13,7 +17,6 @@
     </span>
   <% end %>
 </div>
-<p><%= model.join_on %></p>
 <div class="tags">
   <% model.roles.pluck(:name).each do |role| %>
     <span class="tag"><%= role %></span>

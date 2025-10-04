@@ -77,10 +77,6 @@ module Org
       member_departments.minimum(:grade)
     end
 
-    def display_name
-      name.presence || "member_#{id}"
-    end
-
     def sync_avatar_from_user
       self.name ||= user.name
       self.avatar_blob ||= user.avatar_blob
