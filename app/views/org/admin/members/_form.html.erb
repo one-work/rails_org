@@ -1,4 +1,4 @@
-<%= f.text_field :name %>
+<%= f.text_field :name, autofocus: true %>
 <%= f.file_field :avatar %>
 <%= f.fields :member_departments, label: false, wrap: { all: nil, input: 'field' } do |ef| %>
   <%= render partial: 'item_form', locals: { ef: ef } %>
