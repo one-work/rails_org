@@ -6,7 +6,7 @@
     <%= render 'error_messages', target: f.object %>
     <%= f.text_field :name, autofocus: true, required: true, placeholder: '输入名称', label: '创建新团队' %>
   </div>
-  <div class="fixed-grid has-3-cols pt-4 is-shadow-top">
+  <div class="pt-4 is-shadow-top">
     <div class="grid">
     <% roles.each do |role| %>
       <%= button_tag name: 'organ[role_whos_attributes][][role_id]', value: role.id, class: 'cell as-boxed has-column-centered p-3' do %>
