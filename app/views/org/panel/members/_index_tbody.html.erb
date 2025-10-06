@@ -25,6 +25,11 @@
 <td>
 <% if model.admin? %>
   <%= svg_tag 'check', class: 'icon is-small text-success' %>
+<% else %>
+  <%= form_with theme: nil, model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :owned, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
+    <label data-action="click->input#check"></label>
+  <% end %>
 <% end %>
 </td>
 <td>

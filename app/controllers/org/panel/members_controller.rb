@@ -38,6 +38,7 @@ module Org
         :identity,
         :join_on,
         :enabled,
+        :owned,
         :wechat_openid,
         :corp_userid,
         :avatar,
