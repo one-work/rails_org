@@ -100,6 +100,11 @@ Rails.application.routes.draw do
           get :all
         end
       end
+      resources :members, only: [] do
+        collection do
+          get :all
+        end
+      end
     end
 
     namespace :admin, defaults: { namespace: 'admin' } do

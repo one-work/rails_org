@@ -1,6 +1,6 @@
 module Org
   class Panel::MembersController < Panel::BaseController
-    before_action :set_organ
+    before_action :set_organ, except: [:all]
     before_action :set_member, only: [:show, :edit, :update, :destroy, :actions, :mock, :edit_roles]
     before_action :set_new_member, only: [:new, :create]
 
@@ -9,6 +9,13 @@ module Org
       q_params.merge! params.permit(:id, :identity, 'name-like', :enabled)
 
       @members = @organ.members.includes(:roles).default_where(q_params).order(id: :desc).page(params[:page])
+    end
+
+    def all
+      q_params = {}
+      q_params.merge! params.permit(:wechat_openid)
+
+      @members = Member.where(q_params).page(params[:page])
     end
 
     def mock
