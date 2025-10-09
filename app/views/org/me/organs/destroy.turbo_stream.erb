@@ -3,5 +3,5 @@
 <% elsif params[:redirect_state].present? %>
   <%= turbo_stream.append 'body', partial: 'visit', locals: { url: url_for(**StateUtil.decode(params[:redirect_state])) } %>
 <% else %>
-  <%= turbo_stream.append 'body', partial: 'visit', locals: { url: url_for(controller: 'org/board/organs', role_id: @organ.role_ids[0]) } %>
+  <%= turbo_stream.append 'body', partial: 'visit', locals: { url: url_for(controller: 'org/board/organs') } %>
 <% end %>
