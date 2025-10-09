@@ -11,7 +11,7 @@ module Org
     end
 
     def destroy
-      if current_user.id == @organ.creator_id
+      if current_member.owned?
         @organ.destroy
       end
     end
