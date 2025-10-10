@@ -4,14 +4,12 @@
   <%= render partial: 'button_card' %>
 </div>
 
-<% @members.each do |account, organs| %>
-  <% if organs.present? %>
-    <div class="text-grey size-7 mt-3">
-      <span>我加入的</span>
-      <span><%= account.identity %></span>
-    </div>
-    <div class="cards is-4">
-      <%= render partial: 'card', collection: organs, as: :organ %>
-    </div>
-  <% end %>
+<% @members.group_by(&:identity).each do |identity, members| %>
+  <div class="text-grey size-7 mt-3">
+    <span>我加入的</span>
+    <span><%= identity %></span>
+  </div>
+  <div class="cards is-4 mt-1">
+    <%= render partial: 'card', collection: members, as: :member %>
+  </div>
 <% end %>

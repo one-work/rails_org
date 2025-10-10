@@ -1,12 +1,12 @@
-<div id="tr_<%= organ.id %>" class="card is-middle">
+<div id="tr_<%= member.id %>" class="card is-middle">
   <div class="card-image">
-    <%= image_tag organ.logo.variant(resize_to_limit: [150, 150]), class: 'image' if organ.logo.attached? %>
+    <%= image_tag member.organ.logo.variant(resize_to_limit: [150, 150]), class: 'image' if member.organ.logo.attached? %>
   </div>
   <div class="card-content has-v-end">
-    <strong><%= organ.name %></strong>
+    <strong><%= member.organ.name %></strong>
   </div>
   <div class="card-footer">
-    <%= button_to({ action: 'redirect', id: organ.id }, form: { class: 'card-footer-item', target: '_blank' }) do %>
+    <%= button_to({ controller: 'members', action: 'login', id: member.id }, form: { class: 'card-footer-item', target: '_blank' }) do %>
       <span><%= t('.redirect.title') %></span>
     <% end %>
   </div>
