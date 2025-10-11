@@ -31,15 +31,16 @@ module Org
     end
 
     def current_organ
-      logger.debug("-----------------#{defined?(@current_organ)}")
       return @current_organ if defined?(@current_organ)
 
       if current_organ_domain
         @current_organ = current_organ_domain.organ
       elsif current_member
         @current_organ = current_member.organ
+      else
+        @current_organ = nil
       end
-      logger.debug "\e[35m  Login as organ:  #{self.class}/#{self.object_id}, #{@current_organ&.name}, ID: #{@current_organ&.id}  \e[0m"
+      logger.debug "\e[35m  Login as organ:  #{@current_organ&.name}, ID: #{@current_organ&.id}  \e[0m"
       @current_organ
     end
 
