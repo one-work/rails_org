@@ -1,6 +1,6 @@
 <td>
   <div class="is-several">
-    <i class="fa-solid fa-fw fa-xs fa-circle-dot text-grey"></i>
+    <%= svg_tag 'circle-dot' %>
     <%= image_tag model.logo.variant(resize_to_limit: [30, 30]), class: 'image is-24x24' if model.logo.attached? %>
     <span><%= model.name %></span>
     <% if model.name_short.present? %>
