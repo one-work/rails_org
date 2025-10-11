@@ -31,6 +31,7 @@ module Org
     end
 
     def current_organ
+      logger.debug("-----------------#{defined?(@current_organ)}")
       return @current_organ if defined?(@current_organ)
 
       if current_organ_domain
