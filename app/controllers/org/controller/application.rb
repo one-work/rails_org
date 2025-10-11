@@ -38,7 +38,7 @@ module Org
       elsif current_member
         @current_organ = current_member.organ
       end
-      logger.debug "\e[35m  Login as organ: #{@current_organ&.name}, ID: #{@current_organ&.id}  \e[0m"
+      logger.debug "\e[35m  Login as organ:  #{self.class}/#{self.object_id}, #{@current_organ&.name}, ID: #{@current_organ&.id}  \e[0m"
       @current_organ
     end
 
