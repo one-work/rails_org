@@ -15,7 +15,7 @@ module Org
       q_params = {}
       q_params.merge! params.permit(:wechat_openid)
 
-      @members = Member.where(q_params).page(params[:page])
+      @members = Member.where(q_params).order(id: :desc).page(params[:page])
     end
 
     def mock
