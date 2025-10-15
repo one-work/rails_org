@@ -1,4 +1,4 @@
-<tr id="tr_<%= model.id %>" data-depth="<%= model.depth_str %>" style="display: <%= display %>" data-tree-target="item" data-controller="show" data-action="mouseenter->show#show mouseleave->show#hide">
+<tr id="tr_<%= model.id %>" data-depth="<%= model.depth_str %>" style="display: <%= display %>" data-tree-target="item" data-controller="show">
   <%= yield %>
 </tr>
 <%= render partial: 'index_tbody', layout: 'index_tr', collection: model.children, as: :model, locals: { display: 'none' } %>
