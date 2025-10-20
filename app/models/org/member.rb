@@ -11,5 +11,6 @@ module Org
     include Trade::Ext::Member if defined? RailsTrade
     include Finance::Ext::Member if defined? RailsFinance
     include Bench::Ext::Member if defined? RailsBench
+    include Ship::Ext::Member if defined? RailsShip
   end
 end
