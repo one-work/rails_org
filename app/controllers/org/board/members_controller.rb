@@ -7,7 +7,7 @@ module Org
         Current.session.update member_id: @member.id
         redirect_to '/'
       else
-        refresh_or_redirect_to({ controller: '/me/home', host: @member.organ.admin_host, auth_token: @member.auth_token }, allow_other_host: true)
+        refresh_or_redirect_to({ controller: '/admin/home', host: @member.organ.admin_host, auth_token: @member.auth_token }, allow_other_host: true)
       end
     end
 
