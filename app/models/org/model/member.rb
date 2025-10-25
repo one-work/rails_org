@@ -60,6 +60,10 @@ module Org
       after_create_commit :increment_counts_to_users
     end
 
+    def display_uid
+      identity.presence || uid
+    end
+
     def set_current_cart(organ_id)
       cart = carts.find_or_initialize_by(organ_id: organ_id)
       cart.save if cart.persisted?
