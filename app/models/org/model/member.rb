@@ -61,7 +61,7 @@ module Org
     end
 
     def display_uid
-      identity.presence || uid
+      identity.presence || wechat_openid
     end
 
     def set_current_cart(organ_id)
