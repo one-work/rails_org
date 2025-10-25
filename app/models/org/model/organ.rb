@@ -13,6 +13,7 @@ module Org
       attribute :service_url, :string, comment: '客服 url'
       attribute :theme_settings, :json, default: {}
       attribute :members_count, :integer
+      attribute :children_count, :integer
 
       if defined? RailsShip
         has_taxons :area
