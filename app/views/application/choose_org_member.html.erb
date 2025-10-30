@@ -2,7 +2,7 @@
   <p>选择账号登录</p>
   <div class="buttons mt-3">
   <% members.each do |member| %>
-    <%= link_to member.organ.name, { controller: 'org/board/members', action: 'login', id: member.id }, class: 'button is-link' %>
+    <%= link_to member.organ.name, { controller: 'org/board/members', action: 'login', id: member.id }, data: { turbo_frame: '_top' }, class: 'button is-link' %>
   <% end %>
   </div>
 </div>
