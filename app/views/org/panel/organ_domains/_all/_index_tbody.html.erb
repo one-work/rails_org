@@ -9,7 +9,12 @@
   <p><%= model.redirect_action %></p>
 </td>
 <td>
-  <%= link_to({ controller: 'organs', action: 'show', id: model.id }) do %>
+  <%= link_to({ controller: 'organs', action: 'show', id: model.organ_id }, class: 'display-block') do %>
+    <%= svg_tag 'buildings' %>
+    <span><%= model.organ.name %></span>
+  <% end %>
+  <%= link_to({ controller: 'members', organ_id: model.organ_id }, class: 'display-block mt-3') do %>
+    <%= svg_tag 'users' %>
     <span><%= model.organ.name %></span>
   <% end %>
 </td>
