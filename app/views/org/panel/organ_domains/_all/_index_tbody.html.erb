@@ -8,4 +8,9 @@
   <p><%= model.redirect_controller %></p>
   <p><%= model.redirect_action %></p>
 </td>
+<td>
+  <%= link_to({ controller: 'organs', action: 'show', id: model.id }) do %>
+    <span><%= model.organ.name %></span>
+  <% end %>
+</td>
 <td></td>
