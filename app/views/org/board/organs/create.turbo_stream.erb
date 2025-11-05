@@ -1,2 +1,2 @@
-<%= turbo_stream.replace 'new_card', partial: 'card', locals: { organ: @organ } %>
+<%= turbo_stream.replace 'new_card', partial: 'card', locals: { member: @member } %>
 <%= turbo_stream.append 'tbody', partial: 'button_card' %>

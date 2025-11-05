@@ -5,7 +5,7 @@
 </div>
 
 <% @members.group_by(&:identity).each do |identity, members| %>
-  <div class="text-grey size-7 mt-3">
+  <div class="size-7 text-grey mt-3">
     <span>我加入的</span>
     <span><%= identity %></span>
   </div>
