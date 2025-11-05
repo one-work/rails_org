@@ -27,7 +27,6 @@ Rails.application.routes.draw do
     resources :organs, only: [:index, :show] do
       collection do
         get :form_search
-        post :create_admin
       end
     end
 
@@ -58,6 +57,9 @@ Rails.application.routes.draw do
     namespace :board, defaults: { namespace: 'board' } do
       root 'home#index'
       resources :organs do
+        collection do
+          post :create_admin
+        end
         member do
           match :redirect, via: [:get, :post]
         end
