@@ -1,7 +1,7 @@
 <div class="flex-grow-1 has-block-centered">
   <%= image_tag 'logo.png', class: 'image' %>
 </div>
-<%= form_with theme: 'line_phone', model: Org::Organ.new, url: { controller: 'org/board/organs', action: 'create' }, class: 'box', id: 'new_card' do |f| %>
+<%= form_with theme: 'line_phone', model: Org::Organ.new, url: { controller: 'org/board/organs', action: 'create_admin' }, class: 'box', id: 'new_card' do |f| %>
   <div class="py-6">
     <%= render 'error_messages', target: f.object %>
     <%= f.text_field :name, autofocus: true, required: true, placeholder: '输入名称', label: '创建新团队' %>

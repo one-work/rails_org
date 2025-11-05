@@ -2,7 +2,7 @@ module Org
   class Board::OrgansController < Board::BaseController
     before_action :set_organ, only: [:show, :edit, :update, :redirect, :destroy]
     before_action :set_new_organ, only: [:index, :new]
-    before_action :set_create_organ, only: [:create]
+    before_action :set_create_organ, only: [:create, :create_admin]
     before_action :set_roles, only:[:index, :new, :create]
 
     def index
@@ -16,7 +16,14 @@ module Org
     def create
       if @organ.save
         Current.session.update member_id: @member.id
-        redirect_to '/'
+      else
+        render :new, locals: { model: @organ }, status: :unprocessable_entity
+      end
+    end
+
+    def create_admin
+      if @organ.save
+        Current.session.update member_id: @member.id
       else
         render :new, locals: { model: @organ }, status: :unprocessable_entity
       end

@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :organs, only: [:index, :show] do
       collection do
         get :form_search
+        post :create_admin
       end
     end
 
