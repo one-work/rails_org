@@ -1,0 +1,21 @@
+<%= render layout: 'layouts/admin_head' do %>
+  <main class="columns as-main">
+    <div class="column is-narrow p-0 has-page">
+      <%= render 'admin/nav' %>
+      <div class="flex-shrink-0">
+        <%= render 'admin/menu_bar' %>
+      </div>
+    </div>
+    <turbo-frame id="body" refresh="morph" data-turbo-action="advance" class="column as-body">
+      <div class="breadcrumb has-succeeds-separator ml-3">
+        <ul>
+          <%= render 'breadcrumb' %>
+        </ul>
+      </div>
+      <%= render 'alert' %>
+      <div class="box as-body">
+        <%= yield %>
+      </div>
+    </turbo-frame>
+  </main>
+<% end %>
