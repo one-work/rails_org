@@ -1,4 +1,4 @@
 <div class="menu-label"><%= t('org.board.title') %></div>
 <div class="menu-list">
-  <%= link_to t('org.board.organs.index.title'), { controller: 'org/board/organs' }, class: active_helper(controller: 'org/board/organs', action: 'index', active: 'is-active') %>
+  <%= link_to t('org.board.organs.index.title'), { controller: 'org/board/organs' }, data: { turbo_frame: 'body' }, class: active_helper(controller: 'org/board/organs', action: 'index', active: 'is-active') %>
 </div>
