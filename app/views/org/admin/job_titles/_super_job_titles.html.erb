@@ -5,10 +5,9 @@
   <td></td>
   <td></td>
   <td>
-    <%= form_with theme: nil, scope: nil, url: { action: 'create_department' }, data: { controller: 'input' } do |f| %>
+    <%= form_with theme: 'switch', scope: nil, url: { action: 'create_department' }, data: { controller: 'input' } do |f| %>
       <%= f.hidden_field :super_job_title_id, value: super_job_title.id %>
-      <%= f.check_box :department_id, value: @department.id, checked: false, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
-      <label data-action="click->input#check"></label>
+      <%= f.check_box :department_id, value: @department.id, checked: false, data: { action: 'input#submit' }, id: nil %>
     <% end %>
   </td>
 </tr>

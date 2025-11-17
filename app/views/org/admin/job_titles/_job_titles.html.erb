@@ -36,9 +36,8 @@
       <% end %>
     <% end %>
     <% if job_title.super_job_title %>
-      <%= form_with theme: nil, scope: nil, url: { action: 'destroy', id: job_title.id }, method: :delete, data: { controller: 'input' } do |f| %>
-        <%= f.check_box :department_id, checked: true, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
-        <label data-action="click->input#check"></label>
+      <%= form_with theme: 'switch', scope: nil, url: { action: 'destroy', id: job_title.id }, method: :delete, data: { controller: 'input' } do |f| %>
+        <%= f.check_box :department_id, checked: true, data: { action: 'input#submit' }, id: nil %>
       <% end %>
     <% else %>
       <%= button_to({ action: 'destroy', id: job_title.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-borderless') do %>
