@@ -10,7 +10,9 @@
       <ul class="breadcrumb has-succeeds-separator ml-3"><%= render 'breadcrumb' %></ul>
       <%= render 'alert' %>
       <div class="box as-body">
-        <%= yield %>
+        <div class="mx-auto" style="width: 500px">
+          <%= yield %>
+        </div>
       </div>
     </turbo-frame>
   </main>
