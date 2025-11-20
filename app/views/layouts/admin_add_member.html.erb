@@ -7,11 +7,7 @@
       </div>
     </div>
     <turbo-frame id="panel" refresh="morph" data-turbo-action="advance" class="column as-body">
-      <div class="breadcrumb has-succeeds-separator ml-3">
-        <ul>
-          <%= render 'breadcrumb' %>
-        </ul>
-      </div>
+      <ul class="breadcrumb has-succeeds-separator ml-3"><%= render 'breadcrumb' %></ul>
       <%= render 'alert' %>
       <div class="box as-body">
         <%= yield %>
