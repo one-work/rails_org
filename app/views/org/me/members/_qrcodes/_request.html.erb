@@ -16,10 +16,10 @@
         <span class="tag">曾注册用户</span>
       <% end %>
     </h4>
-    <p class="weui-media-box__desc">
+    <p>
       <time data-controller="time" data-format="human"><%= request.wechat_user.created_at.to_fs(:iso8601) %></time>
     </p>
-    <p class="weui-media-box__desc">
+    <p>
       <time data-controller="time" data-format="human"><%= request.created_at.to_fs(:iso8601) %></time>
     </p>
   </div>

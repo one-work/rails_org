@@ -6,7 +6,11 @@ module Org
     def qrcodes
       if @member.invitable?
         @scene = @member.invite_member!
-        @requests = @scene.requests.includes(:wechat_user).page(params[:page])
+        if @scene
+          @requests = @scene.requests.includes(:wechat_user).page(params[:page])
+        else
+          @requests = Wechat::Request.none
+        end
       else
         render :qrcode
       end

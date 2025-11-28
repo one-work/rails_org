@@ -8,11 +8,9 @@
   </figure>
 </div>
 
-<div class="box">
+<div class="box is-padding-less">
   <div class="box-header">邀请记录</div>
-  <div class="weui-panel__bd">
-    <div class="weui-cells mt-0">
-      <%= render partial: 'request', collection: @requests, as: :request %>
-    </div>
+  <div class="p-3">
+    <%= render partial: 'request', collection: @requests, as: :request %>
   </div>
 </div>
