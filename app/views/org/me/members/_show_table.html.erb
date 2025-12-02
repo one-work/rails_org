@@ -4,7 +4,9 @@
 </div>
 <div>
   <dt><%= Org::Member.human_attribute_name(:name) %></dt>
-  <dd><%= @member.name %></dd>
+  <dd>
+    <%= text_field_tag 'member[name]', @member.name, class: 'input', form: 'show-form', data: { single_input_target: 'input' } %>
+  </dd>
 </div>
 <div>
   <dt><%= Org::Member.human_attribute_name(:identity) %></dt>
