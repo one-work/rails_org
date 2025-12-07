@@ -15,9 +15,6 @@
   <p class="text-grey"><time data-controller="time" data-format="human"><%= model.created_at.to_fs(:iso8601) %></time></p>
 </td>
 <td>
-  <p><%= defined?(RailsShip) && model.area&.full_name %></p>
-</td>
-<td>
   <p><%= model.code %></p>
   <%= form_with theme: 'switch', model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
     <%= f.check_box :official, data: { action: 'input#submit' }, id: nil %>
