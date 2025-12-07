@@ -5,7 +5,7 @@ module Org
     before_action :set_new_organ_domain, only: [:new, :create]
 
     def index
-      @organ_domains = @organ.organ_domains.page(params[:page])
+      @organ_domains = @organ.organ_domains.order(id: :desc).page(params[:page])
     end
 
     def all
