@@ -1,12 +1,7 @@
-require 'active_support/configurable'
-
 module RailsOrg #:nodoc:
-  include ActiveSupport::Configurable
+  mattr_accessor :config, default: ActiveSupport::OrderedOptions.new
 
-  configure do |config|
-    config.independent = false
-  end
-
+  config.independent = false
 end
 
 
