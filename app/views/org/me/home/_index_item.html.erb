@@ -16,6 +16,15 @@
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
+<%= link_to({ controller: 'factory/admin/organs', action: 'share_code' }, class: 'media as-link') do %>
+  <div class="media-content">
+    <%= svg_tag 'qrcode' %>
+    <span class="ml-1"><%= t('factory.admin.organs.share_code.title') %></span>
+  </div>
+  <div class="media-right">
+    <%= svg_tag 'chevron-right' %>
+  </div>
+<% end %>
 <%= link_to({ controller: 'org/me/organs', action: 'show' }, class: 'media as-link') do %>
   <div class="media-content">
     <%= svg_tag 'sitemap' %>
