@@ -5,6 +5,7 @@ module Org
 
     included do
       attribute :identity, :string, default: '', index: true
+      attribute :wechat_openid, :string
       attribute :experience, :string
       attribute :attendance_number, :string
       attribute :organ_root_id, :integer
