@@ -39,7 +39,6 @@ module Org
       @member = @organ.members.build member_params
     end
 
-    # todo corp_userid should permit
     def member_params
       params.fetch(:member, {}).permit(
         :name,
@@ -48,6 +47,7 @@ module Org
         :enabled,
         :owned,
         :wechat_openid,
+        :corp_userid,
         :avatar,
         role_whos_attributes: [:id, :role_id, :_destroy],
         member_departments_attributes: {},
