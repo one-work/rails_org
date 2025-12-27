@@ -4,9 +4,9 @@ module Org
 
     def index
       q_params = {
-        parent_id: current_organ.id,
         allow: { parent_id: nil }
       }
+      q_params.merge! parent_id: current_organ.id if current_organ
 
       @organs = Organ.with_attached_logo.default_where(q_params).order(id: :desc).page(params[:page])
     end

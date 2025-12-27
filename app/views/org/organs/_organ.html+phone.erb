@@ -9,11 +9,11 @@
       <% end %>
     </span>
     <span class="weui-media-box__desc">
-      <span><%= model.area.full_name %></span>
+      <span><%= model.area&.full_name %></span>
       <span><%= model.address %></span>
     </span>
   </div>
-  <%= link_to({ controller: '/space/stations' }, class: 'weui-media-box__ft pr-4') do %>
+  <%= link_to({ controller: '/space/stations' }, class: 'media-right') do %>
     <p>列表</p>
   <% end %>
 </div>
