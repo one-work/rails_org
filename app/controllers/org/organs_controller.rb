@@ -11,9 +11,6 @@ module Org
       @organs = Organ.with_attached_logo.default_where(q_params).order(id: :desc).page(params[:page])
     end
 
-    def show
-    end
-
     def form_search
       q_params = {}
       q_params.merge! params.permit('name-like')

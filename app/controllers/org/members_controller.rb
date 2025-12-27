@@ -20,9 +20,6 @@ module Org
       render json: { results: @members.as_json(only: [:name, :id]) }
     end
 
-    def show
-    end
-
     def people
       @members = Member.where(enabled: true)
     end
