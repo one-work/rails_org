@@ -3,10 +3,8 @@ module Org
     before_action :set_organ, only: [:show]
 
     def index
-      q_params = {
-        allow: { parent_id: nil }
-      }
-      q_params.merge! parent_id: current_organ.id if current_organ
+      q_params = {}
+      q_params.merge! provider_id: current_organ.id if current_organ
 
       @organs = Organ.with_attached_logo.default_where(q_params).order(id: :desc).page(params[:page])
     end
