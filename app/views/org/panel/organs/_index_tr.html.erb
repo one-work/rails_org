@@ -1,3 +1,13 @@
-<tr id="tr_<%= model.id %>" data-controller="show">
+<tr
+  id="tr_<%= model.id %>"
+  data-controller="show tr-actions"
+  data-tr-actions-data-value="<%=
+    tr_actions(
+      model,
+      { href: url_for(controller: 'organ_domains', organ_id: model.id), icon: 'mobile', title: t('.organ_domains.index.title') },
+      icons: ['show']
+    )
+  %>"
+>
   <%= yield %>
 </tr>
