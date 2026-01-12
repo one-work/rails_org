@@ -1,7 +1,6 @@
 <%=
   tr_tag(
     model,
-    { href: url_for(controller: 'organ_domains', organ_id: model.id), icon: 'mobile', title: t('.organ_domains.index.title') },
-    icons: ['show']
+    { href: url_for(controller: 'organ_domains', organ_id: model.id), icon: 'mobile', title: t('.organ_domains.index.title') }
   ) { yield }
 %>
