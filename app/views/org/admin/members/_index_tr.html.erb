@@ -1,3 +1,6 @@
-<tr id="tr_<%= model.id %>" data-controller="show">
-  <%= yield %>
-</tr>
+<%=
+  tr_tag(
+    model,
+    { action: url_for(action: 'edit_roles', id: model.id), icon: 'user-shield', title: t('.edit_roles.title') }
+  ) { yield }
+%>
