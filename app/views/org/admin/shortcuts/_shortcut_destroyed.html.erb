@@ -1,14 +1,15 @@
-<div id="<%= "#{model.controller}/#{model.action}" %>" class="control">
+<div id="<%= "#{model.controller}/#{model.action}" %>_control" class="control">
   <div class="tags has-addons">
     <%= link_to({ controller: model.controller, action: model.action }, target: '_blank', class: 'tag') do %>
       <span><%= model.name %></span>
     <% end %>
-    <%= button_to(
-          { controller: 'org/admin/shortcuts', action: 'create' },
-          params: { 'shortcut[controller]': model.controller, 'shortcut[action]': model.action },
-          aria: { label: t('org.admin.shortcuts.create.title') },
-          form: { class: 'tag' }
-        ) do %>
+    <%=
+      button_to(
+        { controller: 'org/admin/shortcuts', action: 'create' },
+        params: { 'shortcut[controller]': model.controller, 'shortcut[action]': model.action },
+        aria: { label: t('org.admin.shortcuts.create.title') },
+        form: { class: 'tag', id: "#{model.controller}/#{model.action}" }
+      ) do %>
       <%= svg_tag 'star' %>
     <% end %>
   </div>

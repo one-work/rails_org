@@ -1,1 +1,1 @@
-<%= turbo_stream.replace "#{@shortcut.controller}/#{@shortcut.action}", partial: 'shortcut_created', locals: { model: @shortcut } %>
+<%= turbo_stream.replace "#{@shortcut.controller}/#{@shortcut.action}_control", partial: 'shortcut_created', locals: { model: @shortcut } %>
