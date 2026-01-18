@@ -32,22 +32,3 @@
     <%= f.check_box :enabled, data: { action: 'input#submit' }, id: nil %>
   <% end %>
 </td>
-<td>
-  <div data-show-target="item" class="visibility-hidden">
-    <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'eye', class: 'icon text-info' %>
-    <% end %>
-    <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'pencil', class: 'icon text-link' %>
-    <% end %>
-    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, form: { data: { turbo_confirm: t('.destroy.confirm') } }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'trash', class: 'icon text-danger' %>
-    <% end %>
-  </div>
-  <div data-show-target="item" class="visibility-hidden">
-    <%= button_to({ action: 'mock', id: model.id }, data: { turbo: false }, class: 'button is-small is-borderless', form: { target: '_blank' }) do %>
-      <%= svg_tag 'hand-point-right' %>
-      <span class="ml-1"><%= t('.mock.title') %></span>
-    <% end %>
-  </div>
-</td>
