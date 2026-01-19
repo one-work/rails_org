@@ -20,7 +20,7 @@ module Org
 
     def mock
       redirect_to(
-        { controller: '/admin/home', host: @organ.admin_host, auth_token: @member.auth_token },
+        { controller: '/admin/home', host: @organ.admin_host, auth_token: @member.auth_token, format: :html },
         allow_other_host: true
       )
     end
