@@ -19,8 +19,10 @@ module Org
     end
 
     def mock
-      response.headers['Access-Control-Allow-Headers'] = 'Timezone'
-      redirect_to({ controller: '/admin/home', host: @organ.admin_host, auth_token: @member.auth_token }, allow_other_host: true)
+      redirect_to(
+        { controller: '/admin/home', host: @organ.admin_host, auth_token: @member.auth_token },
+        allow_other_host: true
+      )
     end
 
     def edit_roles
