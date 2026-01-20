@@ -82,7 +82,7 @@ Rails.application.routes.draw do
         resources :organ_domains
         resources :members do
           member do
-            post :mock
+            get :mock
             post :edit_roles
           end
         end

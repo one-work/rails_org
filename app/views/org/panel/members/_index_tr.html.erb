@@ -2,11 +2,10 @@
   tr_tag(
     model,
     {
-      action: url_for(action: 'mock', id: model.id),
+      href: url_for(action: 'mock', id: model.id),
       icon: 'hand-point-right',
       title: t('.mock.title'),
-      data: { turbo: false },
-      form: { target: '_blank' }
+      target: '_blank'
     }
   ) { yield }
 %>
