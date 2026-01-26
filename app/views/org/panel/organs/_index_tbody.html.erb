@@ -33,7 +33,9 @@
   </div>
 </td>
 <td>
-  <p class="family-monospace text-success"><%= model.owner.display_uid %></p>
+  <% if model.owner %>
+    <p class="family-monospace text-success"><%= model.owner.display_uid %></p>
+  <% end %>
   <%= link_to({ controller: 'members', organ_id: model.id }, aria: { label: t('.members.index.title') }, class: 'button is-small is-borderless') do %>
     <%= svg_tag 'users', class: 'icon text-info' %>
     <span class="ml-1"><%= model.members_count %></span>
