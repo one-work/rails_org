@@ -3,7 +3,7 @@
   <div class="navbar-link"><%= current_organ.name %></div>
   <div class="navbar-dropdown is-left">
   <% current_organ.children.each do |child| %>
-    <%= link_to child.name, { controller: '/me/home', auth_token: Current.session.id, **child.url_options(request) }, class: 'navbar-item' %>
+    <%= link_to child.name, { controller: '/me/home', auth_token: Current.session.once_token, **child.url_options(request) }, class: 'navbar-item' %>
   <% end %>
   </div>
 </div>

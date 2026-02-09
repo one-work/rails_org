@@ -7,7 +7,7 @@
     <%= link_to({ controller: '/me/home' }, class: active_helper(controllers: ['me/home'], active: 'navbar-item is-active', item: 'navbar-item')) do %>
       <span><%= t('me.home.index.title') %></span>
     <% end %>
-    <%= link_to({ controller: '/admin/home', **current_organ.admin_url_options(request, auth_token: Current.session.id) }, class: active_helper(controllers: ['admin/home'], active: 'navbar-item is-active', item: 'navbar-item')) do %>
+    <%= link_to({ controller: '/admin/home', **current_organ.admin_url_options(request, auth_token: Current.session.once_token) }, class: active_helper(controllers: ['admin/home'], active: 'navbar-item is-active', item: 'navbar-item')) do %>
       <span><%= t('admin.home.index.title') %></span>
     <% end %>
     <%= link_to({ controller: '/auth/sign', action: 'logout' }, data: { turbo_confirm: '确认退出' }, class: 'navbar-item') do %>
