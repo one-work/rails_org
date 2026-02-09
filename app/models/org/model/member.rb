@@ -160,7 +160,7 @@ module Org
         m.mock_member = true
         m.uid = wechat_openid if defined?(wechat_openid)
       end
-      session.id
+      session.once_token
     end
 
     def increment_counts_to_users
