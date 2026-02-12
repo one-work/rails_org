@@ -76,7 +76,7 @@ module Org
       }
       x_options.merge! options
 
-      Rails.application.routes.url_for(**x_options)
+      Rails.app.routes.url_for(**x_options)
     end
 
     def redirect_path(**options)
