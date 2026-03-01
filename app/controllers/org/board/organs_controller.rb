@@ -23,7 +23,12 @@ module Org
 
     def create_admin
       if @organ.save
-        Current.session.update member_id: @member.id
+        if request.subdomain == 'admin'
+          Current.session.update member_id: @member.id
+          redirect_to '/'
+        else
+          refresh_or_redirect_to({ controller: '/admin/home', host: @member.organ.admin_host, auth_token: @member.auth_token }, allow_other_host: true)
+        end
       else
         render :new, locals: { model: @organ }, status: :unprocessable_entity
       end
