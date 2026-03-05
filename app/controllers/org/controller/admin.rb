@@ -18,6 +18,9 @@ module Org
           if members.blank?
             roles = Roled::Role.visible.where.not(tip: nil)
             render 'add_org_member', layout: 'admin_add_member', locals: { roles: roles }
+          elsif members.size == 1
+            Current.session.update member_id: members.first.id
+            return current_member
           else
             render 'choose_org_member', locals: { members: members }
           end
