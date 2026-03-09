@@ -7,7 +7,7 @@ module Org
 
       if Current.session
         if current_organ
-          render 'require_org_member', layout: 'simple'
+          render 'require_org_member'
         else
           if current_user
             members = current_user.members.includes(:organ)
