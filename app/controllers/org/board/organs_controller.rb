@@ -25,9 +25,12 @@ module Org
       if @organ.save
         if request.subdomain == 'admin'
           Current.session.update member_id: @member.id
+          url = request.referer || '/'
         else
-          refresh_or_redirect_to({ controller: '/admin/home', host: @member.organ.admin_host, auth_token: @member.auth_token }, allow_other_host: true)
+          url = url_for(controller: '/admin/home', host: @member.organ.admin_host, auth_token: @member.auth_token)
         end
+
+        render locals: { url: url }
       else
         render :new, locals: { model: @organ }, status: :unprocessable_entity
       end
