@@ -33,10 +33,10 @@ module Org
     def current_organ
       return @current_organ if defined?(@current_organ)
 
-      if current_organ_domain
-        @current_organ = current_organ_domain.organ
-      elsif current_member
+      if current_member
         @current_organ = current_member.organ
+      elsif current_organ_domain
+        @current_organ = current_organ_domain.organ
       else
         @current_organ = nil
       end
