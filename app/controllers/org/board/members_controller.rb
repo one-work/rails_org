@@ -13,7 +13,6 @@ module Org
 
     def logout
       Current.session.update member_id: nil
-      refresh_or_redirect_to({ controller: 'org/board/organs' })
     end
 
     private
