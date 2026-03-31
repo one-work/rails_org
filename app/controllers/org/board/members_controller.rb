@@ -3,7 +3,7 @@ module Org
     before_action :set_member, only: [:show, :login, :edit, :update]
 
     def login
-      if request.subdomain == 'admin'
+      if ['admin', 'demo'].include? request.subdomain
         Current.session.update member_id: @member.id
         redirect_to '/'
       else
@@ -13,7 +13,6 @@ module Org
 
     def logout
       Current.session.update member_id: nil
-      refresh_or_redirect_to({ controller: 'org/board/organs' })
     end
 
     private
