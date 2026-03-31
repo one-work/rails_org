@@ -5,7 +5,7 @@
   <%= render partial: 'index_tbody', layout: 'index_tr', collection: @organs, as: :model %>
   <tr>
     <td colspan="5" class="pl-6">
-      <%= button_to({ action: 'new', **request.query_parameters.except(:id) }, class: 'button is-small is-link') do %>
+      <%= button_to({ action: 'new', **request.query_parameters.except(:id) }, class: 'button is-rounded is-small is-info') do %>
         <%= svg_tag 'plus' %>
         <span class="ml-1"><%= t('.new.title') %></span>
       <% end %>
