@@ -37,6 +37,10 @@ zh:
         experience: Profile
         identity: 手机号或邮箱
         parent: 上级
+        leader: 负责人
+        department: 部门
+        tutorials: 培训阶段
+        interning: 实习期
         enabled: 正常
         inviter: 可邀请
         name: 姓名
@@ -66,6 +70,9 @@ zh:
         limit_office: 允许分支机构数
         parent_uuid: 上级机构编码
         service_url: 客服链接
+        logo: 图标
+        bar_logo: 顶部图标
+        bar_logo_invert: 选中状态图标
       org/organ_grant:
         organ_id: 机构
         role_ids: 权限
@@ -73,6 +80,11 @@ zh:
         expire_at: 过期时间
       org/organ_domain:
         beian: 备案号
+        host: 域名
+        kind: 分类名称
+        default: 默认状态
+        redirect_controller: 重定向控制界面
+        redirect_action: 跳转操作
       org/room:
         room_number: 房间号
         color: 颜色
