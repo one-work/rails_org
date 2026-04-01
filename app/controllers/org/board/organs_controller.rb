@@ -23,7 +23,7 @@ module Org
 
     def create_admin
       if @organ.save
-        if request.subdomain == 'admin'
+        if ['admin', 'demo'].include?(request.subdomain)
           Current.session.update member_id: @member.id
           url = request.referer || '/'
         else
