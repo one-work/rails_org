@@ -3,6 +3,7 @@ module Org
     before_action :set_organ, except: [:all]
     before_action :set_member, only: [:show, :edit, :update, :destroy, :actions, :mock, :edit_roles]
     before_action :set_new_member, only: [:new, :create]
+    before_action :set_filter_columns, only: [:index, :all]
 
     def index
       q_params = {}
@@ -13,9 +14,9 @@ module Org
 
     def all
       q_params = {}
-      q_params.merge! params.permit(:wechat_openid)
+      q_params.merge! params.permit(:wechat_openid, :identity, 'name-like')
 
-      @members = Member.where(q_params).order(id: :desc).page(params[:page])
+      @members = Member.includes(:organ).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def mock
@@ -41,6 +42,14 @@ module Org
 
     def set_new_member
       @member = @organ.members.build member_params
+    end
+
+    def set_filter_columns
+      @filter_columns = set_filter_i18n(
+        'name-like' => { type: 'search', default: true },
+        'identity' => { type: 'search', default: true },
+        'wechat_openid' => { type: 'search', default: true }
+      )
     end
 
     def member_params

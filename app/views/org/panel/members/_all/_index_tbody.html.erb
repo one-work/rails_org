@@ -5,6 +5,7 @@
   </div>
   <p class="text-grey"><%= model.identity %></p>
 </td>
+<td><%= model.organ.name %></td>
 <% if defined? RailsWechat %>
 <td>
   <p class="family-monospace text-grey"><%= model.wechat_openid %></p>
@@ -19,4 +20,3 @@
     <% end %>
   </div>
 </td>
-<td><%= model.organ.name %></td>
