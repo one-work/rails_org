@@ -22,6 +22,7 @@ module Org
         elsif members.size == 1
           Current.session.update member_id: members.first.id
           @current_member = Current.session.member
+          @current_organ = current_member.organ
           return
         else
           render 'choose_org_member', locals: { members: members }
