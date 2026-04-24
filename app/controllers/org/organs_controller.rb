@@ -6,7 +6,7 @@ module Org
       q_params = {}
       q_params.merge! provider_id: current_organ.id if current_organ
 
-      @organs = Organ.with_attached_logo.default_where(q_params).order(id: :desc).page(params[:page])
+      @organs = Organ.includes(:organ_domains).with_attached_logo.default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def form_search

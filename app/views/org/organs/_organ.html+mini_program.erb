@@ -1,0 +1,19 @@
+<div class="media">
+  <div class="media-left">
+    <%= image_tag model.logo.variant(resize_to_limit: [150, 150]), class: 'image is-64x64' if model.logo.attached? %>
+  </div>
+  <div class="media-content">
+    <span class="weui-media-box__title">
+      <% if model.mp_host.present? %>
+        <%= link_to model.name, { controller: 'my/home', host: model.host } %>
+      <% end %>
+    </span>
+    <span class="weui-media-box__desc">
+      <span><%= model.area&.full_name %></span>
+      <span><%= model.address %></span>
+    </span>
+  </div>
+  <%= link_to({ controller: '/space/stations' }, class: 'media-right') do %>
+    <p>列表</p>
+  <% end %>
+</div>
