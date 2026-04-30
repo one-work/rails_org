@@ -6,6 +6,7 @@ light:
   - check
   - chevron-right
   - circle-dot
+  - circle-user-circle-user
   - ellipsis-vertical
   - eye
   - gear
@@ -20,6 +21,7 @@ light:
   - user
   - user-gear
   - user-shield
+  - user-tie
   - users
 regular:
   - angle-left
