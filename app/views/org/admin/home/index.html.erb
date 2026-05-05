@@ -1,3 +1,24 @@
-<div>
-  <%= image_tag QrcodeUtil.data_url(url_for(controller: '/my/home', host: current_organ.host)), class: 'image is-128x128' %>
+<div class="columns">
+  <div class="column">
+    <dl class="as-show as-boxed">
+      <div>
+        <dt>扫码</dt>
+        <dd>
+          <%= image_tag QrcodeUtil.data_url(url_for(controller: '/my/home', host: current_organ.host)), class: 'image is-128x128' %>
+        </dd>
+      </div>
+      <div>
+        <dt>自动发货</dt>
+        <dd>
+          <span><%= current_organ.auto_purchase_i18n %></span>
+          <%= button_to({ action: 'toggle' }, class: 'button is-primary') do %>
+            <span>切换发货方式</span>
+          <% end %>
+        </dd>
+      </div>
+    </dl>
+  </div>
+  <div class="column">
+
+  </div>
 </div>

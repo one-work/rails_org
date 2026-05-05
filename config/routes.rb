@@ -103,6 +103,7 @@ Rails.application.routes.draw do
       root 'home#index'
       controller :home do
         get :index
+        post :toggle
       end
       resource :current_organ, controller: 'current_organ'
       resources :organs do
