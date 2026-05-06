@@ -7,23 +7,20 @@ module Org
 
       if Current.session
         if current_user
-          members = current_user.members.includes(:organ)
+          members = choose_only_member
         else
           members = Member.none
         end
 
-        if members.blank?
+        if members.size == 1
+          return
+        elsif members.blank?
           if current_organ
             render 'require_org_member'
           else
             roles = Roled::Role.visible.where.not(tip: nil)
             render 'add_org_member', layout: 'admin_add_member', locals: { roles: roles }
           end
-        elsif members.size == 1
-          Current.session.update member_id: members.first.id
-          @current_member = Current.session.member
-          @current_organ = current_member.organ
-          return
         else
           render 'choose_org_member', locals: { members: members }
         end
@@ -35,6 +32,16 @@ module Org
           require_user
         end
       end
+    end
+
+    def choose_only_member
+      members = current_user.members.includes(:organ)
+      if members.size == 1
+        Current.session.update member_id: members.first.id
+        @current_member = Current.session.member
+        @current_organ = current_member.organ
+      end
+      members
     end
 
   end
