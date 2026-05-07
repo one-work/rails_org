@@ -1,4 +1,4 @@
-<div class="as-bottom">
+<div class="buttons as-bottom">
   <%= button_to({ action: 'destroy' }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-fullwidth is-danger mx-0', form: { class: 'is-fullwidth p-3' }) do %>
     <%= svg_tag 'trash' %>
     <span class="ml-1"><%= t('.destroy.title') %></span>
