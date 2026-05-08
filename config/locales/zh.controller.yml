@@ -95,6 +95,8 @@ zh:
           title: 下级团队
         edit_roles:
           title: 权限管理
+        invite:
+          title: 邀请同事
       organ_domains:
         index:
           title: 团队域名

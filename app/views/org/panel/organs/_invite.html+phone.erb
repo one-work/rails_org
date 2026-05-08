@@ -1,0 +1,8 @@
+<div class="box">
+  <p class="text-centered">
+    <strong><%= @organ.name %></strong>
+  </p>
+  <figure class="image">
+    <%= image_tag @scene.qrcode_data_url if @scene %>
+  </figure>
+</div>

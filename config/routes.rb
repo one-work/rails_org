@@ -78,6 +78,7 @@ Rails.application.routes.draw do
         member do
           get :children
           post :edit_roles
+          post :invite
         end
         resources :organ_domains
         resources :members do

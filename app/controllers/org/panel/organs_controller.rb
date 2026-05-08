@@ -1,6 +1,6 @@
 module Org
   class Panel::OrgansController < Panel::BaseController
-    before_action :set_organ, only: [:show, :edit, :update, :edit_roles, :children]
+    before_action :set_organ, only: [:show, :edit, :update, :edit_roles, :children, :invite]
 
     def index
       q_params = {}
@@ -35,6 +35,10 @@ module Org
 
     def children
       @organs = @organ.children.page(params[:page])
+    end
+
+    def invite
+      @scene = @organ.invite_member!
     end
 
     private
