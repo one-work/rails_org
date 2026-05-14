@@ -165,7 +165,7 @@ module Org
     end
 
     def init_role_ids!
-      self.role_ids = organ.role_ids
+      self.assign_attributes organ.role_whos_attributes
       self.save
     end
 
