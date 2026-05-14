@@ -23,5 +23,6 @@ light:
   - user-shield
   - user-tie
   - users
+  - users-line
 regular:
   - angle-left

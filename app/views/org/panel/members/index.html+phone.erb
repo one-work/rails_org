@@ -1,7 +1,7 @@
 <%= render 'filter_bar' %>
 
-<%= render layout: 'index_table' do %>
-  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @members, as: :model %>
+<%= render layout: 'index_list' do %>
+  <%= render partial: 'index_item', layout: 'index_item_actions', collection: @members, as: :model %>
 <% end %>
 
 <%= paginate @members %>

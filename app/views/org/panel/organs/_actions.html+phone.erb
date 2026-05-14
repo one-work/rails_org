@@ -10,6 +10,10 @@
   <%= svg_tag 'circle-info' %>
   <span><%= t('.show.title') %></span>
 <% end %>
+<%= link_to({ controller: 'members', organ_id: model.id }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'users-line' %>
+  <span><%= t('.members.index.title') %></span>
+<% end %>
 <%= button_to({ action: 'invite' }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'user-plus' %>
   <span><%= t('.invite.title') %></span>
