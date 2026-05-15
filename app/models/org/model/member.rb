@@ -59,6 +59,7 @@ module Org
       #before_save :sync_tutorials, if: -> { join_on_changed? }
       #before_save :sync_avatar_from_user, if: -> { identity_changed? && user }
       after_create_commit :increment_counts_to_users
+      after_create_commit :init_role_ids!
     end
 
     def display_uid
@@ -161,6 +162,11 @@ module Org
         m.uid = wechat_openid if defined?(wechat_openid)
       end
       session.once_token
+    end
+
+    def init_role_ids!
+      self.assign_attributes organ.role_whos_attributes
+      self.save
     end
 
     def increment_counts_to_users

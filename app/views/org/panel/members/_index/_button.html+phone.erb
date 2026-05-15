@@ -1,8 +1,0 @@
-<%= link_to({ action: 'new' }, class: 'button is-link') do %>
-  <%= svg_tag 'plus' %>
-  <span><%= t('.new.title') %></span>
-<% end %>
-<%= link_to({ controller: 'datum/panel/table_lists', action: 'find', data_list_id: 'MemberExport', **params.permit(:organ_id) }, class: 'button is-light') do %>
-  <%= svg_tag 'file-excel' %>
-  <span><%= t('.export') %></span>
-<% end if defined? RailsData %>

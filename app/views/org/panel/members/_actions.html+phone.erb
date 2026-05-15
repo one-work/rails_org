@@ -1,0 +1,6 @@
+<%= render 'actions_items' %>
+
+<%= link_to({ action: 'mock', organ_id: model.organ_id, id: model.id }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'hand-point-right' %>
+  <span><%= t('.mock.title') %></span>
+<% end %>
