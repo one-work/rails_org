@@ -1,4 +1,4 @@
-<%= link_to({ controller: 'org/me/members', action: 'show' }, class: 'media as-link') do %>
+<%= link_to({ controller: 'org/me/members', action: 'show' }, class: 'media') do %>
   <div class="media-content">
     <%= svg_tag 'user-gear' %>
     <span class="ml-1"><%= t('.members.show.title') %></span>
@@ -7,7 +7,7 @@
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
-<%= link_to({ controller: 'trade/me/home', action: 'qrcode' }, class: 'media as-link') do %>
+<%= link_to({ controller: 'trade/me/home', action: 'qrcode' }, class: 'media') do %>
   <div class="media-content">
     <%= svg_tag 'qrcode' %>
     <span class="ml-1"><%= t('trade.me.home.qrcode.title') %></span>
@@ -16,7 +16,7 @@
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
-<%= link_to({ controller: 'factory/admin/organs', action: 'share_code' }, class: 'media as-link') do %>
+<%= link_to({ controller: 'factory/admin/organs', action: 'share_code' }, class: 'media') do %>
   <div class="media-content">
     <%= svg_tag 'qrcode' %>
     <span class="ml-1"><%= t('factory.admin.organs.share_code.title') %></span>
@@ -25,7 +25,7 @@
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
-<%= link_to({ controller: 'org/me/organs', action: 'show' }, class: 'media as-link') do %>
+<%= link_to({ controller: 'org/me/organs', action: 'show' }, class: 'media') do %>
   <div class="media-content">
     <%= svg_tag 'sitemap' %>
     <span class="ml-1"><%= t('.organs.show.title') %></span>
@@ -40,7 +40,7 @@
     data-mini-program-nav-value="true"
     data-mini-program-url-value="plugin://bluetooth/print_demo"
     data-action="click->mini-program#link"
-    class="media as-link"
+    class="media"
   >
     <div class="media-content">
       <%= svg_tag 'print' %>
