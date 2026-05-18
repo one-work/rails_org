@@ -12,7 +12,7 @@ module Org
       q_params = {}
       q_params.merge! params.permit(:host)
 
-      @organ_domains = OrganDomain.where(q_params).page(params[:page])
+      @organ_domains = OrganDomain.includes(:organ).where(q_params).page(params[:page])
     end
 
     private
