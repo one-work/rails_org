@@ -6,7 +6,7 @@
     <strong><%= member.organ.name %></strong>
   </div>
   <div class="card-footer">
-    <%= button_to({ controller: 'members', action: 'login', id: member.id }, form: { class: 'card-footer-item', target: '_blank' }) do %>
+    <%= button_to({ controller: 'org/board/members', action: 'login', id: member.id }, form: { class: 'card-footer-item', target: '_blank' }) do %>
       <span><%= t('.redirect.title') %></span>
     <% end %>
   </div>
