@@ -22,7 +22,7 @@ module Org
             render 'add_org_member', layout: 'admin_add_member', locals: { roles: roles }
           end
         else
-          render 'choose_org_member', locals: { members: members }
+          render 'choose_org_member', layout: 'admin_choose_member', locals: { members: members }
         end
         set_auth_token # 在这里渲染了模板，不会调用 after_action
       else

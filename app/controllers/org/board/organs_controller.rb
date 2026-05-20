@@ -25,7 +25,7 @@ module Org
       if @organ.save
         if ['admin', 'demo'].include?(request.subdomain)
           Current.session.update member_id: @member.id
-          url = request.referer || '/'
+          url = '/'
         else
           url = url_for(controller: '/admin/home', host: @member.organ.admin_host, auth_token: @member.auth_token)
         end
