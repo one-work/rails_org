@@ -1,31 +1,31 @@
 zh:
   application:
     org_navbar:
-      title: 团队
+      title: 门店
   in:
     home:
       index:
         title: 我的
       organs:
-        title: 我的企业
+        title: 我的门店
   our:
     home:
       index:
-        title: 我的团队
+        title: 我的门店
   mem:
     home:
       index:
         title: 我的
   org:
-    title: 团队
+    title: 门店
     admin:
-      title: 团队
+      title: 门店
       authorized_tokens:
         index:
           title: 登陆Token
       home:
         index:
-          title: 团队
+          title: 门店
       departments:
         index:
           title: 部门
@@ -117,23 +117,23 @@ zh:
         show:
           title: 首页
     board:
-      title: 我的团队
+      title: 我的门店
       members:
         index:
           title: 我的工作台
         new:
           title: 申请为职员
         logout:
-          title: 切换团队
+          title: 切换门店
       organs:
         index:
-          title: 我的团队
+          title: 我的门店
         new:
-          title: 创建新团队
+          title: 创建门店
         redirect:
           title: 工作台
     me:
-      title: 团队管理
+      title: 门店管理
       home:
         index:
           title: 首页
@@ -146,13 +146,13 @@ zh:
           title: 邀请同事
       organs:
         index:
-          title: 团队列表
+          title: 门店列表
         show:
-          title: 注销团队
+          title: 注销门店
         new:
-          title: 创建新团队
+          title: 创建新门店
         destroy:
-          title: 注销团队
+          title: 注销门店
       departments:
         index:
           title: 我的部门
