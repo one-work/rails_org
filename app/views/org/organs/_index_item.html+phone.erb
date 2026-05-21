@@ -1,5 +1,15 @@
+<div>
+  <strong><%= model.name %></strong>
+  <div class="tags has-addons display-inline-flex">
+    <span class="tag">营业时间</span>
+    <% if model.start_at %>
+      <span class="tag"><%= model.start_at.to_fs(:time) %></span>
+    <% else %>
+      <span class="tag">09:00</span>
+    <% end %>
+  </div>
+</div>
 <p>
-<% model.attributes.slice('name', 'title').each do |_, value| %>
-  <span><%= value %></span>
-<% end %>
+  <%= svg_tag 'location-dot', class: 'icon is-small text-grey' %>
+  <span><%= model.address %></span>
 </p>

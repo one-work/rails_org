@@ -54,6 +54,7 @@ module Org
         :official,
         :name_short,
         :license,
+        :address,
         :parent_ancestors,
         :area_ancestors,
         role_whos_attributes: [:id, :role_id, :_destroy]
