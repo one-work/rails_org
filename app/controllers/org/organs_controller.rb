@@ -6,7 +6,13 @@ module Org
       q_params = {}
       q_params.merge! provider_id: current_organ.id if current_organ
 
-      @organs = Organ.includes(:organ_domains).with_attached_logo.default_where(q_params).order(id: :desc).page(params[:page])
+      @organs = Organ.includes(:organ_domains).with_attached_logo.default_where(q_params).page(params[:page])
+
+      if params[:longitude] && params[:latitude]
+        @organs = @organs.near(params[:longitude], params[:latitude])
+      else
+        @organs = @organs.order(id: :asc)
+      end
     end
 
     def form_search
