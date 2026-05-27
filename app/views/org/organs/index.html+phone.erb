@@ -7,5 +7,5 @@
 <%= paginate @organs %>
 
 <% if (params.keys & ['latitude', 'longitude']).blank? %>
-<div data-controller="geo"></div>
+<div data-controller="geo" data-geo-redirect-value="true"></div>
 <% end %>
