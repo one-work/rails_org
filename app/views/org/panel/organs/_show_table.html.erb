@@ -15,6 +15,14 @@
   <dd><%= @organ.license %></dd>
 </div>
 <div>
+  <dt><%= Org::Organ.human_attribute_name(:geo) %></dt>
+  <dd><%= @organ.geo %></dd>
+</div>
+<div>
+  <dt><%= Org::Organ.human_attribute_name(:address) %></dt>
+  <dd><%= @organ.address %></dd>
+</div>
+<div>
   <dt></dt>
   <dd>
     <%= image_tag @scene.qrcode_data_url, class: 'image' if @scene %>
