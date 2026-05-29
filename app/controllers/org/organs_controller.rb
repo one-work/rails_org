@@ -4,7 +4,9 @@ module Org
 
     def index
       q_params = {}
-      q_params.merge! provider_id: current_organ.id if current_organ
+      if current_organ
+        q_params.merge! provider_id: current_organ.id
+      end
 
       @organs = Organ.includes(:organ_domains).with_attached_logo.default_where(q_params).page(params[:page])
 
