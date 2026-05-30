@@ -16,6 +16,7 @@ module Org
     def new
       @organ = Organ.new
       @organ.area = Ship::Area.root || Ship::Area.new if defined? RailsShip
+      @ip_geo = {"lat" => 28.22778, "lng" => 112.93886}
     end
 
     def show
@@ -27,6 +28,7 @@ module Org
       if defined? RailsShip
         @organ.area || @organ.build_area
       end
+      @ip_geo = {"lat" => 28.22778, "lng" => 112.93886}
     end
 
     def edit_roles
@@ -54,6 +56,7 @@ module Org
         :official,
         :name_short,
         :license,
+        :geo,
         :address,
         :parent_ancestors,
         :area_ancestors,
