@@ -1,6 +1,7 @@
 module Org
   class Panel::OrgansController < Panel::BaseController
     before_action :set_organ, only: [:show, :edit, :update, :edit_roles, :children, :invite]
+    before_action :set_geo_hash, only: [:new, :create, :edit, :update]
 
     def index
       q_params = {}
