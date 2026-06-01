@@ -16,7 +16,6 @@ module Org
     def new
       @organ = Organ.new
       @organ.area = Ship::Area.root || Ship::Area.new if defined? RailsShip
-      @ip_geo = {"lat" => 28.22778, "lng" => 112.93886}
     end
 
     def show
@@ -28,7 +27,6 @@ module Org
       if defined? RailsShip
         @organ.area || @organ.build_area
       end
-      @ip_geo = {"lat" => 28.22778, "lng" => 112.93886}
     end
 
     def edit_roles
@@ -46,6 +44,14 @@ module Org
     private
     def set_organ
       @organ = Organ.find params[:id]
+    end
+
+    def set_geo_hash
+      if current_user.geo
+        @ip_geo = current_user.geo_hash
+      else
+        @ip_geo = { lat: 28.22778, lng: 112.93886 }
+      end
     end
 
     def organ_params
