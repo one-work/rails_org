@@ -67,6 +67,7 @@ module Org
         :license,
         :geo,
         :address,
+        :debug_enabled,
         :parent_ancestors,
         :area_ancestors,
         role_whos_attributes: [:id, :role_id, :_destroy]
