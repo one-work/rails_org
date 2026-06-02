@@ -1,0 +1,10 @@
+<%= link_to({ controller: 'trade/our/carts', action: 'list' }, class: 'media') do %>
+  <div class="media-content">
+    <span><%= current_user.name %></span>
+    <span class="tag is-badge is-danger"><%= current_client.organ.name %></span>
+  </div>
+  <div class="media-right">
+    <span class="text-grey">切换</span>
+    <%= svg_tag 'angle-right' %>
+  </div>
+<% end %>
