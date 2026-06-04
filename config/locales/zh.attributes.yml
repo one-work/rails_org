@@ -52,6 +52,7 @@ zh:
         job_titles: 职级
         organ_id: 组织
         department_id: 所在部门
+        auth_token: 授权码
       org/member_department:
         organ_id: 分支机构
         department_id: 部门

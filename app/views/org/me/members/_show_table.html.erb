@@ -18,7 +18,15 @@
 </div>
 <div>
   <dt><%= Org::Member.human_attribute_name(:auth_token) %></dt>
-  <dd class="family-mon text-left is-wrap"><%= @member.auth_token %></dd>
+  <dd class="text-left is-wrap">
+    <div data-controller="clipboard">
+      <span data-clipboard-target="source" class="family-monospace"><%= @member.auth_token %></span>
+      <span data-action="click->clipboard#copy" class="tag is-badge is-danger">复制</span>
+      <div data-clipboard-target="toast" class="tag is-badge is-success display-none">
+        <%= svg_tag 'check' %>
+      </div>
+    </div>
+  </dd>
 </div>
 <% if @member.departments.present? %>
 <div>
