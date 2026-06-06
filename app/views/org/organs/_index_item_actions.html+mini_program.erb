@@ -1,4 +1,11 @@
 <div id="tr_<%= model.id %>" class="media">
+  <div class="media-left">
+    <% if model.logo.attached? %>
+      <%= image_tag model.logo, class: 'image is-64x64' %>
+    <% else %>
+      <%= image_tag 'logo_organ.png', class: 'image is-64x64' %>
+    <% end %>
+  </div>
   <%= link_to({ controller: 'factory/productions', host: model.mp_host, **{ auth_token: Current.session&.once_token }.compact }, class: 'media-content') do %>
     <%= yield %>
   <% end %>
