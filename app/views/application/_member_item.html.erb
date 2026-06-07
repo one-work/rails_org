@@ -1,6 +1,6 @@
 <%= link_to({ controller: 'org/board/members', action: 'login', id: model.id }, class: 'media') do %>
   <div class="media-content">
-    <p>
+    <p class="has-block-left">
       <span><%= model.organ.name %></span>
       <% if model.owned %>
         <span class="tag is-success"><%= model.owned_i18n %></span>
