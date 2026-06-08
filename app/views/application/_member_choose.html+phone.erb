@@ -1,10 +1,12 @@
 <% members.group_by(&:identity).each do |identity, sub_members| %>
-  <div class="mt-3">
-    <div class="size-7 has-border-left-primary">
-      <span>我的团队</span>
-      <span class="text-grey"><%= identity %></span>
+  <div class="card as-transparent">
+    <div class="card-header">
+      <div class="size-7 has-border-left-primary">
+        <span>我的团队</span>
+        <span class="text-grey"><%= identity %></span>
+      </div>
     </div>
-    <div id="tbody" class="box is-padding-less">
+    <div id="tbody" class="card-content p-0">
       <%= render partial: 'member_item', collection: sub_members, as: :model %>
     </div>
   </div>
