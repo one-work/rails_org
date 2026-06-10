@@ -35,7 +35,7 @@ Rails.application.routes.draw do
           get :qrcode
         end
       end
-      resource :organs, except: [:new, :create]
+      resource :organ, except: [:new, :create]
       resource :resign
       resources :departments
       resources :tutorials do

@@ -1,0 +1,14 @@
+<div>
+  <dt><%= Org::Organ.human_attribute_name(:name) %></dt>
+  <dd><%= @organ.name %></dd>
+</div>
+<div>
+  <dt><%= Org::Organ.human_attribute_name(:roles) %></dt>
+  <dd>
+    <div class="tags">
+      <% @organ.roles.each do |role| %>
+        <span class="tag"><%= role.name %></span>
+      <% end %>
+    </div>
+  </dd>
+</div>
