@@ -7,6 +7,15 @@
     <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
+<%= link_to({ controller: 'auth/board/oauth_users' }, class: 'media') do %>
+  <div class="media-content">
+    <%= svg_tag 'user' %>
+    <span><%= t('auth.board.oauth_users.index.title') %></span>
+  </div>
+  <div class="media-right">
+    <%= svg_tag 'chevron-right' %>
+  </div>
+<% end %>
 <%= link_to({ controller: 'trade/me/home', action: 'qrcode' }, class: 'media') do %>
   <div class="media-content">
     <%= svg_tag 'qrcode' %>
