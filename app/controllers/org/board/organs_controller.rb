@@ -53,7 +53,6 @@ module Org
         owned: true,
         **organ_params.slice(:role_whos_attributes)
       )
-      @member.wechat_openid = Current.session.uid.to_s if @member.respond_to? :wechat_openid
     end
 
     def set_roles
