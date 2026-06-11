@@ -4,8 +4,7 @@ module Org
     extend ActiveSupport::Concern
 
     included do
-      attribute :identity, :string, default: '', index: true
-      attribute :wechat_openid, :string
+      attribute :identity, :string, index: true
       attribute :experience, :string
       attribute :attendance_number, :string
       attribute :organ_root_id, :integer
@@ -22,7 +21,7 @@ module Org
         approved: 'approved'
       }, default: 'init'
 
-      has_many :oauth_users, class_name: 'Auth::OauthUser', primary_key: [:identity, :wechat_openid], foreign_key: [:identity, :uid]
+      has_many :oauth_users, class_name: 'Auth::OauthUser', primary_key: :identity, foreign_key: :identity
       has_many :users, class_name: 'Auth::User', through: :oauth_users
       has_many :sessions, class_name: 'Auth::Session', primary_key: :identity, foreign_key: :identity
 
@@ -63,7 +62,7 @@ module Org
     end
 
     def display_uid
-      identity.presence || wechat_openid
+      identity.presence
     end
 
     def set_current_cart(organ_id)
@@ -159,7 +158,6 @@ module Org
       session = sessions.where(mock_member: true, member_id: id).effective.take || sessions.create! do |m|
         m.member_id = id
         m.mock_member = true
-        m.uid = wechat_openid if defined?(wechat_openid)
       end
       session.once_token
     end
