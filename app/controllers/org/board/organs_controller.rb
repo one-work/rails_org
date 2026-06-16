@@ -7,8 +7,11 @@ module Org
 
     def index
       q_params = {}
-      #q_params.merge! provider_id: [current_organ.id, nil] if current_organ
-      q_params.merge! 'who_roles.role_id' => params[:role_id] if params[:role_id].present?
+      if current_organ
+        q_params.merge! provider_id: current_organ.id
+      else
+        q_params.merge! provider_id: Organ.official.take.id
+      end
 
       @members = current_user.members.includes(:organ).default_where(q_params)
     end
@@ -46,7 +49,6 @@ module Org
 
     def set_new_organ
       @organ = Organ.new(organ_params)
-      @organ.role_whos.build(role_id: params[:role_id]) if params[:role_id].present?
     end
 
     def set_create_organ
@@ -59,11 +61,7 @@ module Org
     end
 
     def set_roles
-      if params[:role_id].present?
-        @roles = Roled::Role.visible.where(id: params[:role_id])
-      else
-        @roles = Roled::Role.visible.where.not(tip: nil)
-      end
+      @roles = Roled::Role.visible.where(subdomain: request.subdomain)
     end
 
     def organ_params
