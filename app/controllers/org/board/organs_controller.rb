@@ -13,7 +13,7 @@ module Org
         q_params.merge! organ: { provider_id: Organ.official.take.id }
       end
 
-      @members = current_user.members.includes(:organ).default_where(q_params)
+      @members = current_user.members.includes(:organ).where(q_params)
     end
 
     def create
