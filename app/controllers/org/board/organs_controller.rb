@@ -8,9 +8,9 @@ module Org
     def index
       q_params = {}
       if current_organ
-        q_params.merge! provider_id: current_organ.id
+        q_params.merge! organ: { provider_id: current_organ.id }
       else
-        q_params.merge! provider_id: Organ.official.take.id
+        q_params.merge! organ: { provider_id: Organ.official.take.id }
       end
 
       @members = current_user.members.includes(:organ).default_where(q_params)
