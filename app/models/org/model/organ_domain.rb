@@ -4,6 +4,7 @@ module Org
     KIND = {
       'frontend' => 'org',
       'backend' => 'admin',
+      'panel' => 'partner',
       'mp' => 'mp',
       'agent' => 'agent'
     }
@@ -26,7 +27,8 @@ module Org
         frontend: 'frontend',
         backend: 'backend',
         mp: 'mp',
-        agent: 'agent'
+        agent: 'agent',
+        panel: 'panel'
       }, default: 'frontend'
 
       belongs_to :organ

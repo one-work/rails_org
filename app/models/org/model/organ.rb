@@ -19,8 +19,8 @@ module Org
         has_taxons :area
         belongs_to :area, class_name: 'Ship::Area', optional: true
       end
-      belongs_to :provider, class_name: 'Org::Organ', optional: true
 
+      belongs_to :provider, class_name: 'Organ', optional: true
       has_one :owner, -> { where(owned: true) }, class_name: 'Member'
 
       has_many :organs, class_name: self.name, primary_key: :provider_id
@@ -108,6 +108,14 @@ module Org
 
     def mp_host
       mp_domain.host
+    end
+
+    def panel_domain
+      organ_domains.find(&:panel?) || organ_domains.create(kind: 'panel')
+    end
+
+    def panel_host
+      panel_domain.host
     end
 
     def domains

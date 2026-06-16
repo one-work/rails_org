@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  concern :org_panel do
+    resources :organs do
+      collection do
+        post :search
+      end
+      member do
+        get :children
+        post :edit_roles
+        post :invite
+      end
+      resources :organ_domains
+      resources :members do
+        member do
+          get :mock
+          post :edit_roles
+        end
+      end
+    end
+  end
+
   namespace :in, defaults: { namespace: 'in' } do
     root 'home#index'
     controller :home do
@@ -75,23 +95,7 @@ Rails.application.routes.draw do
 
     namespace :panel, defaults: { namespace: 'panel' } do
       root 'home#index'
-      resources :organs do
-        collection do
-          post :search
-        end
-        member do
-          get :children
-          post :edit_roles
-          post :invite
-        end
-        resources :organ_domains
-        resources :members do
-          member do
-            get :mock
-            post :edit_roles
-          end
-        end
-      end
+      concerns :org_panel
       resources :organ_domains, only: [] do
         collection do
           get :all
@@ -102,6 +106,10 @@ Rails.application.routes.draw do
           get :all
         end
       end
+    end
+
+    namespace :partner, defaults: { namespace: 'partner' } do
+      concerns :org_panel
     end
 
     namespace :admin, defaults: { namespace: 'admin' } do
