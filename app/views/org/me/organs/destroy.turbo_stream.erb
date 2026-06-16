@@ -1,7 +1,1 @@
-<% if defined?(url) %>
-  <%= turbo_stream.visit url: url %>
-<% elsif params[:redirect_state].present? %>
-  <%= turbo_stream.visit url: url_for(**StateUtil.decode(params[:redirect_state])) %>
-<% else %>
-  <%= turbo_stream.visit url: url_for(controller: 'org/board/organs') %>
-<% end %>
+<%= turbo_stream.visit url: url %>

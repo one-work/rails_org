@@ -13,6 +13,7 @@ module Org
     def destroy
       if current_member.owned?
         @organ.destroy
+        render :destroy, locals: { url: url_for(controller: 'org/board/organs', host: @organ.provider.admin_host) }
       end
     end
 
