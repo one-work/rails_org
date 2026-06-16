@@ -1,4 +1,4 @@
-<% if role_permit?(business: 'org', namespace: 'me') %>
+<% if any_role?(business: 'org', namespace: 'me') %>
   <div class="menu-label">
     <span><%= t('org.me.title') %></span>
     <%= link_to({ controller: 'org/admin/home' }, aria: { label: '管理' }) do %>
