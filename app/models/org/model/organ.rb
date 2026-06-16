@@ -114,10 +114,6 @@ module Org
       organ_domains.pluck(:host)
     end
 
-    def admin?
-      official?
-    end
-
     def redirect_path(**options)
       domain.redirect_path(**options)
     end
