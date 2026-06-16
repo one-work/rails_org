@@ -47,8 +47,7 @@ module Org
     def set_filter_columns
       @filter_columns = set_filter_i18n(
         'name-like' => { type: 'search', default: true },
-        'identity' => { type: 'search', default: true },
-        'wechat_openid' => { type: 'search', default: true }
+        'identity' => { type: 'search', default: true }
       )
     end
 
@@ -59,8 +58,6 @@ module Org
         :join_on,
         :enabled,
         :owned,
-        :wechat_openid,
-        :corp_userid,
         :avatar,
         role_whos_attributes: [:id, :role_id, :_destroy],
         member_departments_attributes: {},

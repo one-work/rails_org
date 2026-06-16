@@ -1,6 +1,7 @@
 module Org
   class Panel::OrgansController < Panel::BaseController
     before_action :set_organ, only: [:show, :edit, :update, :edit_roles, :children, :invite]
+    before_action :set_new_organ, only: [:new, :create]
     before_action :set_geo_hash, only: [:new, :create, :edit, :update]
 
     def index
@@ -45,6 +46,10 @@ module Org
     private
     def set_organ
       @organ = Organ.find params[:id]
+    end
+
+    def set_new_organ
+      @organ = Organ.new(organ_params)
     end
 
     def set_geo_hash
