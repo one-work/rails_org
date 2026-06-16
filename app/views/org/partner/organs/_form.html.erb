@@ -1,0 +1,20 @@
+<%= f.text_field :name, required: true, autofocus: true %>
+<%= f.file_field :logo %>
+<%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: @organ.area } if defined? RailsProfile %>
+<div class="field is-horizontal">
+  <div class="field-label"></div>
+  <div
+    data-controller="amap"
+    data-amap-key-value="7581fc92c99a88bc1c3a05fa8c55f2ac"
+    data-amap-code-value="e9bfe33eb20e7de78fa2cfded6323fe4"
+    data-amap-geo-value="<%= @ip_geo.to_json %>"
+    class="field-body flex-direction-column"
+  >
+    <%= f.hidden_field :geo, data: { amap_target: 'input' } %>
+    <div>
+      <input id="tipinput" class="input">
+    </div>
+    <div data-amap-target="container" style="height: 300px"></div>
+    <%= f.text_area :address, label: nil, data: { amap_target: 'address' } %>
+  </div>
+</div>
