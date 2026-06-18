@@ -44,5 +44,13 @@ module Org
       members
     end
 
+    def rails_role_user
+      if current_organ && current_member
+        current_member
+      else
+        super
+      end
+    end
+
   end
 end
