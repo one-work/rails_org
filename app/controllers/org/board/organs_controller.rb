@@ -9,7 +9,7 @@ module Org
       q_params = {}
       if current_organ
         q_params.merge! organ: { provider_id: current_organ.id }
-      else
+      elsif Organ.official.present?
         q_params.merge! organ: { provider_id: Organ.official.take.id }
       end
 
