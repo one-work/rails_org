@@ -2,14 +2,12 @@
   <main class="columns as-main">
     <div class="column is-narrow p-0 has-page">
       <%= render 'admin/nav' %>
-      <div class="flex-shrink-0">
-        <%= render 'admin/menu_bar' %>
-      </div>
+      <%= render 'admin/menu_bar' %>
     </div>
     <turbo-frame id="panel" refresh="morph" data-turbo-action="advance" class="column as-body">
       <ul class="breadcrumb has-succeeds-separator ml-3"><%= render 'breadcrumb' %></ul>
       <%= render 'alert' %>
-      <div class="box as-body">
+      <div class="box flex-grow-1 radius-bottom-none">
         <div class="mx-auto" style="width: 500px">
           <%= yield %>
         </div>
