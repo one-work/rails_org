@@ -7,8 +7,8 @@
     <turbo-frame id="panel" refresh="morph" data-turbo-action="advance" class="column as-body">
       <ul class="breadcrumb has-succeeds-separator ml-3"><%= render 'breadcrumb' %></ul>
       <%= render 'alert' %>
-      <div class="box flex-grow-1 radius-bottom-none">
-        <div class="mx-auto" style="width: 500px">
+      <div class="box has-page-centered radius-bottom-none">
+        <div style="width: 500px">
           <%= yield %>
         </div>
       </div>
