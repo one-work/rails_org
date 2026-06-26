@@ -6,16 +6,6 @@
   <dt><%= Org::Member.human_attribute_name(:identity) %></dt>
   <dd><%= @member.identity %></dd>
 </div>
-<% if defined? RailsWechat %>
-<div>
-  <dt><%= Org::Member.human_attribute_name(:corp_userid) %></dt>
-  <dd><%= @member.corp_userid %></dd>
-</div>
-<div>
-  <dt><%= Org::Member.human_attribute_name(:wechat_openid) %></dt>
-  <dd><%= @member.wechat_openid %></dd>
-</div>
-<% end %>
 <div>
   <dt><%= Org::Member.human_attribute_name(:department) %></dt>
   <dd>
