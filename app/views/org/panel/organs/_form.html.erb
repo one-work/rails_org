@@ -6,6 +6,7 @@
 <%= f.check_box :debug_enabled %>
 <%= f.check_box :partnership %>
 <%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: @organ.area } if defined? RailsProfile %>
+<% if f.object.respond_to?(:geo) %>
 <div class="field is-horizontal">
   <div class="field-label"></div>
   <div
@@ -23,3 +24,4 @@
     <%= f.text_area :address, label: nil, data: { amap_target: 'address' } %>
   </div>
 </div>
+<% end %>
