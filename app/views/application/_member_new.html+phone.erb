@@ -9,7 +9,7 @@
   <div class="pt-4 is-shadow-top">
     <div class="grid">
     <% roles.each do |role| %>
-      <%= button_tag name: 'organ[role_whos_attributes][][role_id]', value: role.id, class: 'cell as-boxed has-column-centered p-3' do %>
+      <%= button_tag name: 'organ[role_whos_attributes][][role_id]', value: role.id, data: { turbo_submits_with: '添加中' }, class: 'cell as-boxed has-column-centered p-3' do %>
         <%= svg_tag 'plus', class: 'icon is-medium' %>
         <span class="mt-1 text-grey size-0_8"><%= role.tip %></span>
       <% end %>
