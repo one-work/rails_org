@@ -53,9 +53,9 @@ module Org
     end
 
     def set_geo_hash
-      if @organ.geo
+      if @organ.respond_to?(:geo) && @organ.geo
         @ip_geo = @organ.geo_hash
-      elsif current_user.geo
+      elsif current_user.respond_to?(:geo) && current_user.geo
         @ip_geo = current_user.geo_hash
       else
         @ip_geo = { lat: 28.22778, lng: 112.93886 }
