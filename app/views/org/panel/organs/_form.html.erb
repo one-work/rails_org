@@ -4,6 +4,7 @@
 <%= f.file_field :logo %>
 <%= f.text_field :license %>
 <%= f.check_box :debug_enabled %>
+<%= f.check_box :partnership %>
 <%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: @organ.area } if defined? RailsProfile %>
 <div class="field is-horizontal">
   <div class="field-label"></div>

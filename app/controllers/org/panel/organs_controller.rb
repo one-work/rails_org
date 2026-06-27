@@ -73,6 +73,7 @@ module Org
         :geo,
         :address,
         :debug_enabled,
+        :partnership,
         :parent_ancestors,
         :area_ancestors,
         role_whos_attributes: [:id, :role_id, :_destroy]

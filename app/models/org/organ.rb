@@ -1,6 +1,7 @@
 module Org
   class Organ < ApplicationRecord
     include Com::Ext::Taxon
+    include Com::Ext::Geo
     include Model::Organ
     include Roled::Ext::Organ
     include Factory::Ext::Organ if defined? RailsFactory
