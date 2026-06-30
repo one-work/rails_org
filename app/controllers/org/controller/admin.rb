@@ -4,7 +4,7 @@ module Org
 
     def require_org_member
       return if current_member #&& current_organ && current_organ.self_and_ancestor_ids.include?(current_member.organ_id)
-      return if current_user.admin?
+      return if Current.session.mock_member
 
       if Current.session
         if current_user

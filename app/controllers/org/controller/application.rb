@@ -12,7 +12,7 @@ module Org
 
       resume_session
       if (request.subdomain == 'admin' || !RailsOrg.config.independent) && Current.session
-        @current_member = Current.session.member || Current.session.mocked_member
+        @current_member = Current.session.member
       elsif current_domain_organ
         @current_member = Current.session&.member ||
           (defined?(current_wechat_user) && current_wechat_user && current_wechat_user.members.find_by(organ_id: current_domain_organ.self_and_ancestor_ids)) ||
