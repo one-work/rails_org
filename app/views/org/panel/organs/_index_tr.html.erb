@@ -5,6 +5,12 @@
       href: url_for(controller: 'organ_domains', organ_id: model.id),
       icon: 'mobile',
       title: t('.organ_domains.index.title')
-    }
+    },
+    {
+      href: url_for(action: 'mock', id: model.id),
+      icon: 'hand-point-right',
+      title: t('.mock.title'),
+      target: '_blank'
+    },
   ) { yield }
 %>

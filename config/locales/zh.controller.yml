@@ -95,6 +95,8 @@ zh:
           title: 下级团队
         edit_roles:
           title: 权限管理
+        mock:
+          title: 以其身份
         invite:
           title: 邀请入驻
       organ_domains:
