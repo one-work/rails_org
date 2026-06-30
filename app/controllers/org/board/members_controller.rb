@@ -12,7 +12,7 @@ module Org
     end
 
     def logout
-      Current.session.update member_id: nil
+      Current.session.update member_id: nil, mock_member: false
 
       if current_user
         members = choose_only_member
