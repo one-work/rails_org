@@ -34,16 +34,6 @@ module Org
       end
     end
 
-    def choose_only_member
-      members = current_user.members.includes(:organ)
-      if members.size == 1
-        Current.session.update member_id: members.first.id
-        @current_member = Current.session.member
-        @current_organ = current_member.organ
-      end
-      members
-    end
-
     def rails_role_user
       if current_organ && current_member
         current_member

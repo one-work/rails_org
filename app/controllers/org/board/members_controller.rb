@@ -13,6 +13,13 @@ module Org
 
     def logout
       Current.session.update member_id: nil
+
+      if current_user
+        members = choose_only_member
+      else
+        members = Member.none
+      end
+      render 'choose_org_member', layout: 'admin_choose_member', locals: { members: members }
     end
 
     private
