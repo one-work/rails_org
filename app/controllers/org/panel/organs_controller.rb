@@ -68,6 +68,7 @@ module Org
         :code,
         :logo,
         :official,
+        :admin,
         :name_short,
         :license,
         :geo,

@@ -5,6 +5,7 @@
 <%= f.text_field :license %>
 <%= f.check_box :debug_enabled %>
 <%= f.check_box :partnership %>
+<%= f.check_box :admin %>
 <%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: @organ.area } if defined? RailsProfile %>
 <% if f.object.respond_to?(:geo) %>
 <div class="field is-horizontal">
