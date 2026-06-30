@@ -25,6 +25,14 @@ module Org
       render :show, locals: { model: @organ }
     end
 
+    def mock
+      redirect_to(
+        { controller: '/admin/home', host: @organ.admin_host, auth_token: current_user.auth_token },
+        allow_other_host: true,
+        status: :see_other
+      )
+    end
+
     def edit
       if defined? RailsShip
         @organ.area || @organ.build_area

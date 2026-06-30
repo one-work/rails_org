@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         get :children
         post :edit_roles
         post :invite
+        get :mock
       end
       resources :organ_domains
       resources :members do
