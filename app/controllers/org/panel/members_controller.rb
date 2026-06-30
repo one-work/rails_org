@@ -20,8 +20,10 @@ module Org
     end
 
     def mock
+      Current.session.update mock_member: true
+
       redirect_to(
-        { controller: '/admin/home', host: @organ.admin_host, auth_token: @member.auth_token },
+        { controller: '/admin/home', host: @organ.admin_host, auth_token: Current.session.once_token },
         allow_other_host: true,
         status: :see_other
       )
