@@ -18,3 +18,7 @@
   <%= svg_tag 'user-plus' %>
   <span><%= t('.invite.title') %></span>
 <% end %>
+<%= link_to({ action: 'mock' }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'hand-point-right' %>
+  <span><%= t('.mock.title') %></span>
+<% end %>
