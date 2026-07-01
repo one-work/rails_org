@@ -21,7 +21,7 @@ module Org
 
     def mock
       redirect_to(
-        { controller: '/admin/home', host: @organ.admin_host, auth_token: @member.auth_token },
+        { controller: '/me/home', host: @organ.admin_host, auth_token: @member.auth_token },
         allow_other_host: true,
         status: :see_other
       )
