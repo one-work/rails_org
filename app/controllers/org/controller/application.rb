@@ -11,12 +11,11 @@ module Org
       return @current_member if defined?(@current_member)
 
       resume_session
-      if (request.subdomain == 'admin' || !RailsOrg.config.independent) && Current.session
+      if request.subdomain == 'admin' && Current.session
         @current_member = Current.session.member
-      elsif current_domain_organ
+      elsif current_organ_domain
         @current_member = Current.session&.member ||
-          (defined?(current_wechat_user) && current_wechat_user && current_wechat_user.members.find_by(organ_id: current_domain_organ.self_and_ancestor_ids)) ||
-          (current_account && current_account.members.find_by(organ_id: current_domain_organ.self_and_ancestor_ids)) ||
+          (defined?(current_user) && current_user && current_user.members.find_by(organ_id: current_organ_domain.organ.self_and_ancestor_ids)) ||
           defined?(current_corp_user) && current_corp_user&.member
       else
         @current_member = Current.session&.member
@@ -51,9 +50,7 @@ module Org
 
     def current_organ_domain
       return @current_organ_domain if defined?(@current_organ_domain)
-      if RailsOrg.config.independent
-        @current_organ_domain = OrganDomain.annotate('get organ domain in org application').find_by(host: request.host)
-      end
+      @current_organ_domain = OrganDomain.annotate('get organ domain in org application').find_by(host: request.host)
     end
 
     def choose_only_member
