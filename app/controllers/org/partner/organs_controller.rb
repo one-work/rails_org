@@ -9,6 +9,7 @@ module Org
       }
       q_params.merge! params.permit(:id, 'name-like')
 
+      Current.session.update mock_member: false
       @organs = Organ.roots.with_attached_logo.includes(:organ_domains, :roles, :owner).default_where(q_params).unscope(:order).order(id: :desc).page(params[:page])
     end
 
