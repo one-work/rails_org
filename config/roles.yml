@@ -1,4 +1,2 @@
-org:
-  admin:
-    organs:
-      - index
+org/admin/organs:
+  - index
