@@ -71,7 +71,7 @@ module Org
     end
 
     def admin?
-      owned?
+      organ.admin? && owned?
     end
 
     def invitable?
