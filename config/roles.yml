@@ -1,2 +1,3 @@
-org/admin/organs:
-  - index
+default:
+  org/admin/organs:
+    - index
