@@ -1,2 +1,4 @@
 default:
   org/admin/organs: ['index']
+Org::Organ:
+  org/partner/organs: ['index']
