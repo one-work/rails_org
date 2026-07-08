@@ -113,6 +113,10 @@ zh:
           title: 以其身份
         edit_roles:
           title: 权限管理
+    partner:
+      organs:
+        index:
+          title: 门店管理
     our:
       title: 分支机构
       organs:
