@@ -24,22 +24,22 @@ module Org
       validate :validate_select_option
       validates :transfer_on, :reason_note, presence: true
 
-      after_initialize if: :new_record? do
-        self.from_office_id = self.member&.office_id
-        self.from_department_id = self.member&.department_id
-        self.from_job_title_id = self.member&.job_title_id
-        self.state = JobTransfer::states[:approved_sl] if self.member&.leading_department
-      end
+      after_initialize :init_from_member, if: :new_record?
       after_create_commit :send_notification
+    end
 
-      #acts_as_notify :default, only: []
+    def init_from_member
+      self.from_office_id = self.member&.office_id
+      self.from_department_id = self.member&.department_id
+      self.from_job_title_id = self.member&.job_title_id
+      self.state = JobTransfer::states[:approved_sl] if self.member&.leading_department
     end
 
     def approve_config
       {
         approved_sl: member.department&.leader,
         approved_om: member.office&.leader
-      }.with_indifferent_access
+      }
     end
 
     def next_operator
