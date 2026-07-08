@@ -1,0 +1,3 @@
+Org::Resign:
+  default:
+    only: ['reason_note', 'leave_on']

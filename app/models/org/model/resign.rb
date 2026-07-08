@@ -22,8 +22,6 @@ module Org
       }, default: 'init'
 
       after_create_commit :send_notification
-
-      #acts_as_notify only: [:reason_note, :leave_on]
     end
 
     def do_trigger(params = {})
@@ -36,7 +34,7 @@ module Org
           member: self.member,
           title: "Your resignation request has been #{self.state_i18n}.",
           body: "Your resignation request has been #{self.state_i18n}.",
-          link: url_helpers.my_resign_url,
+          link: Rails.app.url_for(controller: 'org/my/resigns', action: 'show', id: id),
           cc_emails: [
             self.member.office.leader.email
           ],
@@ -53,7 +51,7 @@ module Org
         cc_emails: [
           self.member.email
         ],
-        link: url_helpers.admin_resign_url(id: self.id),
+        link: Rails.app.url_for(controller: 'org/admin/resigns', action: 'show', id: id),
         verbose: true
       )
     end
