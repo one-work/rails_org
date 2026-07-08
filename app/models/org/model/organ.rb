@@ -23,7 +23,7 @@ module Org
       belongs_to :provider, class_name: 'Organ', optional: true
       has_one :owner, -> { where(owned: true) }, class_name: 'Member'
 
-      has_many :organs, class_name: self.name, primary_key: :provider_id
+      has_many :organs, class_name: self.name, foreign_key: :provider_id
       has_many :supports, -> { where(department_id: nil) }, dependent: :destroy_async
       has_many :departments, dependent: :destroy_async
       has_many :members, dependent: :destroy  # 这里不能用异步，因为可能删除之后就会跳转到选择 organs 的页面
