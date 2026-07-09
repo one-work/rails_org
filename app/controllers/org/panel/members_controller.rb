@@ -1,7 +1,7 @@
 module Org
   class Panel::MembersController < Panel::BaseController
     before_action :set_organ, except: [:all]
-    before_action :set_member, only: [:show, :edit, :update, :destroy, :actions, :mock, :edit_roles]
+    before_action :set_member, only: [:show, :edit, :update, :destroy, :actions, :mock, :edit_roles, :edit_mock_roles]
     before_action :set_new_member, only: [:new, :create]
     before_action :set_filter_columns, only: [:index, :all]
 

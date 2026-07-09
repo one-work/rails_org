@@ -1,6 +1,6 @@
 module Org
   class Panel::OrgansController < Panel::BaseController
-    before_action :set_organ, only: [:show, :edit, :update, :edit_roles, :children, :invite, :mock]
+    before_action :set_organ, only: [:show, :edit, :update, :edit_roles, :edit_mock_roles, :children, :invite, :mock]
     before_action :set_new_organ, only: [:new, :create]
     before_action :set_geo_hash, only: [:new, :create, :edit, :update]
 
@@ -8,7 +8,7 @@ module Org
       q_params = {}
       q_params.merge! params.permit(:id, 'name-like')
 
-      @organs = Organ.roots.with_attached_logo.includes(:organ_domains, :roles, :owner).default_where(q_params).unscope(:order).order(id: :desc).page(params[:page])
+      @organs = Organ.roots.with_attached_logo.includes(:organ_domains, :owner, role_whos: :role).default_where(q_params).unscope(:order).order(id: :desc).page(params[:page])
     end
 
     def search

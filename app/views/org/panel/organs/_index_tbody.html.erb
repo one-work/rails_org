@@ -22,12 +22,24 @@
 </td>
 <td>
   <div>
-    <% model.roles.pluck(:name).each do |role| %>
-      <span><%= role %></span>
+    <% model.role_whos.normal.each do |role_who| %>
+      <span><%= role_who.role.name %></span>
     <% end %>
   </div>
   <div>
     <%= button_to({ action: 'edit_roles', id: model.id }, aria: { label: t('.edit_roles.title') }) do %>
+      <%= svg_tag 'user-shield' %>
+    <% end %>
+  </div>
+</td>
+<td>
+  <div>
+    <% model.role_whos.mock.each do |role_who| %>
+      <span><%= role_who.role.name %></span>
+    <% end %>
+  </div>
+  <div>
+    <%= button_to({ action: 'edit_mock_roles', id: model.id }, aria: { label: t('.edit_roles.title') }) do %>
       <%= svg_tag 'user-shield' %>
     <% end %>
   </div>
