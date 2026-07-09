@@ -31,6 +31,10 @@ module Org
       @roles = @member.visible_roles
     end
 
+    def edit_mock_roles
+      @roles = @member.visible_roles
+    end
+
     private
     def set_organ
       @organ = Organ.find params[:organ_id]

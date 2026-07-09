@@ -45,6 +45,10 @@ module Org
       @roles = @organ.visible_roles
     end
 
+    def edit_mock_roles
+      @roles = @organ.visible_roles
+    end
+
     def children
       @organs = @organ.children.page(params[:page])
     end

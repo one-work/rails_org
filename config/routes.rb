@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       member do
         get :children
         post :edit_roles
+        post :edit_mock_roles
         post :invite
         get :mock
       end
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
         member do
           get :mock
           post :edit_roles
+          post :edit_mock_roles
         end
       end
     end
