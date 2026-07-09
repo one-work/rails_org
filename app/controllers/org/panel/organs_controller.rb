@@ -87,7 +87,7 @@ module Org
         :partnership,
         :parent_ancestors,
         :area_ancestors,
-        role_whos_attributes: [:id, :role_id, :_destroy]
+        role_whos_attributes: [:id, :role_id, :mock, :_destroy]
       )
     end
 

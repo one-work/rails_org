@@ -59,7 +59,7 @@ module Org
         :enabled,
         :owned,
         :avatar,
-        role_whos_attributes: [:id, :role_id, :_destroy],
+        role_whos_attributes: [:id, :role_id, :mock, :_destroy],
         member_departments_attributes: {},
       )
     end
