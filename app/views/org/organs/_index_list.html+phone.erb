@@ -1,0 +1,14 @@
+<div data-controller="page" data-page-url-value="<%= url_for(action: 'index') %>" class="has-page-grow">
+  <div id="tbody" class="is-padding-less">
+    <%= yield %>
+  </div>
+  <% if @organs.blank? %>
+    <%= render 'page_blank' %>
+  <% else %>
+    <% if @organs.total_pages <= @organs.current_page %>
+      <%= render 'page_no_more' %>
+    <% elsif @organs.total_pages > @organs.current_page %>
+      <%= render partial: 'page_loading', locals: { all: @organs } %>
+    <% end %>
+  <% end %>
+</div>
