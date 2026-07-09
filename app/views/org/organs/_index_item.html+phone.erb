@@ -15,7 +15,8 @@
     <span><%= model.address %></span>
   </p>
   <p>
-    <span>距离：</span>
+  <% if model.distance.presence %>
     <span><%= model.distance %></span>
+  <% end %>
   </p>
 <% end %>
