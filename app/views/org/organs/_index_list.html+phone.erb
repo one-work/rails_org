@@ -1,5 +1,5 @@
 <div data-controller="page" data-page-url-value="<%= url_for(action: 'index') %>" class="has-page-grow">
-  <div id="tbody" class="is-padding-less">
+  <div id="tbody" class="as-list">
     <%= yield %>
   </div>
   <% if @organs.blank? %>
