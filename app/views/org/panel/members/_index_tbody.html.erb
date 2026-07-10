@@ -8,10 +8,20 @@
 <td><%= model.join_on %></td>
 <td>
   <div class="tags">
-    <% model.roles.pluck(:name).each do |role| %>
-      <span class="tag"><%= role %></span>
+    <% model.roles.each do |role| %>
+      <span class="tag"><%= role.name %></span>
     <% end %>
     <%= button_to({ action: 'edit_roles', id: model.id }) do %>
+      <%= svg_tag 'user-shield' %>
+    <% end %>
+  </div>
+</td>
+<td>
+  <div class="tags">
+    <% model.mock_roles.each do |role| %>
+      <span class="tag"><%= role.name %></span>
+    <% end %>
+    <%= button_to({ action: 'edit_mock_roles', id: model.id }) do %>
       <%= svg_tag 'user-shield' %>
     <% end %>
   </div>
