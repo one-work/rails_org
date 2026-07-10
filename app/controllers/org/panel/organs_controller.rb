@@ -8,7 +8,7 @@ module Org
       q_params = {}
       q_params.merge! params.permit(:id, 'name-like')
 
-      @organs = Organ.roots.with_attached_logo.includes(:organ_domains, :owner, role_whos: :role).default_where(q_params).unscope(:order).order(id: :desc).page(params[:page])
+      @organs = Organ.roots.with_attached_logo.includes(:organ_domains, :owner, :roles, :mock_roles).default_where(q_params).unscope(:order).order(id: :desc).page(params[:page])
     end
 
     def search

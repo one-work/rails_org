@@ -22,8 +22,8 @@
 </td>
 <td>
   <div>
-    <% model.role_whos.normal.each do |role_who| %>
-      <span><%= role_who.role.name %></span>
+    <% model.roles.each do |role| %>
+      <span><%= role.name %></span>
     <% end %>
   </div>
   <div>
@@ -34,8 +34,8 @@
 </td>
 <td>
   <div>
-    <% model.role_whos.mock.each do |role_who| %>
-      <span><%= role_who.role.name %></span>
+    <% model.mock_roles.each do |role| %>
+      <span><%= role.name %></span>
     <% end %>
   </div>
   <div>
