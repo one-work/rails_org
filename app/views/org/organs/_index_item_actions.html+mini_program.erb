@@ -11,7 +11,7 @@
       <%= yield %>
     <% end %>
     <div class="media-right">
-      <%= link_to({ controller: 'factory/productions', host: model.host, **{ auth_token: Current.session&.once_token }.compact }, class: 'button is-primary') do %>
+      <%= link_to({ controller: 'factory/productions', host: model.mp_host, **{ auth_token: Current.session&.once_token }.compact }, class: 'button is-primary') do %>
         <span>去下单</span>
       <% end %>
     </div>
