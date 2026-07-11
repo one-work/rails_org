@@ -21,7 +21,7 @@ module Org
         self.state ||= 'init'
         self.start_on ||= self.member&.join_on
       end
-      before_save :compute_finish_on, -> { start_on_changed? }
+      before_save :compute_finish_on, if: -> { start_on_changed? }
 
       validates :tutor_id, uniqueness: { scope: [:member_id, :kind] }
       #validates :kind, presence: true
