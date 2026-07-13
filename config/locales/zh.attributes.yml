@@ -62,6 +62,7 @@ zh:
         name_short: 简称
         area_id: 地区
         address: 地址
+        address_short: 简短地址（不超过20字）
         timezone: 时区
         locale: 语言
         official: 是否官方

@@ -12,7 +12,7 @@
   >
     <%= f.hidden_field :geo, data: { amap_target: 'input' } %>
     <div>
-      <input id="tipinput" class="input">
+      <input id="tipinput" placeholder="输入关键词搜索" class="input">
     </div>
     <div data-amap-target="container" style="height: 300px"></div>
     <%= f.text_area :address, label: nil, data: { amap_target: 'address' } %>
