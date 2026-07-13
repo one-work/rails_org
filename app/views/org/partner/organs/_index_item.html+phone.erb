@@ -3,6 +3,12 @@
     <%= image_tag model.logo, class: 'image is-24x24' if model.logo.attached? %>
     <span><%= model.name %></span>
   </div>
+  <% if model.printer_aims_count > 0 %>
+    <span class="tag">
+      <%= svg_tag 'bluetooth' %>
+      <span><%= model.printer_aims_count %></span>
+    </span>
+  <% end %>
 </div>
 <div class="size-7">
   <%= svg_tag 'location-dot' %>
