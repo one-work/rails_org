@@ -1,5 +1,6 @@
 default:
   org/admin/organs: ['index']
-  org/admin/current_organ: all
+  org/admin/members: ['index']
+  org/admin/current_organ: ['show']
 Org::Organ:
   org/partner/organs: ['index']
