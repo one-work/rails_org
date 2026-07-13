@@ -87,6 +87,7 @@ module Org
         :license,
         :geo,
         :address,
+        :address_short,
         :debug_enabled,
         :partnership,
         :parent_ancestors,
