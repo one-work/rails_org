@@ -6,6 +6,7 @@ module Org
       attribute :name, :string
       attribute :name_short, :string
       attribute :address, :string
+      attribute :address_short, :string
       attribute :official, :boolean, default: false, comment: '是否官方'
       attribute :joinable, :boolean, default: false, comment: '是否可搜索并加入'
       attribute :code, :string
@@ -39,6 +40,7 @@ module Org
       scope :official, -> { where(official: true) }
 
       validates :name, presence: true
+      validates :address_short, length: { maximum: 20 }
       validates :code, uniqueness: true, allow_blank: true
     end
 
