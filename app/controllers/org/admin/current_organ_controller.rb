@@ -1,12 +1,6 @@
 module Org
   class Admin::CurrentOrganController < Admin::BaseController
 
-    def show
-    end
-
-    def edit
-    end
-
     def update
       current_organ.assign_attributes(organ_params)
 
