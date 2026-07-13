@@ -4,9 +4,15 @@
     <span><%= model.name %></span>
   </div>
   <% if model.printer_aims_count > 0 %>
-    <span class="tag">
+    <span class="tag is-primary">
       <%= svg_tag 'bluetooth' %>
       <span><%= model.printer_aims_count %></span>
+    </span>
+  <% end %>
+  <% if model.members_count > 0 %>
+    <span class="tag is-info">
+      <%= svg_tag 'users' %>
+      <span><%= model.members_count %></span>
     </span>
   <% end %>
 </div>
