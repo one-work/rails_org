@@ -48,11 +48,7 @@ module Org
         member: self.member.office.leader,
         body: "#{self.member.name} has requested resignation",
         title: "#{self.member.name} has requested resignation",
-        cc_emails: [
-          self.member.email
-        ],
-        link: Rails.app.url_for(controller: 'org/admin/resigns', action: 'show', id: id),
-        verbose: true
+        link: Rails.app.url_for(controller: 'org/admin/resigns', action: 'show', id: id)
       )
     end
 
