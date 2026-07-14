@@ -20,3 +20,8 @@
   <%= svg_tag 'location-dot' %>
   <span><%= model.address %></span>
 </div>
+<div class="tags mt-1">
+<% model.dispatches.each do |dispatch| %>
+  <span class="tag <%= dispatch == model.dispatch ? 'is-primary' : 'is-default' %>"><%= Org::Organ.enum_i18n :dispatch, dispatch %></span>
+<% end %>
+</div>
