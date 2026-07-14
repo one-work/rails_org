@@ -1,5 +1,5 @@
 <% if @members.present? %>
-<div class="buttons as-bottom">
+<div id="buttons" class="buttons as-bottom">
   <%= link_to({ action: 'new' }, class: 'button is-fullwidth is-primary') do %>
     <%= svg_tag 'plus' %>
     <span><%= t('.new.title') %></span>
