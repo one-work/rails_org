@@ -12,7 +12,7 @@
 <% if model.address.present? %>
   <p class="size-7">
     <%= svg_tag 'location-dot', class: 'icon is-small text-grey' %>
-    <span><%= model.address %></span>
+    <span><%= model.address_short.presence || model.address %></span>
   </p>
   <p>
   <% if model.distance.presence %>
