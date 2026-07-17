@@ -1,18 +1,14 @@
-<div class="">
-  <% @organs.each do |organ| %>
-  <div class="media">
-    <div class="media-left">
-      <%= image_tag organ.logo.variant(resize_to_limit: [150, 150]), class: 'image' if organ.logo.attached? %>
-    </div>
-    <div class="media-content">
-      <div>
-        <span class="has-grey-text"><%= organ.name %></span>
-      </div>
-      <p><%= organ.address %></p>
-    </div>
-    <div class="media-right">
-      <%= link_to organ.name, my_root_url(host: organ.host), class: 'button is-link' %>
-    </div>
+<div class="media">
+  <div class="media-left">
+    <%= image_tag model.logo.variant(resize_to_limit: [150, 150]), class: 'image' if model.logo.attached? %>
   </div>
-  <% end %>
+  <div class="media-content">
+    <div>
+      <span class="has-grey-text"><%= model.name %></span>
+    </div>
+    <p><%= model.address %></p>
+  </div>
+  <div class="media-right">
+    <%= link_to model.name, { controller: 'home', host: model.host }, class: 'button is-link' %>
+  </div>
 </div>
