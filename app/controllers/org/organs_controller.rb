@@ -3,7 +3,9 @@ module Org
     before_action :set_organ, only: [:show]
 
     def index
-      q_params = {}
+      q_params = {
+        production_enabled: true
+      }
       if current_organ
         q_params.merge! provider_id: current_organ.id
       end
