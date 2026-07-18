@@ -49,7 +49,7 @@ module Org
     end
 
     def choose_only_member
-      members = current_user.members.includes(:organ)
+      members = current_user.members.includes(organ: :cache)
       if members.size == 1
         Current.session.update member_id: members.first.id
         @current_member = Current.session.member
