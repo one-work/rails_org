@@ -1,7 +1,11 @@
 <div class="card">
   <div class="card-image">
     <figure class="image is-1by1">
-      <%= image_tag model.product.logo if model.product.logo.attached? %>
+    <% if model.product.logo.attached? %>
+      <%= image_tag model.product.logo %>
+    <% else %>
+      <%= image_tag 'product_default.jpg' %>
+    <% end %>
     </figure>
   </div>
   <div class="card-content text-centered p-1">
