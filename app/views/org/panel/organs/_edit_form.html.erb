@@ -1,6 +1,6 @@
 <%= form_with theme: 'modal', model: @organ, url: { action: 'update' } do |f| %>
   <%= render 'modal_header' %>
-  <section class="modal-card-body">
+  <section id="modal-card-body" class="modal-card-body">
     <%= render 'error_messages', target: @organ %>
     <%= render partial: 'com/nodes/children_select', locals: { f: f, node: Org::Organ.root } %>
     <%= render partial: 'form', locals: { f: f } %>
