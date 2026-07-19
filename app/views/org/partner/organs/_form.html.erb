@@ -15,7 +15,7 @@
       <input id="tipinput" placeholder="输入关键词搜索" class="input">
     </div>
     <div data-amap-target="container" style="height: 300px"></div>
-    <%= f.text_area :address, label: nil, data: { amap_target: 'address' } %>
-    <%= f.text_area :address_short, maxlength: 20, data: { amap_target: 'address' } %>
+    <%= f.text_area :address, label: nil, required: true, data: { amap_target: 'address' } %>
+    <%= f.text_area :address_short, required: true, maxlength: 20, data: { amap_target: 'address' } %>
   </div>
 </div>
