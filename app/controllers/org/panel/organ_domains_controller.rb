@@ -3,6 +3,7 @@ module Org
     before_action :set_organ, except: [:all]
     before_action :set_organ_domain, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_organ_domain, only: [:new, :create]
+    before_action :set_filter_columns, only: [:index, :all]
 
     def index
       @organ_domains = @organ.organ_domains.order(id: :desc).page(params[:page])
@@ -26,6 +27,12 @@ module Org
 
     def set_new_organ_domain
       @organ_domain = @organ.organ_domains.build(organ_domain_params)
+    end
+
+    def filter_columns
+      {
+        'host' => { type: 'search', default: true }
+      }
     end
 
     def organ_domain_params
