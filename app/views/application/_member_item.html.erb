@@ -5,7 +5,9 @@
       <% if model.owned %>
         <span class="tag is-success"><%= model.owned_i18n %></span>
       <% end %>
-      <span class="tag"><%= model.cache.str_roles %></span>
+      <% model.cache.roles_arr.each do |role_str| %>
+        <span class="tag"><%= role_str %></span>
+      <% end %>
     </p>
   </div>
   <div class="media-right">
