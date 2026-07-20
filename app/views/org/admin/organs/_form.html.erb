@@ -1,7 +1,7 @@
 <%= f.text_field :name, required: true, autofocus: true %>
 <%= f.text_field :name_short %>
 <%= f.text_field :code %>
-<%= f.file_field :logo %>
+<%= render partial: 'com/attachments/list_field', locals: { target: f.object.logo, f: f } %>
 <%= f.file_field :bar_logo %>
 <%= f.file_field :bar_logo_invert %>
 <%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: @organ.area } %>

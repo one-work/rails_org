@@ -1,6 +1,6 @@
 <%= render 'error_messages', target: @member %>
 <%= f.text_field :name %>
-<%= f.file_field :avatar %>
+<%= render partial: 'com/attachments/list_field', locals: { target: f.object.avatar, f: f } %>
 <%= f.fields :member_departments, label: false, wrap: { all: nil, input: 'field' } do |ef| %>
   <%= render partial: 'item_form', locals: { ef: ef } %>
 <% end %>

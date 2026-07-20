@@ -1,7 +1,7 @@
 <%= f.text_field :name, required: true, autofocus: true %>
 <%= f.text_field :name_short %>
 <%= f.text_field :code %>
-<%= f.file_field :logo %>
+<%= render partial: 'com/attachments/list_field', locals: { target: f.object.logo, f: f } %>
 <%= f.text_field :license %>
 <%= f.check_box :debug_enabled %>
 <%= f.check_box :partnership %>

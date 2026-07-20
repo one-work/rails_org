@@ -2,7 +2,7 @@
   <%= render 'error_messages', target: @organ %>
   <%= f.text_field :name, required: true %>
   <%= f.text_field :name_short %>
-  <%= f.file_field :logo %>
+  <%= render partial: 'com/attachments/list_field', locals: { target: f.object.logo, f: f } %>
   <%= render partial: 'com/nodes/outer_select', locals: { f: f, node: @organ.area, outer: 'area' } %>
   <%= f.text_area :address %>
   <%= f.time_zone_select :timezone %>

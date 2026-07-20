@@ -19,4 +19,4 @@
 <% end %>
 <%= f.text_field :name, required: true %>
 <%= f.number_field :needed_number %>
-<%= f.file_field :logo %>
+<%= render partial: 'com/attachments/list_field', locals: { target: f.object.logo, f: f } %>
