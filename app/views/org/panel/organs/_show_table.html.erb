@@ -3,6 +3,10 @@
   <dd><%= @organ.name %></dd>
 </div>
 <div>
+  <dt><%= Org::Organ.human_attribute_name(:logo) %></dt>
+  <dd><%= image_tag @organ.logo.url, class: 'image' if @organ.logo.attached? %></dd>
+</div>
+<div>
   <dt><%= Org::Organ.human_attribute_name(:name_short) %></dt>
   <dd><%= @organ.name_short %></dd>
 </div>
