@@ -3,9 +3,16 @@ module Org
     before_action :set_member, only: [:show, :login, :edit, :update]
 
     def login
-      if ['admin', 'demo', 'partner'].include? request.subdomain
+      if ['admin', 'demo'].include? request.subdomain
         Current.session.update member_id: @member.id
         redirect_to '/'
+      elsif ['partner'].include? request.subdomain
+        Current.session.update member_id: @member.id
+        if @member.organ.partnership
+          redirect_to '/'
+        else
+          redirect_to({ host: @member.organ.admin_host, auth_token: Current.session.once_token }, allow_other_host: true)
+        end
       else
         refresh_or_redirect_to({ controller: '/me/home', host: @member.organ.admin_host, auth_token: @member.auth_token }, allow_other_host: true)
       end
