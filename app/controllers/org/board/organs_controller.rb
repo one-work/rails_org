@@ -54,9 +54,8 @@ module Org
     def set_create_organ
       @organ = Organ.new(organ_params)
       @member = @organ.members.build(
-        identity: Current.session.identity.to_s,
-        owned: true,
-        **organ_params.slice(:role_whos_attributes)
+        identity: Current.session.identity,
+        owned: true
       )
     end
 
