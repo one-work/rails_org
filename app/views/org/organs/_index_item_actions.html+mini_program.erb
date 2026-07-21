@@ -17,6 +17,6 @@
     </div>
   </div>
   <div class="cards is-4">
-    <%= render partial: 'card', collection: model.top_productions, as: :model %>
+    <%= render partial: 'card', collection: model.top_productions.with_attached_logo, as: :model %>
   </div>
 </div>
