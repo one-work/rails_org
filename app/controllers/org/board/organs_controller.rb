@@ -26,7 +26,7 @@ module Org
 
     def create_admin
       if @organ.save
-        if ['admin'].include?(request.subdomain)
+        if ['admin', 'partner'].include?(request.subdomain)
           Current.session.update member_id: @member.id
           url = '/'
         elsif ['demo'].include?(request.subdomain)
