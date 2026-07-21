@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.app.routes.draw do
   concern :org_panel do
     resources :organs do
       collection do

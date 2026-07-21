@@ -4,7 +4,7 @@ module Org
 
     def current_organ
       return @current_organ if defined?(@current_organ)
-      return if params[:namespace] == 'panel' && Rails.application.routes.default_url_options[:host] == request.host
+      return if params[:namespace] == 'panel' && Rails.app.routes.default_url_options[:host] == request.host
 
       if current_organ_domain
         @current_organ = current_organ_domain.organ

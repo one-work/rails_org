@@ -11,7 +11,7 @@ module Org
 
     included do
       attribute :subdomain, :string
-      attribute :domain, :string, default: Rails.application.routes.default_url_options[:host]
+      attribute :domain, :string, default: Rails.app.routes.default_url_options[:host]
       attribute :host, :string, index: true
       attribute :default, :boolean, default: false
       attribute :beian, :string, comment: '备案号'
@@ -21,7 +21,7 @@ module Org
       enum :scheme, {
         http: 'http',
         https: 'https'
-      }, default: Rails.application.routes.default_url_options[:protocol].presence || 'https'
+      }, default: Rails.app.routes.default_url_options[:protocol].presence || 'https'
 
       enum :kind, {
         frontend: 'frontend',
@@ -57,8 +57,8 @@ module Org
 
     def options
       {
-        host: host || Rails.application.routes.default_url_options[:host],
-        protocol: scheme.presence || Rails.application.routes.default_url_options[:protocol]
+        host: host || Rails.app.routes.default_url_options[:host],
+        protocol: scheme.presence || Rails.app.routes.default_url_options[:protocol]
       }
     end
 
