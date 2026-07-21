@@ -57,8 +57,8 @@ module Org
 
       #before_save :sync_tutorials, if: -> { join_on_changed? }
       #before_save :sync_avatar_from_user, if: -> { identity_changed? && user }
+      before_create :init_roles
       after_create_commit :increment_counts_to_users
-      after_create_commit :init_role_ids!
     end
 
     def display_uid
@@ -162,9 +162,8 @@ module Org
       session.once_token
     end
 
-    def init_role_ids!
+    def init_roles
       self.assign_attributes organ.role_whos_attributes
-      self.save
     end
 
     def increment_counts_to_users
