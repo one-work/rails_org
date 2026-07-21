@@ -3,13 +3,10 @@ module Org
     before_action :set_member, only: [:show, :login, :edit, :update]
 
     def login
-      if ['admin', 'demo'].include? request.subdomain
-        Current.session.update member_id: @member.id
-        redirect_to '/'
-      elsif ['partner'].include? request.subdomain
+      if ['admin', 'demo', 'partner'].include? request.subdomain
         Current.session.update member_id: @member.id
         if @member.organ.partnership
-          redirect_to '/'
+          redirect_to({ host: "partner.#{Rails.app.routes.default_url_options[:host]}", auth_token: Current.session.once_token }, allow_other_host: true)
         else
           redirect_to({ host: "admin.#{Rails.app.routes.default_url_options[:host]}", auth_token: Current.session.once_token }, allow_other_host: true)
         end
