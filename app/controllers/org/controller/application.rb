@@ -49,7 +49,12 @@ module Org
     end
 
     def choose_only_member
-      members = current_user.members.includes(organ: :cache)
+      if request.subdomain == 'partner'
+        members = current_user.members.includes(organ: :cache).where(organ: { partnership: true })
+      else
+        members = current_user.members.includes(organ: :cache)
+      end
+
       if members.size == 1
         Current.session.update member_id: members.first.id
         @current_member = Current.session.member
