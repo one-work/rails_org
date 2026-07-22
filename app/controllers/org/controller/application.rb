@@ -52,7 +52,7 @@ module Org
       if request.subdomain == 'partner'
         members = current_user.members.includes(organ: :cache).where(organ: { partnership: true })
       else
-        members = current_user.members.includes(organ: :cache)
+        members = current_user.members.includes(organ: :cache).where(organ: { partnership: false })
       end
 
       if members.size == 1
