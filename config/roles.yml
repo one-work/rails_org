@@ -2,5 +2,6 @@ default:
   org/admin/organs: read
   org/admin/members: read
   org/admin/current_organ: ['show']
+  org/me/members: write
 Org::Organ:
   org/partner/organs: ['index']
