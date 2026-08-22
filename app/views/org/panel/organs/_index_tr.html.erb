@@ -12,5 +12,11 @@
       title: t('.mock.title'),
       target: '_blank'
     },
+    {
+      href: url_for(controller: '/home', host: model.host, auth_token: Current.session.once_token),
+      icon: 'eye',
+      title: '预览',
+      target: '_blank'
+    }
   ) { yield }
 %>
