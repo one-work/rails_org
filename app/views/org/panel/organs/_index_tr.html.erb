@@ -17,6 +17,11 @@
       icon: 'eye',
       title: '预览',
       target: '_blank'
+    },
+    {
+      action: url_for(action: 'invite', id: model.id),
+      icon: 'user-plus',
+      title: t('.invite.title')
     }
   ) { yield }
 %>
