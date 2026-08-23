@@ -4,7 +4,7 @@
 </div>
 <div>
   <dt><%= Org::Organ.human_attribute_name(:logo) %></dt>
-  <dd><%= image_tag @organ.logo.url, class: 'image' if @organ.logo.attached? %></dd>
+  <dd><%= image_tag @organ.logo.variant(resize_to_limit: [32, 32]), class: 'image is-32x32' if @organ.logo.attached? %></dd>
 </div>
 <div>
   <dt><%= Org::Organ.human_attribute_name(:name_short) %></dt>
