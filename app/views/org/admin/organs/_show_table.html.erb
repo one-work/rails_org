@@ -24,7 +24,7 @@
 </div>
 <div>
   <dt><%= Org::Organ.human_attribute_name(:redirect_url) %></dt>
-  <dd><%= @organ.redirect_url %></dd>
+  <dd><%= link_to @organ.redirect_url, target: '_blank' %></dd>
 </div>
 <div>
   <dt><%= Org::Organ.human_attribute_name(:service_url) %></dt>
