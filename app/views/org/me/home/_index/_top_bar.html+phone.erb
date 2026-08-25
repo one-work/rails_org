@@ -1,7 +1,7 @@
 <div class="as-bar">
-  <%= link_to('/', class: 'px-4') do %>
-    <%= svg_tag 'angle-left', kind: 'regular' %>
-  <% end %>
+  <button data-controller="back" class="px-5">
+    <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
+  </button>
   <span class="bar-title"><%= t('.title') %></span>
   <i class="px-5"></i>
 </div>
