@@ -1,15 +1,7 @@
 <div class="as-bar">
-  <% if current_state %>
-    <%= link_to(current_state.prev_path, text: true, class: 'px-4') do %>
-      <%= svg_tag 'angle-left', kind: 'regular' %>
-    <% end %>
-  <% elsif tab_item_items.exclude?(request.path) %>
-    <%= link_to({ controller: 'board/home' }, class: 'px-4') do %>
-      <%= svg_tag 'angle-left', kind: 'regular' %>
-    <% end %>
-  <% else %>
-    <i class="px-5"></i>
-  <% end %>
+  <button data-controller="back" class="px-5">
+    <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
+  </button>
   <div class="bar-title"><%= t('.title') %></div>
   <i class="px-5"></i>
 </div>
