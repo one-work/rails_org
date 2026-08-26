@@ -62,7 +62,7 @@ module Org
     end
 
     def display_uid
-      identity.presence
+      identity.presence.truncate(28)
     end
 
     def set_current_cart(organ_id)
