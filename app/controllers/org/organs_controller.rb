@@ -6,7 +6,9 @@ module Org
       q_params = {
         production_enabled: true
       }
-      if current_organ
+      if current_organ&.official
+        q_params.merge! provider_id: [current_organ.id, nil]
+      elsif current_organ
         q_params.merge! provider_id: current_organ.id
       end
 
