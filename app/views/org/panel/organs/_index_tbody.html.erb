@@ -11,6 +11,9 @@
     <% if model.name_short.present? %>
       <span class="text-grey">(<%= model.name_short %>)</span>
     <% end %>
+    <% if model.provider %>
+      <span class="tag"><%= model.provider.name %></span>
+    <% end %>
   </p>
   <p class="text-grey"><time data-controller="time" data-format="human"><%= model.created_at.to_fs(:iso8601) %></time></p>
 </td>
