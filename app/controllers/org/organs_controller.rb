@@ -13,8 +13,8 @@ module Org
 
       @organs = Organ.includes(:organ_domains).with_attached_logo.default_where(q_params).page(params[:page])
 
-      if params[:longitude] && params[:latitude]
-        @organs = @organs.near(params[:longitude], params[:latitude])
+      if session[:longitude] && session[:latitude]
+        @organs = @organs.near(session[:longitude], session[:latitude])
       else
         @organs = @organs.order(id: :asc)
       end
