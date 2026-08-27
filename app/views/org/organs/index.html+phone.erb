@@ -6,6 +6,4 @@
 
 <%= paginate @organs %>
 
-<% if (session.keys & ['latitude', 'longitude']).blank? %>
 <div data-controller="geo" data-geo-url-value="<%= url_for(controller: 'com/common', action: 'geo') %>"></div>
-<% end %>
