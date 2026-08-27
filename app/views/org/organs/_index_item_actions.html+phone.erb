@@ -2,7 +2,7 @@
   <div class="media p-3 mb-0">
     <div class="media-left align-self-auto">
       <% if model.logo.attached? %>
-        <%= image_tag model.logo, class: 'image is-64x64' %>
+        <%= image_tag model.logo.variant(resize_to_limit: [64, 64]), class: 'image is-64x64' %>
       <% else %>
         <%= image_tag 'logo_organ.png', class: 'image is-64x64' %>
       <% end %>
