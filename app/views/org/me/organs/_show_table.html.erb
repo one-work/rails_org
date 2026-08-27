@@ -1,6 +1,8 @@
 <div>
   <dt><%= Org::Organ.human_attribute_name(:name) %></dt>
-  <dd><%= @organ.name %></dd>
+  <dd>
+    <%= text_field_tag 'organ[name]', @organ.name, class: 'input', form: 'show-form', data: { single_input_target: 'input' } %>
+  </dd>
 </div>
 <div>
   <dt><%= Org::Organ.human_attribute_name(:roles) %></dt>

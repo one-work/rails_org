@@ -22,5 +22,11 @@ module Org
       @organ = current_member.organ
     end
 
+    def organ_params
+      params.fetch(:organ, {}).permit(
+        :name
+      )
+    end
+
   end
 end

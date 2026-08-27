@@ -151,10 +151,8 @@ zh:
         qrcodes:
           title: 邀请同事
       organs:
-        index:
-          title: 门店列表
         show:
-          title: 注销门店
+          title: 门店管理
         new:
           title: 创建新门店
         destroy:
