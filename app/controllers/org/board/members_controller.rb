@@ -5,13 +5,15 @@ module Org
     def login
       if ['admin', 'demo', 'partner'].include? request.subdomain
         Current.session.update member_id: @member.id
+        session[:auth_token] = Current.session.once_token
         if @member.organ.partnership
-          redirect_to({ controller: '/partner/home', host: "partner.#{Rails.app.routes.default_url_options[:host]}", auth_token: Current.session.once_token }, allow_other_host: true)
+          redirect_to({ controller: '/partner/home', host: "partner.#{Rails.app.routes.default_url_options[:host]}" }, allow_other_host: true)
         else
-          redirect_to({ controller: '/me/home', host: "admin.#{Rails.app.routes.default_url_options[:host]}", auth_token: Current.session.once_token }, allow_other_host: true)
+          redirect_to({ controller: '/me/home', host: "admin.#{Rails.app.routes.default_url_options[:host]}" }, allow_other_host: true)
         end
       else
-        refresh_or_redirect_to({ controller: '/me/home', host: @member.organ.admin_host, auth_token: @member.auth_token }, allow_other_host: true)
+        session[:auth_token] = @member.auth_token
+        redirect_to({ controller: '/me/home', host: @member.organ.admin_host }, allow_other_host: true)
       end
     end
 
