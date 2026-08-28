@@ -2,7 +2,7 @@
   <div class="card-image">
     <figure class="image is-1by1">
     <% if model.product.logo.attached? %>
-      <%= image_tag model.product.logo %>
+      <%= image_tag model.product.logo.variant(resize_to_limit: [64, 64]) %>
     <% else %>
       <%= image_tag 'product_default.jpg' %>
     <% end %>
