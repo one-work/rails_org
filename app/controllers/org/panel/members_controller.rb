@@ -20,8 +20,9 @@ module Org
     end
 
     def mock
+      session[:auth_token] = @member.auth_token
       redirect_to(
-        { controller: '/me/home', host: @organ.admin_host, auth_token: @member.auth_token },
+        { controller: '/me/home', host: @organ.admin_host },
         allow_other_host: true,
         status: :see_other
       )
