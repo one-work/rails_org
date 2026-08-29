@@ -27,11 +27,10 @@ module Org
 
     def mock
       Current.session.update mock_member: true
-      session[:auth_token] = Current.session.once_token
+
       redirect_to(
-        { controller: '/me/home', host: @organ.admin_host },
-        allow_other_host: true,
-        status: :see_other
+        { controller: '/me/home', host: @organ.admin_host, auth_token: Current.session.once_token },
+        allow_other_host: true
       )
     end
 
