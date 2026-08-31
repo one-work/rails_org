@@ -1,6 +1,7 @@
 module Org
   class OrgansController < BaseController
     before_action :set_organ, only: [:show]
+    before_action :authenticated?
 
     def index
       q_params = {
