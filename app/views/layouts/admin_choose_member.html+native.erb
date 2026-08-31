@@ -1,0 +1,11 @@
+<%= render layout: 'layouts/phone_head' do %>
+  <main id="weui-tab__panel">
+    <%= yield %>
+  </main>
+  <div class="buttons as-bottom">
+    <%= link_to({ controller: 'org/board/organs', action: 'new' }, class: 'button is-fullwidth is-primary') do %>
+      <%= svg_tag 'plus' %>
+      <span><%= t('org.board.organs.new.title') %></span>
+    <% end %>
+  </div>
+<% end %>
