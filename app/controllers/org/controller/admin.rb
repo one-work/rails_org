@@ -19,7 +19,7 @@ module Org
           if current_organ
             render 'require_org_member'
           else
-            roles = Roled::Role.visible.where.not(tip: nil)
+            roles = Roled::Role.visible.where(subdomain: request.subdomain)
             render 'add_org_member', layout: 'admin_add_member', locals: { roles: roles }
           end
         else
