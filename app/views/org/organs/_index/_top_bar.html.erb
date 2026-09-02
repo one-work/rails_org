@@ -1,9 +1,9 @@
 <div class="as-bar justify-content-space-between">
   <i></i>
   <div class="pr-3">
-    <div>
-      <%= svg_tag 'location-dot' %>
+    <%= link_to({ controller: 'ship/board/addresses' }) do %>
+      <%= svg_tag 'arrow-right-arrow-left' %>
       <span class="size-7"><%= current_user&.address_simple %></span>
-    </div>
+    <% end %>
   </div>
 </div>
