@@ -12,8 +12,15 @@ module Org
         q_params.merge! provider_id: current_organ.id
       end
 
-      @organs = Organ.includes(:organ_domains, :top_productions).with_attached_logo.default_where(q_params).page(params[:page])
+      if current_user&.address_principal
+        geo = current_user.address_principal.geo
+        if geo
+          session[:longitude] = geo.longitude
+          session[:latitude] = geo.latitude
+        end
+      end
 
+      @organs = Organ.includes(:organ_domains, :top_productions).with_attached_logo.default_where(q_params).page(params[:page])
       if session[:longitude] && session[:latitude]
         @organs = @organs.near(session[:longitude], session[:latitude])
       else
