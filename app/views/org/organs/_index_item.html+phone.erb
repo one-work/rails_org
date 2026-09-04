@@ -6,6 +6,9 @@
       <span class="tag"><%= model.start_at.to_fs(:time) %></span>
     </div>
   <% end %>
+  <% if model.printer_online? %>
+    <%= svg_tag 'print', class: 'icon is-small is-primary' %>
+  <% end %>
 </div>
 <% if model.address.present? %>
   <p class="size-7">
