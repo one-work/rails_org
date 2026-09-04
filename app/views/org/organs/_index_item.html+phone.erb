@@ -1,13 +1,11 @@
 <div>
   <strong><%= model.name %></strong>
-  <div class="tags has-addons display-inline-flex">
-    <span class="tag">营业时间</span>
-    <% if model.start_at %>
+  <% if model.start_at.present? %>
+    <div class="tags has-addons display-inline-flex">
+      <span class="tag">营业时间</span>
       <span class="tag"><%= model.start_at.to_fs(:time) %></span>
-    <% else %>
-      <span class="tag">09:00</span>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
 <% if model.address.present? %>
   <p class="size-7">
