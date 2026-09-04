@@ -1,18 +1,17 @@
 <div>
   <strong><%= model.name %></strong>
-  <% if model.start_at.present? %>
-    <div class="tags has-addons display-inline-flex">
-      <span class="tag">营业时间</span>
-      <span class="tag"><%= model.start_at.to_fs(:time) %></span>
+  <% if model.start_at.present? && model.finish_at.present? %>
+    <div class="tag">
+      <span><%= model.start_at.to_fs(:time) %></span>
+      <span>~</span>
+      <span><%= model.finish_at.to_fs(:time) %></span>
     </div>
   <% end %>
   <% if model.printer_online? %>
-    <div class="tags has-addons display-inline-flex">
-      <span class="tag">
-        <%= svg_tag 'print', class: 'icon is-small text-primary' %>
-      </span>
-      <span class="tag">在线</span>
-    </div>
+    <span class="tag">
+      <%= svg_tag 'print', class: 'icon is-small text-primary' %>
+      <span>在线</span>
+    </span>
   <% end %>
 </div>
 <% if model.address.present? %>
