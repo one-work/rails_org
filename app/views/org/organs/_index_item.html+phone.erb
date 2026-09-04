@@ -18,10 +18,8 @@
   <p class="size-7">
     <%= svg_tag 'location-dot', class: 'icon is-small text-grey' %>
     <span><%= model.address_short.presence || model.address %></span>
-  </p>
-  <p>
-  <% if model.distance.presence %>
-    <span><%= model.distance %></span>
-  <% end %>
+    <% if model.distance.presence %>
+      <span>（<%= model.distance %>）</span>
+    <% end %>
   </p>
 <% end %>
