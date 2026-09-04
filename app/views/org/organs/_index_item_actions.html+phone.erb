@@ -7,11 +7,29 @@
         <%= image_tag 'logo_organ.png', class: 'image is-64x64' %>
       <% end %>
     </div>
-    <%= link_to({ controller: 'factory/productions', host: model.host, **{ auth_token: Current.session&.once_token, from_provider: current_organ&.id }.compact }, class: 'media-content') do %>
+    <%=
+      link_to(
+        {
+          controller: 'factory/productions',
+          host: model.host,
+          **{ auth_token: Current.session&.once_token, from_provider: current_organ&.id, dispatch: model.dispatch }.compact
+        },
+        class: 'media-content'
+      ) do
+    %>
       <%= yield %>
     <% end %>
     <div class="media-right">
-      <%= link_to({ controller: 'factory/productions', host: model.host, **{ auth_token: Current.session&.once_token, from_provider: current_organ&.id }.compact }, class: 'button is-primary') do %>
+      <%=
+        link_to(
+          {
+            controller: 'factory/productions',
+            host: model.host,
+            **{ auth_token: Current.session&.once_token, from_provider: current_organ&.id, dispatch: model.dispatch }.compact
+          },
+          class: 'button is-primary'
+        ) do
+      %>
         <span>去下单</span>
       <% end %>
     </div>
