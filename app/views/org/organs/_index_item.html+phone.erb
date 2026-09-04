@@ -7,7 +7,12 @@
     </div>
   <% end %>
   <% if model.printer_online? %>
-    <%= svg_tag 'print', class: 'icon is-small text-primary' %>
+    <div class="tags has-addons display-inline-flex">
+      <span class="tag">
+        <%= svg_tag 'print', class: 'icon is-small text-primary' %>
+      </span>
+      <span class="tag">在线</span>
+    </div>
   <% end %>
 </div>
 <% if model.address.present? %>
