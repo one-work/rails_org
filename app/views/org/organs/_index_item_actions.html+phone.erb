@@ -11,7 +11,7 @@
       link_to(
         {
           controller: 'factory/productions',
-          host: model.host,
+          host: request.variant.include?(:mini_program) ? model.mp_host : model.host,
           **{ auth_token: Current.session&.once_token, from_provider: current_organ&.id, dispatch: model.dispatch }.compact
         },
         class: 'media-content'
@@ -24,7 +24,7 @@
         link_to(
           {
             controller: 'factory/productions',
-            host: model.host,
+            host: request.variant.include?(:mini_program) ? model.mp_host : model.host,
             **{ auth_token: Current.session&.once_token, from_provider: current_organ&.id, dispatch: model.dispatch }.compact
           },
           class: 'button is-primary'
