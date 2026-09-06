@@ -27,6 +27,20 @@
   <dd><%= @organ.address %></dd>
 </div>
 <div>
+  <dt><%= Org::Organ.human_attribute_name(:dispatches) %></dt>
+  <dd>
+    <div class="tags">
+    <%= @organ.dispatches.each do |dispatch| %>
+      <span class="tag"><%= Trade::Item.enum_i18n(:dispatch, dispatch) %></span>
+    <% end %>
+    </div>
+  </dd>
+</div>
+<div>
+  <dt><%= Org::Organ.human_attribute_name(:dispatche) %></dt>
+  <dd><%= @organ.dispatch_i18n %></dd>
+</div>
+<div>
   <dt></dt>
   <dd>
     <%= image_tag @scene.qrcode_data_url, class: 'image' if @scene %>
