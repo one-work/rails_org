@@ -30,7 +30,7 @@
   <dt><%= Org::Organ.human_attribute_name(:dispatches) %></dt>
   <dd>
     <div class="tags">
-    <%= @organ.dispatches.each do |dispatch| %>
+    <% @organ.dispatches.each do |dispatch| %>
       <span class="tag"><%= Trade::Item.enum_i18n(:dispatch, dispatch) %></span>
     <% end %>
     </div>
