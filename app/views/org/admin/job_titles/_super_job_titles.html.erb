@@ -7,7 +7,7 @@
   <td>
     <%= form_with theme: 'switch', scope: nil, url: { action: 'create_department' }, data: { controller: 'input' } do |f| %>
       <%= f.hidden_field :super_job_title_id, value: super_job_title.id %>
-      <%= f.check_box :department_id, value: @department.id, checked: false, data: { action: 'input#submit' }, id: nil %>
+      <%= f.checkbox :department_id, value: @department.id, checked: false, data: { action: 'input#submit' }, id: nil %>
     <% end %>
   </td>
 </tr>
