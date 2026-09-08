@@ -136,6 +136,7 @@ module Org
     def invite_url
       Rails.app.routes.url_for(
         controller: 'org/board/organs',
+        action: 'all',
         provider_token: provider_token,
         host: host
       )

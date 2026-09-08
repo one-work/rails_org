@@ -18,6 +18,10 @@ module Org
       @members = current_user.members.includes(:organ).where(q_params)
     end
 
+    def all
+      @members = current_user.members.includes(:organ)
+    end
+
     def create
       if @organ.save
         Current.session.update member_id: @member.id

@@ -79,6 +79,7 @@ Rails.app.routes.draw do
       scope '(:provider_token)' do
         resources :organs do
           collection do
+            get :all
             post :create_admin
           end
           member do
