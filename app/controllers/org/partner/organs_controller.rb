@@ -14,7 +14,7 @@ module Org
     end
 
     def invite
-      
+
     end
 
     private

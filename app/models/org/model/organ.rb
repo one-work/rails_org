@@ -12,6 +12,7 @@ module Org
       attribute :code, :string
       attribute :license, :string
       attribute :service_url, :string, comment: '客服 url'
+      attribute :provider_token, :string, default: -> { SecureRandom.uuid }
       attribute :theme_settings, :json, default: {}
       attribute :members_count, :integer, default: 0
       attribute :children_count, :integer, default: 0
@@ -130,6 +131,14 @@ module Org
 
     def redirect_url(**options)
       domain.redirect_url(**options)
+    end
+
+    def invite_url
+      Rails.app.routes.url_for(
+        controller: 'org/board/organs',
+        invite_token: provider_token,
+        host: host
+      )
     end
 
     def admin_theme
