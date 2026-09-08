@@ -117,6 +117,8 @@ zh:
       organs:
         index:
           title: 门店管理
+        invite_provider:
+          title: 邀请绑定
     our:
       title: 分支机构
       organs:

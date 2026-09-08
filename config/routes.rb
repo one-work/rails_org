@@ -76,12 +76,14 @@ Rails.app.routes.draw do
 
     namespace :board, defaults: { namespace: 'board' } do
       root 'home#index'
-      resources :organs do
-        collection do
-          post :create_admin
-        end
-        member do
-          match :redirect, via: [:get, :post]
+      scope '(:provider_token)' do
+        resources :organs do
+          collection do
+            post :create_admin
+          end
+          member do
+            match :redirect, via: [:get, :post]
+          end
         end
       end
       resources :members, only: [:index, :new, :create] do
@@ -112,12 +114,12 @@ Rails.app.routes.draw do
     end
 
     namespace :partner, defaults: { namespace: 'partner' } do
-      concerns :org_panel
       resources :organs, only: [] do
         collection do
-          post :invite
+          post :invite_provider
         end
       end
+      concerns :org_panel # 这个必须放到上一个定义的后面
     end
 
     namespace :admin, defaults: { namespace: 'admin' } do
