@@ -1,0 +1,8 @@
+<%= button_to({ action: 'new' }, class: 'button is-rounded is-primary') do %>
+  <%= svg_tag 'plus' %>
+  <span><%= t('.new.title') %></span>
+<% end %>
+<%= button_to({ action: 'invite' }, class: 'button is-rounded is-primary') do %>
+  <%= svg_tag 'qrcode' %>
+  <span><%= t('.invite.title') %></span>
+<% end %>

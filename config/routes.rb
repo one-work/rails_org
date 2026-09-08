@@ -113,6 +113,11 @@ Rails.app.routes.draw do
 
     namespace :partner, defaults: { namespace: 'partner' } do
       concerns :org_panel
+      resources :organs, only: [] do
+        collection do
+          post :invite
+        end
+      end
     end
 
     namespace :admin, defaults: { namespace: 'admin' } do

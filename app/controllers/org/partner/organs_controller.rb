@@ -13,6 +13,10 @@ module Org
       @organs = Organ.roots.with_attached_logo.includes(:organ_domains, :roles, :owner).default_where(q_params).unscope(:order).order(id: :desc).page(params[:page])
     end
 
+    def invite
+      
+    end
+
     private
     def set_new_organ
       @organ = Organ.new(organ_params)
