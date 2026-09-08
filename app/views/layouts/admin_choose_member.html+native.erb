@@ -3,7 +3,7 @@
     <%= yield %>
   </main>
   <div class="buttons as-bottom">
-    <%= link_to({ controller: 'org/board/organs', action: 'new' }, class: 'button is-fullwidth is-primary') do %>
+    <%= link_to({ controller: 'org/board/organs', action: 'new' }, class: 'button is-rounded is-fullwidth is-primary') do %>
       <%= svg_tag 'plus' %>
       <span><%= t('org.board.organs.new.title') %></span>
     <% end %>
