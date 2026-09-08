@@ -1,10 +1,10 @@
 <%= render layout: 'layouts/phone_head' do %>
   <div class="as-bar">
-    <button data-controller="history" data-action="history#back" class="px-5">
+    <button id="history-button" data-controller="history" data-action="history#back" class="left">
       <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
     </button>
     <div class="bar-title"></div>
-    <i class="px-5"></i>
+    <i class="right"></i>
   </div>
   <main id="weui-tab__panel">
     <%= yield %>
