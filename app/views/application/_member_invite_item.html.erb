@@ -15,7 +15,7 @@
       <span>已绑定</span>
       <span class="tag"><%= model.organ.provider.name %></span>
     <% else %>
-      <%= button_to({ controller: 'members', action: 'bind', id: model.id }, class: 'button is-small is-link') do %>
+      <%= button_to({ controller: 'members', action: 'bind', id: model.id, **params.permit(:provider_token).permit! }, class: 'button is-small is-link') do %>
         <%= svg_tag 'handshake' %>
         <span><%= t('.members.bind.title') %></span>
       <% end %>

@@ -30,7 +30,8 @@ module Org
 
     def bind
       @organ = @member.organ
-      @organ.provider = current_organ
+      provider = Organ.find_by provider_token: params[:provider_token]
+      @organ.provider = provider
       @organ.save
     end
 
