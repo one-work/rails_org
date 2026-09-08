@@ -95,6 +95,7 @@ Rails.app.routes.draw do
         member do
           match :user_login, via: [:get, :post]
           match :login, via: [:get, :post]
+          post :bind
         end
       end
     end

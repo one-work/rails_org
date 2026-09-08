@@ -133,6 +133,8 @@ zh:
           title: 申请为职员
         logout:
           title: 切换门店
+        bind:
+          title: 绑定
       organs:
         index:
           title: 我的门店

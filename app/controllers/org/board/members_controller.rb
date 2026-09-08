@@ -1,6 +1,6 @@
 module Org
   class Board::MembersController < Board::BaseController
-    before_action :set_member, only: [:show, :login, :edit, :update]
+    before_action :set_member, only: [:show, :login, :edit, :update, :bind]
 
     def login
       if ['admin', 'demo', 'partner'].include? request.subdomain
@@ -26,6 +26,12 @@ module Org
         members = Member.none
       end
       render 'choose_org_member', layout: 'admin_choose_member', locals: { members: members }
+    end
+
+    def bind
+      @organ = @member.organ
+      @organ.provider = current_organ
+      @organ.save
     end
 
     private
