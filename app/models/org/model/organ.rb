@@ -9,6 +9,7 @@ module Org
       attribute :address_short, :string
       attribute :official, :boolean, default: false, comment: '是否官方'
       attribute :joinable, :boolean, default: false, comment: '是否可搜索并加入'
+      attribute :partnership, :boolean, default: false
       attribute :code, :string
       attribute :license, :string
       attribute :service_url, :string, comment: '客服 url'

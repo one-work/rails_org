@@ -19,7 +19,7 @@ module Org
     end
 
     def all
-      @members = current_user.members.includes(:organ)
+      @members = current_user.members.includes(:organ).where(organ: { partnership: false })
     end
 
     def create
