@@ -2,7 +2,7 @@
   <%= svg_tag 'plus' %>
   <span><%= t('.new.title') %></span>
 <% end %>
-<%= link_to({ controller: 'org/me/members', action: 'qrcodes' }, class: 'button is-rounded is-primary') do %>
+<%= button_to({ controller: 'org/me/members', action: 'qrcodes' }, class: 'button is-rounded is-primary') do %>
   <%= svg_tag 'qrcode' %>
   <span><%= t('org.me.members.qrcodes.title') %></span>
 <% end %>

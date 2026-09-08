@@ -12,7 +12,7 @@ module Org
           @requests = Wechat::Request.none
         end
       else
-        render :qrcode
+        render :qrcodes_denied
       end
     end
 

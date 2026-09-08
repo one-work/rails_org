@@ -54,8 +54,7 @@ Rails.app.routes.draw do
       root 'home#index'
       resource :member, except: [:new, :create] do
         member do
-          get :qrcodes
-          get :qrcode
+          match :qrcodes, via: [:get, :post]
         end
       end
       resource :organ, except: [:new, :create]
