@@ -19,6 +19,7 @@ module Org
     end
 
     def all
+      @organ = Organ.find_by provider_token: params[:provider_token]
       @members = current_user.members.includes(:organ).where(organ: { partnership: false })
     end
 

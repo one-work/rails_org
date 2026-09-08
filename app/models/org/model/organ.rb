@@ -139,7 +139,7 @@ module Org
         controller: 'org/board/organs',
         action: 'all',
         provider_token: provider_token,
-        host: host
+        host: "partner.#{Rails.app.routes.default_url_options[:host]}"
       )
     end
 
