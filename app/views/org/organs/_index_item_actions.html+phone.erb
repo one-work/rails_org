@@ -12,7 +12,7 @@
         {
           controller: 'factory/productions',
           host: request.variant.include?(:mini_program) ? model.mp_host : model.host,
-          **{ auth_token: Current.session&.once_token, from_provider: current_organ&.id, dispatch: model.dispatch }.compact
+          **{ auth_token: Current.session&.once_token, from_provider: current_organ&.id, dispatch: 'delivery' }.compact
         },
         class: 'media-content'
       ) do
@@ -25,7 +25,7 @@
           {
             controller: 'factory/productions',
             host: request.variant.include?(:mini_program) ? model.mp_host : model.host,
-            **{ auth_token: Current.session&.once_token, from_provider: current_organ&.id, dispatch: model.dispatch }.compact
+            **{ auth_token: Current.session&.once_token, from_provider: current_organ&.id, dispatch: 'delivery' }.compact
           },
           class: 'button is-primary'
         ) do

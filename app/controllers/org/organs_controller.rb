@@ -20,7 +20,7 @@ module Org
         end
       end
 
-      @organs = Organ.includes(:organ_domains, :top_productions).with_attached_logo.default_where(q_params).page(params[:page])
+      @organs = Organ.includes(:organ_domains, :top_productions).with_attached_logo.json_filter_any(:dispatches, 'delivery').default_where(q_params).page(params[:page])
       if session[:longitude] && session[:latitude]
         @organs = @organs.near(session[:longitude], session[:latitude])
       else
