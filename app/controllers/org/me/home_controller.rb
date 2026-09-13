@@ -3,6 +3,7 @@ module Org
     skip_before_action :require_role, only: [:index] if whether_filter :require_role
 
     def index
+      @once_token = Current.session.once_token
     end
 
   end
