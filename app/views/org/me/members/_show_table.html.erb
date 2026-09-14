@@ -1,6 +1,6 @@
 <div>
   <dt><%= Org::Member.human_attribute_name(:avatar) %></dt>
-  <dd><%= image_tag @member.avatar, class: 'image is-64x64' if @member.avatar.attached? %></dd>
+  <dd><%= image_tag @member.avatar, class: 'image is-radius is-64x64' if @member.avatar.attached? %></dd>
 </div>
 <div>
   <dt><%= Org::Member.human_attribute_name(:name) %></dt>

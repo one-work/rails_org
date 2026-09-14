@@ -1,13 +1,13 @@
 <%= link_to({ controller: 'auth/my/home' }, text: true, class: 'media') do %>
   <div class="media-left">
   <% if current_user.avatar.attached? %>
-    <%= image_tag current_user.avatar, class: 'image is-64x64 is-radius' %>
+    <%= image_tag current_user.avatar, class: 'image is-radius is-64x64' %>
   <% elsif current_user.name.present? %>
     <div class="is-avatar">
       <div class="text"><%= current_user.name[0] %></div>
     </div>
   <% else %>
-    <%= image_tag 'default_avatar.jpg', class: 'image is-64x64 is-radius' %>
+    <%= image_tag 'default_avatar.jpg', class: 'image is-radius is-64x64' %>
   <% end %>
   </div>
   <div class="media-content">
