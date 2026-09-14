@@ -11,6 +11,7 @@ module Org
     include Crm::Ext::Organ if defined? RailsCrm
     include Wechat::Ext::Organ if defined? RailsWechat
     include Print::Ext::Organ if defined? RailsPrint
+    include Space::Ext::Organ if defined? RailsSpace
 
   end
 end
