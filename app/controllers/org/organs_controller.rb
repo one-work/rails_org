@@ -7,6 +7,7 @@ module Org
       q_params = {
         production_enabled: true
       }
+      q_params.merge! params.permit('name-like')
       if current_organ&.official
       elsif current_organ
         q_params.merge! provider_id: current_organ.id
