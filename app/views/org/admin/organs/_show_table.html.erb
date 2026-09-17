@@ -24,7 +24,12 @@
 </div>
 <div>
   <dt><%= Org::Organ.human_attribute_name(:redirect_url) %></dt>
-  <dd><%= link_to @organ.redirect_url, target: '_blank' %></dd>
+  <dd>
+    <%= link_to @organ.redirect_url(auth_token: Current.session.once_token), target: '_blank' do %>
+      <%= svg_tag 'eye' %>
+      <span>预览</span>
+    <% end %>
+  </dd>
 </div>
 <div>
   <dt><%= Org::Organ.human_attribute_name(:service_url) %></dt>
