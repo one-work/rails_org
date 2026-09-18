@@ -17,7 +17,7 @@ module Org
           return
         elsif members.blank?
           if current_organ
-            render 'require_org_member'
+            render 'require_org_member', layout: 'raw'
           else
             roles = Roled::Role.visible.where(subdomain: request.subdomain)
             render 'add_org_member', layout: 'admin_add_member', locals: { roles: roles }
