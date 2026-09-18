@@ -12,7 +12,7 @@ module Org
           @requests = Wechat::Request.none
         end
       else
-        render :qrcodes_denied
+        render :alert_message, locals: { message: '您暂无权限邀请新成员，请联系管理员!' }
       end
     end
 
