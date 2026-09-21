@@ -61,6 +61,10 @@ module Org
       after_create_commit :increment_counts_to_users
     end
 
+    def title
+      name.presence || display_uid
+    end
+
     def display_uid
       identity.to_s.truncate(28)
     end
