@@ -5,7 +5,7 @@
     <% else %>
       <i class="fa-solid fa-minus fa-fw"></i>
     <% end %>
-    <%= image_tag model.logo.variant(resize_to_limit: [30, 30]), class: 'image is-24x24' if model.logo.attached? %>
+    <%= image_tag model.logo.variant(resize_to_limit: [30, 30]), class: 'image is-radius is-24x24' if model.logo.attached? %>
     <span><%= model.name %></span>
     <% if model.name_short.present? %>
       <span>（<%= model.name_short %>）</span>

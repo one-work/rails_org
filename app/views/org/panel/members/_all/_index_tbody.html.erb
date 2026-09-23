@@ -1,6 +1,6 @@
 <td>
   <div class="is-several">
-    <%= image_tag model.avatar.url, class: 'image is-24x24' if model.avatar.attached? %>
+    <%= image_tag model.avatar.url, class: 'image is-radius is-24x24' if model.avatar.attached? %>
     <%= model.name %>
   </div>
   <p class="family-monospace text-grey"><%= model.identity %></p>

@@ -12,7 +12,7 @@
 <% end %>
 <div class="navbar-item has-dropdown is-hoverable">
   <div class="navbar-link">
-    <%= image_tag current_member.avatar, class: 'image is-24x24' if current_member.avatar.attached? %>
+    <%= image_tag current_member.avatar, class: 'image is-radius is-24x24' if current_member.avatar.attached? %>
     <%= current_member.name %>
   </div>
   <div class="navbar-dropdown is-right">
