@@ -4,22 +4,26 @@ zh:
       org/member:
         owned:
           true: 创建者
-      organ_domain:
+      org/organ:
+        official:
+          true: 官方
+          false: 非官方
+      org/organ_domain:
         kind:
           frontend: 网站
           backend: 管理平台
           mp: 小程序
-      job_transfer:
+      org/job_transfer:
         state:
           init: 申请
           approved: 批准
           denied: 拒绝
-      resign:
+      org/resign:
         state:
           init: 申请
           approved: 批准
           denied: 拒绝
-      tutorial:
+      org/tutorial:
         accepted_status:
           very_advance: Very advance
           advance: 提前一个月转正
