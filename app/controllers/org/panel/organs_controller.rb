@@ -6,7 +6,7 @@ module Org
 
     def index
       q_params = {}
-      q_params.merge! params.permit(:id, 'name-like')
+      q_params.merge! params.permit(:id, :official, 'name-like')
 
       @organs = Organ.roots.with_attached_logo.includes(:provider, :organ_domains, :owner, :roles, :mock_roles).default_where(q_params).unscope(:order).order(id: :desc).page(params[:page])
     end
@@ -73,6 +73,13 @@ module Org
       else
         @ip_geo = { lat: 28.22778, lng: 112.93886 }
       end
+    end
+
+    def filter_columns
+      {
+        'name-like' => { type: 'search', default: true },
+        'official' => { type: 'dropdown', default: true }
+      }
     end
 
     def organ_params
