@@ -146,18 +146,14 @@ module Org
     def main_theme
       official_organ = self.class.official.take
       if official_organ
-        r = {
-          backgroundColor: official_organ.theme_settings['backgroundColor'],
-          frontColor: official_organ.theme_settings['frontColor']
-        }
+        r = official_organ.theme_settings.slice('backgroundColor', 'frontColor')
       else
         r = {
-          backgroundColor: '#ffffff',
-          frontColor: '#000000'
+          'backgroundColor' => '#ffffff',
+          'frontColor' => '#000000'
         }
       end
-      r.merge! backgroundColor: theme_settings['backgroundColor'] if theme_settings['backgroundColor']
-      r.merge! frontColor: theme_settings['frontColor'] if theme_settings['frontColor']
+      r.merge! theme_settings.slice('backgroundColor', 'frontColor')
       r
     end
 
