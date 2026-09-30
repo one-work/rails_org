@@ -16,6 +16,19 @@ module Org
       end
     end
 
+    def mall
+      Current.session.update member_id: current_member.id
+
+      redirect_to(
+        {
+          controller: 'factory/productions',
+          host: "mall.#{Rails.app.routes.default_url_options[:host]}",
+          auth_token: Current.session.once_token
+        },
+        allow_other_host: true
+      )
+    end
+
     private
     def set_member
       @member = current_member

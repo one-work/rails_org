@@ -55,6 +55,7 @@ Rails.app.routes.draw do
       resource :member, except: [:new, :create] do
         member do
           match :qrcodes, via: [:get, :post]
+          get :mall
         end
       end
       resource :organ, except: [:new, :create]
