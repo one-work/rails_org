@@ -21,7 +21,7 @@ module Org
 
       redirect_to(
         {
-          controller: 'factory/productions',
+          controller: 'factory/our/productions',
           host: "mall.#{Rails.app.routes.default_url_options[:host]}",
           auth_token: Current.session.once_token
         },
