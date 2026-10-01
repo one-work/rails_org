@@ -7,7 +7,8 @@ module Org
 
     def index
       q_params = {}
-      if current_organ&.official
+      if ['admin'].include?(request.subdomain)
+      elsif current_organ&.official
         q_params.merge! organ: { provider_id: [current_organ.id, nil] }
       elsif current_organ
         q_params.merge! organ: { provider_id: current_organ.id }
