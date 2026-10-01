@@ -1,0 +1,7 @@
+<div class="flex-grow-1 has-column-centered">
+  <p class="size-7 text-grey">PC 端登录</p>
+  <div data-controller="clipboard" data-action="click->clipboard#copyInner" class="mt-1">
+    <strong data-clipboard-target="source">https://admin.<%= Rails.app.routes.default_url_options[:host] %></strong>
+    <%= svg_tag 'clone', class: 'icon is-small text-grey ml-1' %>
+  </div>
+</div>
