@@ -1,1 +1,18 @@
-
+<div class="card as-transparent">
+  <div class="card-header">
+    <span class="size-7 text-grey has-border-left-primary">我的门店</span>
+  </div>
+  <div class="card-content fixed-grid has-2-cols">
+    <div class="grid">
+      <%=
+        link_to(
+          { controller: 'trade/admin/orders', 'created_at-gte': Date.today.beginning_of_day.to_fs(:db) },
+          class: 'cell has-column-centered'
+        ) do
+      %>
+        <strong class="size-5"><%= current_organ.counters['amount'].to_money.format.html_safe %></strong>
+        <p class="size-7 text-grey">我创建的</p>
+      <% end %>
+    </div>
+  </div>
+</div>
