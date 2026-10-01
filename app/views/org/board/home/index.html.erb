@@ -10,8 +10,17 @@
           class: 'cell has-column-centered'
         ) do
       %>
-        <strong class="size-5"><%= current_organ.counters['amount'].to_money.format.html_safe %></strong>
+        <strong class="size-5"><%= current_user.organs.count %></strong>
         <p class="size-7 text-grey">我创建的</p>
+      <% end %>
+      <%=
+        link_to(
+          { controller: 'org/board/organs' },
+          class: 'cell has-column-centered'
+        ) do
+      %>
+        <strong class="size-5"><%= current_user.organs.count %></strong>
+        <p class="size-7 text-grey">我加入的</p>
       <% end %>
     </div>
   </div>
