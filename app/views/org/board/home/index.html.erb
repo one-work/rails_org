@@ -6,7 +6,7 @@
     <div class="grid">
       <%=
         link_to(
-          { controller: 'trade/admin/orders', 'created_at-gte': Date.today.beginning_of_day.to_fs(:db) },
+          { controller: 'org/board/organs', 'created_at-gte': Date.today.beginning_of_day.to_fs(:db) },
           class: 'cell has-column-centered'
         ) do
       %>
