@@ -126,6 +126,9 @@ zh:
           title: 首页
     board:
       title: 我的门店
+      home:
+        index:
+          title: 我的
       members:
         index:
           title: 我的工作台
