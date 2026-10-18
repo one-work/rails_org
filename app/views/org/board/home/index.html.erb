@@ -10,7 +10,7 @@
           class: 'cell has-column-centered'
         ) do
       %>
-        <strong class="size-5"><%= current_user.organs.count %></strong>
+        <strong class="size-5"><%= current_user.members.owned.count %></strong>
         <p class="size-7 text-grey">我创建的</p>
       <% end %>
       <%=
@@ -19,7 +19,7 @@
           class: 'cell has-column-centered'
         ) do
       %>
-        <strong class="size-5"><%= current_user.organs.count %></strong>
+        <strong class="size-5"><%= current_user.members.joined.count %></strong>
         <p class="size-7 text-grey">我加入的</p>
       <% end %>
     </div>
