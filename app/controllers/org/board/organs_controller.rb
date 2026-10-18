@@ -3,7 +3,7 @@ module Org
     before_action :set_organ, only: [:show, :edit, :update, :redirect, :destroy]
     before_action :set_new_organ, only: [:index, :new]
     before_action :set_create_organ, only: [:create, :create_admin]
-    before_action :set_roles, only:[:index, :new, :create]
+    before_action :set_roles, only:[:index, :owned, :joined, :new, :create]
 
     def index
       q_params = q_common_params

@@ -80,6 +80,8 @@ Rails.app.routes.draw do
         resources :organs do
           collection do
             get :all
+            get :owned
+            get :joined
             post :create_admin
           end
           member do

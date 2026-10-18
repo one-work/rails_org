@@ -141,6 +141,10 @@ zh:
       organs:
         index:
           title: 我的门店
+        owned:
+          title: 我创建的
+        joined:
+          title: 我加入的
         new:
           title: 创建门店
         redirect:

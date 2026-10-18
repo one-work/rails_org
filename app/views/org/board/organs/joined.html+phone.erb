@@ -1,5 +1,3 @@
 <% if @members.present? %>
   <%= render partial: 'member_choose', locals: { members: @members } %>
-<% else %>
-  <%= render partial: 'member_new', locals: { roles: @roles } %>
 <% end %>
