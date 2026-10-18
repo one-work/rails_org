@@ -1,0 +1,35 @@
+<%= link_to({ controller: 'home', action: 'index' }, class: 'media') do %>
+  <div class="media-content">
+    <%= svg_tag 'crown' %>
+    <span>会员</span>
+  </div>
+  <div class="media-right">
+    <%= svg_tag 'chevron-right' %>
+  </div>
+<% end %>
+<% if request.variant.include?(:mini_program) %>
+  <div
+    data-controller="mini-program"
+    data-mini-program-url-value="/pages/service/index"
+    data-action="click->mini-program#link"
+    class="media"
+  >
+    <div class="media-content">
+      <%= svg_tag 'headset' %>
+      <span>联系客服</span>
+    </div>
+    <div class="media-right">
+      <%= svg_tag 'chevron-right' %>
+    </div>
+  </div>
+<% elsif Rails.app.credentials.kf.present? %>
+  <%= link_to Rails.app.credentials.kf, rel: 'nofollow', class: 'media' do %>
+    <div class="media-content">
+      <%= svg_tag 'headset' %>
+      <span>联系客服</span>
+    </div>
+    <div class="media-right">
+      <%= svg_tag 'chevron-right' %>
+    </div>
+  <% end %>
+<% end %>
