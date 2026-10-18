@@ -51,7 +51,7 @@ module Org
       scope :enabled, -> { where(enabled: true) }
       scope :inviter, -> { where(inviter: true) }
       scope :owned, -> { where(owned: true) }
-      scope :joined, -> { where(joined: false) }
+      scope :joined, -> { where(owned: false) }
 
       validates :identity, uniqueness: { scope: :organ_id }, allow_blank: true
 
