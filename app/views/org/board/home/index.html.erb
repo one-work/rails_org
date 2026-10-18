@@ -26,4 +26,16 @@
   </div>
 </div>
 
+<div class="box p-0">
+  <%= link_to({ controller: 'home', action: 'index' }, class: 'media') do %>
+    <div class="media-content">
+      <%= svg_tag 'crown' %>
+      <span>会员</span>
+    </div>
+    <div class="media-right">
+      <%= svg_tag 'chevron-right' %>
+    </div>
+  <% end %>
+</div>
+
 <%= render 'power_login' %>
