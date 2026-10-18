@@ -6,17 +6,18 @@ module Org
     before_action :set_roles, only:[:index, :new, :create]
 
     def index
-      q_params = {}
-      if ['admin'].include?(request.subdomain)
-      elsif current_organ&.official
-        q_params.merge! organ: { provider_id: [current_organ.id, nil] }
-      elsif current_organ
-        q_params.merge! organ: { provider_id: current_organ.id }
-      elsif Organ.official.present?
-        q_params.merge! organ: { provider_id: Organ.official.take.id }
-      end
-
+      q_params = q_common_params
       @members = current_user.members.includes(:organ).where(q_params)
+    end
+
+    def owned
+      q_params = q_common_params
+      @members = current_user.members.owned.includes(:organ).where(q_params)
+    end
+
+    def joined
+      q_params = q_common_params
+      @members = current_user.members.joined.includes(:organ).where(q_params)
     end
 
     def all
@@ -69,6 +70,19 @@ module Org
 
     def set_roles
       @roles = Roled::Role.visible.where(subdomain: request.subdomain)
+    end
+
+    def q_common_params
+      q_params = {}
+      if ['admin'].include?(request.subdomain)
+      elsif current_organ&.official
+        q_params.merge! organ: { provider_id: [current_organ.id, nil] }
+      elsif current_organ
+        q_params.merge! organ: { provider_id: current_organ.id }
+      elsif Organ.official.present?
+        q_params.merge! organ: { provider_id: Organ.official.take.id }
+      end
+      q_params
     end
 
     def organ_params
