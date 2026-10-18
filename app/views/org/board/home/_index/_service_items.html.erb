@@ -11,7 +11,12 @@
   <div
     data-controller="mini-program"
     data-mini-program-url-value="/pages/service/index"
-    data-mini-program-data-value="<%= {}.to_json %>"
+    data-mini-program-data-value="<%=
+      {
+        service_url: Rails.app.credentials.kf,
+        service_corp: 'wwe12735687b84ba54'
+      }.to_json
+    %>"
     data-action="click->mini-program#link"
     class="media"
   >
