@@ -6,6 +6,11 @@
         <span class="tag"><%= role_str %></span>
       <% end %>
     </p>
+    <p class="size-7 text-grey">
+      <span><%= Org::Organ.human_attribute_name(:created_at) %></span>
+      <span>:</span>
+      <time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time>
+    </p>
   </div>
   <div class="media-right">
     <%= svg_tag 'chevron-right' %>
