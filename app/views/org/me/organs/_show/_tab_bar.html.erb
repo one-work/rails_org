@@ -1,9 +1,9 @@
 <div id="buttons" class="as-bottom">
+  <% if current_member.admin? %>
   <div class="px-3 text-centered">
     <p>注意：此操作将删除本团队及本团队的所有数据，且不可逆，请务必谨慎操作！</p>
   </div>
   <div class="grid-buttons px-3 mt-2">
-  <% if current_member.admin? %>
     <%=
         button_to(
           { action: 'destroy' },
@@ -15,6 +15,6 @@
       <%= svg_tag 'trash', class: 'icon is-small text-white' %>
       <span><%= t('.destroy.title') %></span>
     <% end %>
-  <% end %>
   </div>
+  <% end %>
 </div>
