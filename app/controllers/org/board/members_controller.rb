@@ -13,7 +13,7 @@ module Org
         end
       else
         session[:auth_token] = @member.auth_token
-        redirect_to({ controller: '/me/home', host: @member.organ.admin_host }, allow_other_host: true)
+        redirect_to({ controller: '/me/home', host: @member.organ.admin_host, auth_token: session[:auth_token] }, allow_other_host: true)
       end
     end
 
