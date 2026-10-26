@@ -7,22 +7,22 @@ module Org
 
     def index
       q_params = q_common_params
-      @members = current_user.members.includes(:organ).where(q_params)
+      @members = current_user.members.includes(:cache, organ: :cache).where(q_params)
     end
 
     def owned
       q_params = q_common_params
-      @members = current_user.members.owned.includes(:organ).where(q_params)
+      @members = current_user.members.owned.includes(:cache, organ: :cache).where(q_params)
     end
 
     def joined
       q_params = q_common_params
-      @members = current_user.members.joined.includes(:organ).where(q_params)
+      @members = current_user.members.joined.includes(:cache, organ: :cache).where(q_params)
     end
 
     def all
       @organ = Organ.find_by provider_token: params[:provider_token]
-      @members = current_user.members.includes(:organ).where(organ: { partnership: false })
+      @members = current_user.members.includes(:cache, organ: :cache).where(organ: { partnership: false })
     end
 
     def create
