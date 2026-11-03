@@ -39,3 +39,12 @@
     </div>
   <% end %>
 <% end %>
+<%= link_to({ controller: 'wechat/channels' }, class: 'media') do %>
+  <div class="media-content">
+    <%= svg_tag 'circle-info' %>
+    <span>帮助</span>
+  </div>
+  <div class="media-right">
+    <%= svg_tag 'chevron-right' %>
+  </div>
+<% end %>
