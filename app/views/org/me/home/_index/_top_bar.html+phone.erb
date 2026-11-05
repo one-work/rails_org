@@ -1,7 +1,4 @@
-<div class="as-bar">
-  <button id="history-button" data-controller="history-back" class="left">
-    <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
-  </button>
-  <span class="bar-title"><%= t('.title') %></span>
+<%= render layout: 'top_bar_left' do %>
+  <div class="bar-title"><%= t('.title') %></div>
   <i class="right"></i>
-</div>
+<% end %>
