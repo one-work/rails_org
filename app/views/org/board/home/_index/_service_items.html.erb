@@ -28,6 +28,7 @@
       <%= svg_tag 'chevron-right' %>
     </div>
   </div>
+<% elsif request.variant.include?(:douyin) %>
 <% elsif Rails.app.credentials.kf.present? %>
   <%= link_to Rails.app.credentials.kf, rel: 'nofollow', class: 'media' do %>
     <div class="media-content">
