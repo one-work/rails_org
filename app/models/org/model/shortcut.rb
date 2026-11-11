@@ -8,6 +8,8 @@ module Org
       attribute :business, :string
       attribute :namespace, :string
 
+      belongs_to :meta_action, class_name: 'Meta::Action', foreign_key: [:controller_path, :action_name], primary_key: [:controller, :action], optional: true
+
       belongs_to :member
     end
 
