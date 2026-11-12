@@ -5,7 +5,7 @@ module Org
   end
 
   def self.table_name_prefix
-    'org_'
+    'org_'.freeze
   end
 
 end
