@@ -10,12 +10,7 @@
     <span class="text-grey">(<%= model.all_member_departments_count %>)</span>
   <% end %>
 </td>
-<td>
-  <%= model.needed_number %> /
-  <span class="<%= active_asserts('red': model.needed_number.to_i > model.member_departments_count, 'grey': model.needed_number.to_i == model.member_departments_count, 'green': model.needed_number.to_i < model.member_departments_count) %> text">
-    <%= model.member_departments_count %>
-  </span>
-</td>
+<td><%= model.member_departments_count %></td>
 <td>
   <% model.job_titles.each do |job_title| %>
     <div class="button is-small is-light" aria-label="<%= job_title.grade %>"><%= job_title.name %></div>
@@ -33,14 +28,5 @@
       <%= svg_tag 'plus' %>
     <% end %>
     <%#= link_to 'JD', admin_department_job_descriptions_path(model), class: 'button is-small is-borderless' %>
-    <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-users text-primary"></i>
-    <% end %>
-    <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'pencil', class: 'icon text-link' %>
-    <% end %>
-    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-borderless', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
-      <%= svg_tag 'trash', class: 'icon text-danger' %>
-    <% end %>
   </div>
 </td>

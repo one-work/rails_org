@@ -1,9 +1,5 @@
 <th><%= Org::Department.human_attribute_name(:name) %></th>
-<th>
-  <%= Org::Department.human_attribute_name(:needed_number) %>
-  <span class="has-grey-text">/</span>
-  <%= Org::Department.human_attribute_name(:members_count) %>
-</th>
+<th><%= Org::Department.human_attribute_name(:members_count) %></th>
 <th>
   <%= Org::Department.human_attribute_name(:job_titles) %>
   <%= link_to({ controller: 'super_job_titles' }, aria: { label: '不限部门职级' }) do %>

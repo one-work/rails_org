@@ -18,5 +18,4 @@
   <%# 当前组织为空时不显示 superior 选择器 %>
 <% end %>
 <%= f.text_field :name, required: true %>
-<%= f.number_field :needed_number %>
 <%= render partial: 'com/attachments/list_field', locals: { target: f.object.logo, f: f } %>

@@ -5,7 +5,13 @@
   <%= link_to({ controller: 'org/admin/members' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: active_helper(controllers: ['members'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
     <span><%= t('org.admin.members.index.title') %></span>
   <% end %>
-  <%= link_to({ controller: 'org/admin/departments' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: active_helper(controllers: ['departments', 'job_descriptions'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+  <%=
+    link_to(
+      { controller: 'org/admin/departments' },
+      data: { turbo_frame: 'panel', action: 'menu-popup#enter' },
+      class: active_helper(controllers: ['departments', 'job_descriptions'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')
+    ) do
+  %>
     <span><%= t('org.admin.departments.index.title') %></span>
   <% end %>
 </div>
